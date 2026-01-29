@@ -36,7 +36,7 @@ const Experience = () => {
     <section
       id="experience"
       ref={sectionRef}
-      className="py-32 px-6 bg-gradient-to-b from-slate-900 via-navy-950 to-slate-900"
+      className="py-32 px-6"
     >
       <div className="max-w-7xl mx-auto">
         <div
@@ -49,7 +49,7 @@ const Experience = () => {
             <h2 className="text-6xl md:text-7xl font-black text-white mb-6">
               Experience
             </h2>
-            <div className="w-32 h-2 bg-gradient-to-r from-coral-500 to-coral-600 mx-auto rounded-full mb-8"></div>
+            <div className="w-32 h-2 bg-gradient-to-r from-blue-400 to-blue-600 mx-auto rounded-full mb-8"></div>
 
             {/* Tab Selector */}
             <div className="inline-flex p-2 gap-2 bg-white/5 backdrop-blur-xl rounded-2xl border border-white/10">
@@ -57,7 +57,7 @@ const Experience = () => {
                 onClick={() => setActiveTab('Professional')}
                 className={`px-8 py-3 rounded-xl font-bold transition-all duration-300 ${
                   activeTab === 'Professional'
-                    ? 'bg-gradient-to-r from-coral-500 to-coral-600 text-white shadow-lg'
+                    ? 'bg-gradient-to-r from-blue-500 to-blue-600 text-white shadow-lg'
                     : 'text-slate-400 hover:text-white hover:bg-white/5'
                 }`}
               >
@@ -67,7 +67,7 @@ const Experience = () => {
                 onClick={() => setActiveTab('Volunteering')}
                 className={`px-8 py-3 rounded-xl font-bold transition-all duration-300 ${
                   activeTab === 'Volunteering'
-                    ? 'bg-gradient-to-r from-coral-500 to-coral-600 text-white shadow-lg'
+                    ? 'bg-gradient-to-r from-blue-500 to-blue-600 text-white shadow-lg'
                     : 'text-slate-400 hover:text-white hover:bg-white/5'
                 }`}
               >
@@ -89,33 +89,33 @@ const Experience = () => {
                 style={{ transitionDelay: `${index * 100}ms` }}
               >
                 {/* Compact Card */}
-                <div className="relative p-6 bg-white/5 backdrop-blur-xl border border-white/10 rounded-2xl hover:bg-white/10 hover:border-coral-400/50 transition-all duration-300">
+                <div className="relative p-6 bg-white/5 backdrop-blur-xl border border-white/10 rounded-2xl hover:bg-white/10 hover:border-blue-400/50 transition-all duration-300">
                   {/* Header Row */}
                   <div className="flex flex-col md:flex-row md:items-start md:justify-between gap-4 mb-4">
                     <div className="flex-1">
                       <div className="flex items-start gap-3 mb-3">
-                        <div className="p-2.5 bg-gradient-to-br from-coral-500 to-coral-600 rounded-lg">
+                        <div className="p-2.5 bg-gradient-to-br from-blue-500 to-blue-600 rounded-lg">
                           <Building2 className="w-5 h-5 text-white" />
                         </div>
                         <div className="flex-1">
-                          <h3 className="text-xl font-bold text-white group-hover:text-coral-400 transition-colors leading-tight">
+                          <h3 className="text-xl font-bold text-white group-hover:text-blue-400 transition-colors leading-tight">
                             {exp.role}
                           </h3>
-                          <p className="text-navy-300 font-semibold text-sm mt-1">{exp.company}</p>
+                          <p className="text-slate-300 font-semibold text-sm mt-1">{exp.company}</p>
                         </div>
                       </div>
                       
                       {/* Meta Info */}
                       <div className="flex flex-wrap items-center gap-4 text-sm text-slate-400">
                         <div className="flex items-center gap-1.5">
-                          <Calendar className="w-4 h-4 text-coral-400" />
+                          <Calendar className="w-4 h-4 text-blue-400" />
                           <span>{exp.period}</span>
                         </div>
                         <div className="flex items-center gap-1.5">
-                          <MapPin className="w-4 h-4 text-coral-400" />
+                          <MapPin className="w-4 h-4 text-blue-400" />
                           <span>{exp.location}</span>
                         </div>
-                        <Badge className="bg-coral-500/20 text-coral-300 border-coral-500/30 font-semibold">
+                        <Badge className="bg-blue-500/20 text-blue-300 border-blue-500/30 font-semibold">
                           {exp.type}
                         </Badge>
                       </div>
@@ -129,7 +129,7 @@ const Experience = () => {
                         key={achIndex}
                         className="flex items-start gap-3 text-sm"
                       >
-                        <div className="w-1.5 h-1.5 bg-coral-400 rounded-full mt-2 flex-shrink-0"></div>
+                        <div className="w-1.5 h-1.5 bg-blue-400 rounded-full mt-2 flex-shrink-0"></div>
                         <p className="text-slate-300 leading-relaxed">
                           {achievement}
                         </p>
@@ -143,7 +143,7 @@ const Experience = () => {
                   </div>
 
                   {/* Bottom accent */}
-                  <div className="absolute bottom-0 left-0 w-full h-1 bg-gradient-to-r from-coral-500 to-coral-600 transform scale-x-0 group-hover:scale-x-100 transition-transform duration-500 origin-left rounded-b-2xl"></div>
+                  <div className="absolute bottom-0 left-0 w-full h-1 bg-gradient-to-r from-blue-500 to-blue-600 transform scale-x-0 group-hover:scale-x-100 transition-transform duration-500 origin-left rounded-b-2xl"></div>
                 </div>
               </div>
             ))}
