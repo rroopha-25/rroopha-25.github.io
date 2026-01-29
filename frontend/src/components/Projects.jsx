@@ -141,7 +141,7 @@ const Projects = () => {
                         <Badge
                           key={tagIndex}
                           variant="secondary"
-                          className="bg-white/10 text-slate-300 border border-white/20 hover:bg-coral-500/20 hover:text-coral-300 hover:border-coral-500/30 transition-colors text-xs"
+                          className="bg-blue-500/10 text-blue-200 border border-blue-400/20 hover:bg-blue-500/20 hover:text-blue-100 hover:border-blue-400/40 transition-colors text-xs"
                         >
                           {tag}
                         </Badge>
@@ -153,10 +153,10 @@ const Projects = () => {
                       {project.impact.slice(0, 2).map((metric, metricIndex) => (
                         <div
                           key={metricIndex}
-                          className="flex items-start gap-2 p-3 rounded-xl bg-gradient-to-br from-coral-500/10 to-pink-500/10 border border-coral-500/20"
+                          className="flex items-start gap-2 p-3 rounded-xl bg-gradient-to-br from-blue-500/15 to-cyan-500/10 border border-blue-400/20"
                         >
-                          <CheckCircle2 className="w-4 h-4 text-coral-400 flex-shrink-0 mt-0.5" />
-                          <p className="text-xs text-slate-300 leading-tight font-medium">
+                          <CheckCircle2 className="w-4 h-4 text-blue-400 flex-shrink-0 mt-0.5" />
+                          <p className="text-xs text-blue-100 leading-tight font-medium">
                             {metric}
                           </p>
                         </div>
@@ -166,7 +166,7 @@ const Projects = () => {
                     {/* CTA */}
                     <Button
                       variant="ghost"
-                      className="w-full text-coral-400 hover:text-coral-300 hover:bg-coral-500/10 transition-colors font-semibold rounded-xl"
+                      className="w-full text-blue-300 hover:text-blue-200 hover:bg-blue-500/15 transition-colors font-semibold rounded-xl"
                       onClick={(e) => {
                         e.stopPropagation();
                         setSelectedProject(project);
@@ -178,7 +178,7 @@ const Projects = () => {
                   </div>
 
                   {/* Decorative gradient */}
-                  <div className="absolute top-0 left-0 w-2 h-full bg-gradient-to-b from-coral-500 to-pink-500 opacity-0 group-hover:opacity-100 transition-opacity duration-300 rounded-l-3xl"></div>
+                  <div className="absolute top-0 left-0 w-2 h-full bg-gradient-to-b from-blue-400 to-cyan-500 opacity-0 group-hover:opacity-100 transition-opacity duration-300 rounded-l-3xl"></div>
                 </div>
               </div>
             ))}
