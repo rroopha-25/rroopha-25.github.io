@@ -81,6 +81,46 @@ export const mockData = {
     },
     {
       id: 2,
+      title: "B2B E-Commerce Customer Retention Engine",
+      company: "AMBC Inc.",
+      role: "Product Manager",
+      duration: "6 months",
+      category: "Retention & Growth",
+      tags: ["ML Prediction", "B2B", "Churn Analysis", "Automation", "CRM"],
+      image: "https://images.unsplash.com/photo-1551288049-bebda4e38f71?crop=entropy&cs=srgb&fm=jpg&ixid=M3w3NTY2OTV8MHwxfHNlYXJjaHw0fHxwcm9kdWN0JTIwbWFuYWdlbWVudCUyMGRhc2hib2FyZHxlbnwwfHx8fDE3Njk2NTgzMDB8MA&ixlib=rb-4.1.0&q=85",
+      summary: "Built predictive ML system that reduced B2B churn from 18% to 13%, retaining $1.5M+ annual revenue through automated interventions.",
+      challenge: "18% annual churn rate costing $3M+ in lost revenue with no early warning system. Customers silently stopped ordering, discovered only after 90+ days of inactivity.",
+      solution: "Built ML-powered predictive scoring engine (78% accuracy) identifying at-risk customers, automated intervention campaigns, and account manager dashboard with recommended actions.",
+      impact: [
+        "$1.5M+ incremental revenue retained in first 12 months",
+        "Churn rate reduced from 18% to 13% (28% reduction)",
+        "Customer lifetime value increased by $6,800 average",
+        "Win-back rate improved from 12% to 31%",
+        "Account manager productivity +35% (proactive vs reactive)",
+        "52% of flagged customers successfully retained"
+      ],
+      keyDecisions: [
+        "Build vs Buy: Built in-house for IP ownership and B2B customization despite higher upfront cost ($120K vs $80K annually)",
+        "Explainable AI: Added 'top 3 contributing factors' to risk scores, driving 2x better intervention effectiveness",
+        "Segmented Intervention Timing: High-value (24hr), Mid-market (7-day), Small business (14-day) reduced false positives by 60%"
+      ],
+      metrics: {
+        before: {
+          "Annual Churn Rate": "18%",
+          "Win-back Success": "12%",
+          "Account Manager Time": "60% reactive",
+          "Intervention Success": "N/A"
+        },
+        after: {
+          "Annual Churn Rate": "13% (-28%)",
+          "Win-back Success": "31% (+158%)",
+          "Account Manager Time": "60% proactive",
+          "Intervention Success": "52%"
+        }
+      }
+    },
+    {
+      id: 3,
       title: "SaaS Onboarding Redesign",
       company: "Case Study",
       role: "Product Manager",
@@ -109,7 +149,7 @@ export const mockData = {
       ]
     },
     {
-      id: 3,
+      id: 4,
       title: "Enterprise Feature Adoption Strategy",
       company: "Arizona State University",
       role: "Product Manager",
@@ -146,7 +186,33 @@ export const mockData = {
       ]
     },
     {
-      id: 4,
+      id: 5,
+      title: "Oracle EPM Cloud Optimization",
+      company: "Oracle",
+      role: "Product Manager",
+      duration: "8 months",
+      category: "Enterprise Platform",
+      tags: ["EPM", "Performance", "Templates", "Fortune 500", "Financial Planning"],
+      image: "https://images.unsplash.com/photo-1460925895917-afdab827c52f?crop=entropy&cs=srgb&fm=jpg&ixid=M3w3NTY2OTV8MHwxfHNlYXJjaHw1fHxlbnRlcnByaXNlJTIwc29mdHdhcmV8ZW58MHx8fHwxNzY5NjU4NDAwfDA&ixlib=rb-4.1.0&q=85",
+      summary: "Transformed Oracle EPM Cloud implementation speed and performance, improving NPS from 28 to 52 and saving $12M+ in at-risk renewals.",
+      challenge: "Enterprise clients paying $500K-$2M annually threatened non-renewal due to 10-month implementations, slow performance (8+ min reports), and 43% user adoption.",
+      solution: "Three-pillar strategy: Performance optimization (query caching, 87% faster), industry templates (5 verticals), and low-code rule builder enabling self-service.",
+      impact: [
+        "Implementation time: 10.5 months → 5.8 months (45% reduction)",
+        "Report load times: 8.2 min → 1.1 min (87% improvement)",
+        "User adoption: 43% → 71% monthly active rate",
+        "Customer NPS: 28 → 52 (86% improvement)",
+        "Renewal rate: 78% → 91% (saved $12M+ ARR)",
+        "Competitive win rate: +18% vs Anaplan"
+      ],
+      keyDecisions: [
+        "Performance First: Paused new features for 2 quarters to fix critical blockers, saved 14 of 15 at-risk clients ($7M ARR)",
+        "Templates Over Custom: Reduced services revenue 18% but increased product revenue 31% through faster implementations",
+        "Low-Code Priority: Empowered 60% of clients to self-configure vs 10% previously, reduced consultant dependency"
+      ]
+    },
+    {
+      id: 6,
       title: "AI Support Automation - ROI Framework",
       company: "AMBC Inc.",
       role: "Product Manager",
