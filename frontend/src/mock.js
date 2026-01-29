@@ -178,7 +178,8 @@ export const mockData = {
     }
   ],
   about: {
-    summary: "Product Owner with 6+ years IT experience leading agile business systems and CPQ projects, specializing in Configure, Price, Quote (CPQ) solution architecture and digital transformation, conducting requirement analysis and translating business needs into data-driven solutions through hands-on SQL and Python analysis, product backlog management, and agile ceremonies leadership across Fortune 500 clients in financial services, consulting, and technology sectors.",
+    summary: "I bridge the gap between \"what customers need\" and \"what engineering can build\" then make sure it actually gets used. I ask \"why\" until I understand the real problem, test ideas fast, and treat every product decision like a hypothesis worth validating. I'm an ocean person learning to love hiking, excited about new experiences and discovering what I'm capable of.",
+    photo: "https://customer-assets.emergentagent.com/job_roopha-portfolio/artifacts/cvkjcwev_ROOPA.jpeg",
     highlights: [
       "6+ years in IT and Product Management",
       "Led enterprise solutions for Fortune 500 clients",
