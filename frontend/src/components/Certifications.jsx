@@ -34,7 +34,7 @@ const Certifications = () => {
     <section
       id="certifications"
       ref={sectionRef}
-      className="py-24 px-6 bg-gradient-to-br from-pink-50 via-white to-pink-50"
+      className="py-24 px-6 bg-gradient-to-b from-blue-100 via-blue-50 to-white"
     >
       <div className="max-w-6xl mx-auto">
         <div
@@ -43,20 +43,20 @@ const Certifications = () => {
           }`}
         >
           <div className="text-center mb-16">
-            <h2 className="text-5xl md:text-6xl font-bold text-gray-900 mb-4">
+            <h2 className="text-5xl md:text-6xl font-bold text-blue-900 mb-4">
               Certifications & Education
             </h2>
-            <div className="w-24 h-1 bg-gradient-to-r from-pink-400 to-pink-600 mx-auto rounded-full"></div>
+            <div className="w-32 h-1.5 bg-gradient-to-r from-coral-500 via-pink-500 to-coral-500 mx-auto rounded-full"></div>
           </div>
 
           <div className="grid md:grid-cols-2 gap-12">
             {/* Certifications */}
             <div>
               <div className="flex items-center gap-3 mb-6">
-                <div className="p-3 bg-pink-100 rounded-lg">
-                  <Award className="w-6 h-6 text-pink-600" />
+                <div className="p-4 bg-gradient-to-br from-coral-500 to-pink-500 rounded-xl shadow-lg">
+                  <Award className="w-6 h-6 text-white" />
                 </div>
-                <h3 className="text-2xl font-semibold text-gray-900">
+                <h3 className="text-2xl font-semibold text-blue-900">
                   Certifications
                 </h3>
               </div>
@@ -64,7 +64,7 @@ const Certifications = () => {
                 {certifications.map((cert, index) => (
                   <Card
                     key={index}
-                    className={`p-4 border-pink-200 hover:shadow-lg hover:scale-105 transition-all duration-300 bg-white cursor-pointer ${
+                    className={`p-4 border-2 border-blue-200 hover:shadow-lg hover:scale-105 hover:border-coral-400 transition-all duration-300 bg-gradient-to-br from-white to-blue-50 cursor-pointer ${
                       isVisible
                         ? 'translate-x-0 opacity-100'
                         : '-translate-x-10 opacity-0'
@@ -72,8 +72,8 @@ const Certifications = () => {
                     style={{ transitionDelay: `${index * 100}ms` }}
                   >
                     <div className="flex items-start gap-3">
-                      <div className="w-2 h-2 bg-pink-500 rounded-full mt-2 flex-shrink-0"></div>
-                      <p className="text-gray-700 font-medium">{cert}</p>
+                      <div className="w-2 h-2 bg-gradient-to-br from-coral-500 to-pink-500 rounded-full mt-2 flex-shrink-0"></div>
+                      <p className="text-blue-900 font-semibold">{cert}</p>
                     </div>
                   </Card>
                 ))}
@@ -83,10 +83,10 @@ const Certifications = () => {
             {/* Education */}
             <div>
               <div className="flex items-center gap-3 mb-6">
-                <div className="p-3 bg-pink-100 rounded-lg">
-                  <GraduationCap className="w-6 h-6 text-pink-600" />
+                <div className="p-4 bg-gradient-to-br from-blue-600 to-blue-700 rounded-xl shadow-lg">
+                  <GraduationCap className="w-6 h-6 text-white" />
                 </div>
-                <h3 className="text-2xl font-semibold text-gray-900">
+                <h3 className="text-2xl font-semibold text-blue-900">
                   Education
                 </h3>
               </div>
@@ -94,22 +94,22 @@ const Certifications = () => {
                 {education.map((edu, index) => (
                   <Card
                     key={index}
-                    className={`p-6 border-pink-200 hover:shadow-lg hover:scale-105 transition-all duration-300 bg-white ${
+                    className={`p-6 border-2 border-blue-300 hover:shadow-lg hover:scale-105 hover:border-coral-400 transition-all duration-300 bg-gradient-to-br from-white to-blue-50 ${
                       isVisible
                         ? 'translate-x-0 opacity-100'
                         : 'translate-x-10 opacity-0'
                     }`}
                     style={{ transitionDelay: `${index * 100}ms` }}
                   >
-                    <h4 className="text-lg font-bold text-gray-900 mb-2">
+                    <h4 className="text-lg font-bold text-blue-900 mb-2">
                       {edu.degree}
                     </h4>
-                    <p className="text-gray-700 font-medium mb-1">
+                    <p className="text-blue-800 font-semibold mb-2">
                       {edu.institution}
                     </p>
                     <Badge
                       variant="secondary"
-                      className="bg-pink-100 text-pink-700 border-pink-200"
+                      className="bg-gradient-to-r from-coral-100 to-pink-100 text-coral-800 border-coral-300 font-medium"
                     >
                       {edu.location}
                     </Badge>

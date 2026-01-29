@@ -37,7 +37,7 @@ const Experience = () => {
     <section
       id="experience"
       ref={sectionRef}
-      className="py-24 px-6 bg-white"
+      className="py-24 px-6 bg-gradient-to-b from-white via-blue-50 to-blue-100"
     >
       <div className="max-w-6xl mx-auto">
         <div
@@ -46,29 +46,29 @@ const Experience = () => {
           }`}
         >
           <div className="text-center mb-16">
-            <h2 className="text-5xl md:text-6xl font-bold text-gray-900 mb-4">
+            <h2 className="text-5xl md:text-6xl font-bold text-blue-900 mb-4">
               Experience
             </h2>
-            <div className="w-24 h-1 bg-gradient-to-r from-pink-400 to-pink-600 mx-auto rounded-full mb-8"></div>
+            <div className="w-32 h-1.5 bg-gradient-to-r from-coral-500 via-pink-500 to-coral-500 mx-auto rounded-full mb-8"></div>
 
             {/* Tab Selector */}
             <div className="flex justify-center gap-4 mt-8">
               <button
                 onClick={() => setActiveTab('Professional')}
-                className={`px-6 py-3 rounded-full font-medium transition-all duration-300 ${
+                className={`px-8 py-3 rounded-full font-semibold transition-all duration-300 ${
                   activeTab === 'Professional'
-                    ? 'bg-gray-900 text-white shadow-lg scale-105'
-                    : 'bg-white text-gray-700 border-2 border-gray-200 hover:border-pink-300 hover:bg-pink-50'
+                    ? 'bg-gradient-to-r from-coral-500 to-pink-500 text-white shadow-xl scale-105'
+                    : 'bg-white text-blue-900 border-2 border-blue-300 hover:border-coral-400 hover:bg-coral-50'
                 }`}
               >
                 Professional
               </button>
               <button
                 onClick={() => setActiveTab('Volunteering')}
-                className={`px-6 py-3 rounded-full font-medium transition-all duration-300 ${
+                className={`px-8 py-3 rounded-full font-semibold transition-all duration-300 ${
                   activeTab === 'Volunteering'
-                    ? 'bg-gray-900 text-white shadow-lg scale-105'
-                    : 'bg-white text-gray-700 border-2 border-gray-200 hover:border-pink-300 hover:bg-pink-50'
+                    ? 'bg-gradient-to-r from-coral-500 to-pink-500 text-white shadow-xl scale-105'
+                    : 'bg-white text-blue-900 border-2 border-blue-300 hover:border-coral-400 hover:bg-coral-50'
                 }`}
               >
                 Volunteering
@@ -79,7 +79,7 @@ const Experience = () => {
           {/* Timeline */}
           <div className="relative">
             {/* Timeline line */}
-            <div className="hidden md:block absolute left-1/2 transform -translate-x-1/2 w-0.5 h-full bg-gradient-to-b from-pink-400 to-pink-200"></div>
+            <div className="hidden md:block absolute left-1/2 transform -translate-x-1/2 w-1 h-full bg-gradient-to-b from-coral-400 via-pink-400 to-coral-300 rounded-full"></div>
 
             <div className="space-y-12">
               {filteredExperience.map((exp, index) => (
@@ -102,25 +102,25 @@ const Experience = () => {
                     {/* Content Card */}
                     <div className="md:w-1/2">
                       <Card
-                        className={`p-6 border-pink-200 hover:shadow-xl transition-all duration-300 bg-white group ${
+                        className={`p-6 border-2 border-blue-300 hover:shadow-2xl hover:border-coral-400 transition-all duration-300 bg-gradient-to-br from-white to-blue-50 group ${
                           index % 2 === 0 ? 'md:mr-8' : 'md:ml-8'
                         }`}
                       >
                         <div className="mb-4">
-                          <h3 className="text-xl font-bold text-gray-900 mb-2 group-hover:text-pink-600 transition-colors duration-300">
+                          <h3 className="text-xl font-bold text-blue-900 mb-2 group-hover:text-coral-600 transition-colors duration-300">
                             {exp.role}
                           </h3>
-                          <div className="flex items-center gap-2 text-gray-600 mb-2">
-                            <Building2 className="w-4 h-4 text-pink-500" />
-                            <span className="font-medium">{exp.company}</span>
+                          <div className="flex items-center gap-2 text-blue-800 mb-2">
+                            <Building2 className="w-4 h-4 text-coral-500" />
+                            <span className="font-semibold">{exp.company}</span>
                           </div>
-                          <div className="flex flex-wrap gap-3 text-sm text-gray-500">
+                          <div className="flex flex-wrap gap-3 text-sm text-blue-700">
                             <div className="flex items-center gap-1">
-                              <Calendar className="w-4 h-4 text-pink-500" />
+                              <Calendar className="w-4 h-4 text-coral-500" />
                               <span>{exp.period}</span>
                             </div>
                             <div className="flex items-center gap-1">
-                              <MapPin className="w-4 h-4 text-pink-500" />
+                              <MapPin className="w-4 h-4 text-coral-500" />
                               <span>{exp.location}</span>
                             </div>
                           </div>
@@ -130,7 +130,7 @@ const Experience = () => {
                           {exp.achievements.map((achievement, achIndex) => (
                             <li
                               key={achIndex}
-                              className="text-gray-700 text-sm leading-relaxed pl-4 border-l-2 border-pink-200 hover:border-pink-400 transition-colors duration-200"
+                              className="text-gray-700 text-sm leading-relaxed pl-4 border-l-2 border-coral-300 hover:border-coral-500 transition-colors duration-200"
                             >
                               {achievement}
                             </li>
@@ -139,7 +139,7 @@ const Experience = () => {
 
                         <Badge
                           variant="secondary"
-                          className="mt-4 bg-pink-100 text-pink-700 border-pink-200"
+                          className="mt-4 bg-gradient-to-r from-coral-100 to-pink-100 text-coral-800 border-coral-300 font-medium"
                         >
                           {exp.type}
                         </Badge>
@@ -148,7 +148,7 @@ const Experience = () => {
 
                     {/* Timeline dot */}
                     <div className="hidden md:block absolute left-1/2 transform -translate-x-1/2">
-                      <div className="w-4 h-4 bg-pink-500 rounded-full border-4 border-white shadow-lg"></div>
+                      <div className="w-5 h-5 bg-gradient-to-br from-coral-500 to-pink-500 rounded-full border-4 border-white shadow-lg"></div>
                     </div>
                   </div>
                 </div>
