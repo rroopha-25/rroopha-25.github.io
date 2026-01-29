@@ -54,7 +54,7 @@ const About = () => {
               <div className="relative group">
                 <div className="absolute -inset-1 bg-gradient-to-r from-coral-500 to-pink-500 rounded-2xl blur opacity-25 group-hover:opacity-50 transition duration-500"></div>
                 <img
-                  src="https://customer-assets.emergentagent.com/job_roopha-portfolio/artifacts/sc3fgq7i_ROOPA.jpeg"
+                  src="https://customer-assets.emergentagent.com/job_roopha-portfolio/artifacts/cvkjcwev_ROOPA.jpeg"
                   alt="Roopha Rajagopal"
                   className="relative rounded-2xl w-full max-w-sm shadow-2xl border-4 border-white"
                 />
