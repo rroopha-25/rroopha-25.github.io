@@ -45,29 +45,32 @@ const Projects = () => {
     <section
       id="projects"
       ref={sectionRef}
-      className="py-24 px-6 bg-gradient-to-b from-blue-50 to-white"
+      className="py-32 px-6 bg-gradient-to-b from-slate-950 via-slate-900 to-slate-950 relative overflow-hidden"
     >
-      <div className="max-w-7xl mx-auto">
+      {/* Background decoration */}
+      <div className="absolute inset-0 bg-[url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNjAiIGhlaWdodD0iNjAiIHZpZXdCb3g9IjAgMCA2MCA2MCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj48ZyBmaWxsPSJub25lIiBmaWxsLXJ1bGU9ImV2ZW5vZGQiPjxwYXRoIGQ9Ik0zNiAxOGMwLTkuOTQtOC4wNi0xOC0xOC0xOCIgc3Ryb2tlPSJyZ2JhKDI1NSwgMjU1LCAyNTUsIDAuMDUpIiBzdHJva2Utd2lkdGg9IjEiLz48L2c+PC9zdmc+')] opacity-40\"></div>
+
+      <div className="max-w-7xl mx-auto relative z-10">
         <div
           className={`transition-all duration-1000 transform ${
             isVisible ? 'translate-y-0 opacity-100' : 'translate-y-10 opacity-0'
           }`}
         >
           <div className="text-center mb-20">
-            <h2 className="text-5xl md:text-6xl font-bold text-blue-900 mb-4">
+            <h2 className="text-5xl md:text-7xl font-black text-white mb-6">
               Featured Projects
             </h2>
-            <div className="w-32 h-1.5 bg-gradient-to-r from-coral-500 via-pink-500 to-coral-500 mx-auto rounded-full mb-6"></div>
-            <p className="text-xl text-gray-600 max-w-3xl mx-auto">
+            <div className="w-32 h-2 bg-gradient-to-r from-coral-500 via-pink-500 to-coral-500 mx-auto rounded-full mb-6"></div>
+            <p className="text-xl text-slate-400 max-w-3xl mx-auto">
               Real-world case studies showcasing data-driven product strategy, cross-functional leadership, and measurable business impact
             </p>
           </div>
 
-          <div className="grid md:grid-cols-2 gap-8">
+          <div className="grid md:grid-cols-2 gap-6">
             {projects.map((project, index) => (
-              <Card
+              <div
                 key={project.id}
-                className={`group relative overflow-hidden border-2 border-blue-100 hover:border-coral-400 hover:shadow-2xl transition-all duration-500 cursor-pointer ${
+                className={`group relative transition-all duration-700 cursor-pointer ${
                   isVisible
                     ? 'translate-y-0 opacity-100'
                     : 'translate-y-10 opacity-0'
@@ -75,85 +78,87 @@ const Projects = () => {
                 style={{ transitionDelay: `${index * 150}ms` }}
                 onClick={() => setSelectedProject(project)}
               >
-                {/* Project Image */}
-                <div className="relative h-64 overflow-hidden bg-gradient-to-br from-blue-900 to-blue-700">
-                  <img
-                    src={project.image}
-                    alt={project.title}
-                    className="w-full h-full object-cover opacity-80 group-hover:opacity-100 group-hover:scale-110 transition-all duration-500"
-                  />
-                  <div className="absolute inset-0 bg-gradient-to-t from-blue-900/90 to-transparent"></div>
-                  
-                  {/* Category Badge */}
-                  <Badge
-                    variant="secondary"
-                    className="absolute top-4 right-4 bg-coral-500 text-white border-none px-4 py-2 text-sm font-semibold"
-                  >
-                    {project.category}
-                  </Badge>
+                {/* Glass card with image */}
+                <div className="relative rounded-3xl overflow-hidden bg-white/5 backdrop-blur-xl border border-white/10 hover:border-coral-400/50 transition-all duration-300 hover:scale-[1.02] hover:shadow-2xl hover:shadow-coral-500/20">
+                  {/* Project Image with overlay */}
+                  <div className="relative h-72 overflow-hidden">
+                    <img
+                      src={project.image}
+                      alt={project.title}
+                      className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
+                    />
+                    <div className="absolute inset-0 bg-gradient-to-t from-slate-950 via-slate-950/80 to-transparent"></div>
+                    
+                    {/* Category Badge */}
+                    <Badge
+                      className="absolute top-4 right-4 bg-gradient-to-r from-coral-500 to-pink-500 text-white border-0 px-4 py-1.5 font-semibold shadow-lg"
+                    >
+                      {project.category}
+                    </Badge>
 
-                  {/* Title overlay */}
-                  <div className="absolute bottom-4 left-4 right-4">
-                    <h3 className="text-2xl font-bold text-white mb-1">
-                      {project.title}
-                    </h3>
-                    <p className="text-blue-200 text-sm font-medium">
-                      {project.company} • {project.duration}
+                    {/* Title overlay */}
+                    <div className="absolute bottom-4 left-4 right-4">
+                      <h3 className="text-2xl font-bold text-white mb-1 group-hover:text-coral-400 transition-colors">
+                        {project.title}
+                      </h3>
+                      <p className="text-slate-300 text-sm font-medium">
+                        {project.company} • {project.duration}
+                      </p>
+                    </div>
+                  </div>
+
+                  {/* Project Content */}
+                  <div className="p-6">
+                    <p className="text-slate-300 leading-relaxed mb-4">
+                      {project.summary}
                     </p>
+
+                    {/* Tags */}
+                    <div className="flex flex-wrap gap-2 mb-4">
+                      {project.tags.slice(0, 4).map((tag, tagIndex) => (
+                        <Badge
+                          key={tagIndex}
+                          variant="secondary"
+                          className="bg-white/10 text-slate-300 border border-white/20 hover:bg-coral-500/20 hover:text-coral-300 hover:border-coral-500/30 transition-colors text-xs"
+                        >
+                          {tag}
+                        </Badge>
+                      ))}
+                    </div>
+
+                    {/* Key Metrics Preview */}
+                    <div className="grid grid-cols-2 gap-3 mb-4">
+                      {project.impact.slice(0, 2).map((metric, metricIndex) => (
+                        <div
+                          key={metricIndex}
+                          className="flex items-start gap-2 p-3 rounded-xl bg-gradient-to-br from-coral-500/10 to-pink-500/10 border border-coral-500/20"
+                        >
+                          <CheckCircle2 className="w-4 h-4 text-coral-400 flex-shrink-0 mt-0.5" />
+                          <p className="text-xs text-slate-300 leading-tight font-medium">
+                            {metric}
+                          </p>
+                        </div>
+                      ))}
+                    </div>
+
+                    {/* CTA */}
+                    <Button
+                      variant="ghost"
+                      className="w-full text-coral-400 hover:text-coral-300 hover:bg-coral-500/10 transition-colors font-semibold rounded-xl"
+                      onClick={(e) => {
+                        e.stopPropagation();
+                        setSelectedProject(project);
+                      }}
+                    >
+                      View Full Case Study
+                      <ExternalLink className="w-4 h-4 ml-2" />
+                    </Button>
                   </div>
+
+                  {/* Decorative gradient */}
+                  <div className="absolute top-0 left-0 w-2 h-full bg-gradient-to-b from-coral-500 to-pink-500 opacity-0 group-hover:opacity-100 transition-opacity duration-300 rounded-l-3xl"></div>
                 </div>
-
-                {/* Project Content */}
-                <div className="p-6">
-                  <p className="text-gray-700 leading-relaxed mb-4 text-base">
-                    {project.summary}
-                  </p>
-
-                  {/* Tags */}
-                  <div className="flex flex-wrap gap-2 mb-4">
-                    {project.tags.map((tag, tagIndex) => (
-                      <Badge
-                        key={tagIndex}
-                        variant="secondary"
-                        className="bg-blue-50 text-blue-700 border border-blue-200 hover:bg-blue-100 transition-colors text-xs"
-                      >
-                        {tag}
-                      </Badge>
-                    ))}
-                  </div>
-
-                  {/* Key Metrics Preview */}
-                  <div className="grid grid-cols-2 gap-3 mb-4">
-                    {project.impact.slice(0, 2).map((metric, metricIndex) => (
-                      <div
-                        key={metricIndex}
-                        className="flex items-start gap-2 p-3 bg-gradient-to-br from-blue-50 to-coral-50 rounded-lg"
-                      >
-                        <CheckCircle2 className="w-4 h-4 text-coral-500 flex-shrink-0 mt-0.5" />
-                        <p className="text-xs text-gray-700 leading-tight">
-                          {metric}
-                        </p>
-                      </div>
-                    ))}
-                  </div>
-
-                  {/* CTA */}
-                  <Button
-                    variant="ghost"
-                    className="w-full text-blue-600 hover:text-coral-600 hover:bg-coral-50 transition-colors font-semibold"
-                    onClick={(e) => {
-                      e.stopPropagation();
-                      setSelectedProject(project);
-                    }}
-                  >
-                    View Full Case Study
-                    <ExternalLink className="w-4 h-4 ml-2" />
-                  </Button>
-                </div>
-
-                {/* Hover accent */}
-                <div className="absolute top-0 left-0 w-1 h-full bg-gradient-to-b from-coral-500 to-pink-500 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
-              </Card>
+              </div>
             ))}
           </div>
         </div>
