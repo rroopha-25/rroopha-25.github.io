@@ -97,6 +97,19 @@ html.light-mode .hero-section {
     background: linear-gradient(135deg, #ffffff 0%, #f1f5f9 50%, #e2e8f0 100%) !important;
 }
 
+html.light-mode .constellation-pattern {
+    background-image: 
+        radial-gradient(1px 1px at 20px 30px, rgba(59,130,246,0.3), transparent),
+        radial-gradient(1px 1px at 40px 70px, rgba(59,130,246,0.2), transparent),
+        radial-gradient(1.5px 1.5px at 90px 40px, rgba(100,116,139,0.25), transparent),
+        radial-gradient(1px 1px at 130px 80px, rgba(59,130,246,0.2), transparent),
+        radial-gradient(1.5px 1.5px at 160px 30px, rgba(100,116,139,0.2), transparent);
+}
+
+html.light-mode .projects-section {
+    background: linear-gradient(to bottom, #eff6ff, #dbeafe, #f1f5f9) !important;
+}
+
 html.light-mode {
     --background: 210 40% 98%;
     --foreground: 222 47% 11%;
