@@ -13,13 +13,47 @@ body {
     transition: background-color 0.3s ease;
 }
 
-/* Light Mode */
+/* Hero pattern - works in both modes */
+.hero-pattern {
+    background-image: radial-gradient(circle, currentColor 1px, transparent 1px);
+    background-size: 32px 32px;
+    color: rgba(255, 255, 255, 0.03);
+}
+
+/* Floating animations */
+@keyframes float {
+    0%, 100% { transform: translateY(0) rotate(0deg); }
+    50% { transform: translateY(-20px) rotate(5deg); }
+}
+
+@keyframes float-delayed {
+    0%, 100% { transform: translateY(0) rotate(0deg); }
+    50% { transform: translateY(-15px) rotate(-5deg); }
+}
+
+.animate-float {
+    animation: float 6s ease-in-out infinite;
+}
+
+.animate-float-delayed {
+    animation: float-delayed 8s ease-in-out infinite;
+}
+
+/* Light Mode - White, Grey, Blue Theme */
 html.light-mode body {
-    background: #ffffff;
+    background: #f8fafc;
+}
+
+html.light-mode .hero-pattern {
+    color: rgba(59, 130, 246, 0.08);
+}
+
+html.light-mode .hero-section {
+    background: linear-gradient(135deg, #ffffff 0%, #f1f5f9 50%, #e2e8f0 100%) !important;
 }
 
 html.light-mode {
-    --background: 0 0% 100%;
+    --background: 210 40% 98%;
     --foreground: 222 47% 11%;
     --card: 0 0% 100%;
     --card-foreground: 222 47% 11%;
@@ -69,7 +103,7 @@ code {
     }
 }
 
-/* Light mode overrides */
+/* Light mode overrides - White, Grey, Blue Theme */
 html.light-mode section {
     background: linear-gradient(to bottom, #f8fafc, #ffffff, #f1f5f9) !important;
 }
@@ -81,26 +115,53 @@ html.light-mode .bg-slate-950 {
 }
 
 html.light-mode .text-white {
-    color: #1e293b !important;
+    color: #1e3a5f !important;
 }
 
 html.light-mode .text-slate-300,
-html.light-mode .text-slate-400 {
-    color: #475569 !important;
+html.light-mode .text-slate-400,
+html.light-mode .text-navy-200 {
+    color: #64748b !important;
 }
 
 html.light-mode .bg-white\/5,
 html.light-mode .bg-white\/10 {
-    background: rgba(0, 0, 0, 0.05) !important;
+    background: rgba(59, 130, 246, 0.08) !important;
 }
 
 html.light-mode .border-white\/10,
 html.light-mode .border-white\/20 {
-    border-color: rgba(0, 0, 0, 0.1) !important;
+    border-color: rgba(59, 130, 246, 0.15) !important;
+}
+
+html.light-mode .border-coral-500\/20,
+html.light-mode .border-coral-400\/15 {
+    border-color: rgba(59, 130, 246, 0.15) !important;
+}
+
+html.light-mode .border-blue-500\/20,
+html.light-mode .border-blue-500\/10 {
+    border-color: rgba(59, 130, 246, 0.12) !important;
+}
+
+html.light-mode .bg-coral-500\/10,
+html.light-mode .bg-blue-500\/10 {
+    background: rgba(59, 130, 246, 0.08) !important;
 }
 
 html.light-mode .hover\:border-coral-400\/50:hover {
-    border-color: rgba(255, 107, 127, 0.5) !important;
+    border-color: rgba(59, 130, 246, 0.4) !important;
+}
+
+html.light-mode .via-coral-500\/20,
+html.light-mode .via-blue-500\/10 {
+    --tw-gradient-via: rgba(59, 130, 246, 0.15) !important;
+}
+
+/* Light mode decorative elements */
+html.light-mode .border-coral-500\/10,
+html.light-mode .border-blue-500\/10 {
+    border-color: rgba(59, 130, 246, 0.1) !important;
 }
 
 /* Smooth scroll */
