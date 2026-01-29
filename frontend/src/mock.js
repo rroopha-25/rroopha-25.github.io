@@ -6,8 +6,8 @@ export const mockData = {
     tagline: "Transforming business challenges into data-driven solutions through agile leadership and enterprise systems expertise",
     email: "rroopha@gmail.com",
     phone: "+1 (602) 565-9001",
-    linkedin: "https://www.linkedin.com/in/roopha-rajagopal",
-    github: "https://github.com/roopha"
+    linkedin: "https://www.linkedin.com/in/rroopha/",
+    github: "https://github.com/rroopha-25"
   },
   whyPM: {
     title: "Why Product Management?",
