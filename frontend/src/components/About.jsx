@@ -51,7 +51,7 @@ const About = () => {
           <div className="grid md:grid-cols-2 gap-12 items-center">
             {/* Summary */}
             <div>
-              <Card className="p-8 bg-gradient-to-br from-pink-50 to-white border-pink-200 hover:shadow-xl transition-shadow duration-300">
+              <Card className="p-8 bg-gradient-to-br from-blue-50 to-white border-blue-200 hover:shadow-xl hover:border-coral-300 transition-all duration-300">
                 <p className="text-gray-700 leading-relaxed text-lg">
                   {about.summary}
                 </p>
