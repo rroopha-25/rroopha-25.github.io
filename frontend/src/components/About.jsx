@@ -82,7 +82,9 @@ const About = () => {
                           ? 'translate-x-0 opacity-100'
                           : '-translate-x-10 opacity-0'
                       }`}
-                      style={{ transitionDelay: `${index * 150}ms` }}\n                    >\n                      <CheckCircle2 className="w-5 h-5 md:w-6 md:h-6 text-coral-400 flex-shrink-0 mt-1" />
+                      style={{ transitionDelay: `${index * 150}ms` }}
+                    >
+                      <CheckCircle2 className="w-5 h-5 md:w-6 md:h-6 text-coral-400 flex-shrink-0 mt-1" />
                       <p className="text-white text-base md:text-lg font-medium">{highlight}</p>
                     </div>
                   ))}
