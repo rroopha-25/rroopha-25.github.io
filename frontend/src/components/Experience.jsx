@@ -1,7 +1,6 @@
 import React, { useEffect, useRef, useState } from 'react';
-import { Card } from './ui/card';
 import { Badge } from './ui/badge';
-import { Calendar, MapPin, Building2, Briefcase } from 'lucide-react';
+import { Calendar, MapPin, Building2 } from 'lucide-react';
 import { mockData } from '../mock';
 
 const Experience = () => {
@@ -37,12 +36,9 @@ const Experience = () => {
     <section
       id="experience"
       ref={sectionRef}
-      className="py-32 px-6 bg-gradient-to-b from-gray-50 via-white to-leaf-50/30 relative overflow-hidden"
+      className="py-32 px-6 bg-gradient-to-b from-slate-900 via-navy-950 to-slate-900"
     >
-      {/* Background decoration */}
-      <div className="absolute inset-0 bg-[radial-gradient(circle_at_1px_1px,rgb(34_197_94/0.08)_1px,transparent_0)] [background-size:40px_40px]"></div>
-
-      <div className="max-w-7xl mx-auto relative z-10">
+      <div className="max-w-7xl mx-auto">
         <div
           className={`transition-all duration-1000 transform ${
             isVisible ? 'translate-y-0 opacity-100' : 'translate-y-10 opacity-0'
@@ -50,19 +46,19 @@ const Experience = () => {
         >
           {/* Header */}
           <div className="text-center mb-16">
-            <h2 className="text-6xl md:text-7xl font-black text-gray-900 mb-6">
+            <h2 className="text-6xl md:text-7xl font-black text-white mb-6">
               Experience
             </h2>
-            <div className="w-32 h-2 bg-gradient-to-r from-leaf-600 to-leaf-400 mx-auto rounded-full mb-8"></div>
+            <div className="w-32 h-2 bg-gradient-to-r from-coral-500 to-coral-600 mx-auto rounded-full mb-8"></div>
 
-            {/* Tab Selector - Modern Pills */}
-            <div className="inline-flex p-2 gap-2 bg-white rounded-2xl shadow-lg border border-gray-200">
+            {/* Tab Selector */}
+            <div className="inline-flex p-2 gap-2 bg-white/5 backdrop-blur-xl rounded-2xl border border-white/10">
               <button
                 onClick={() => setActiveTab('Professional')}
                 className={`px-8 py-3 rounded-xl font-bold transition-all duration-300 ${
                   activeTab === 'Professional'
-                    ? 'bg-gradient-to-r from-leaf-600 to-leaf-500 text-white shadow-md scale-105'
-                    : 'text-gray-600 hover:bg-gray-50 hover:text-gray-900'
+                    ? 'bg-gradient-to-r from-coral-500 to-coral-600 text-white shadow-lg'
+                    : 'text-slate-400 hover:text-white hover:bg-white/5'
                 }`}
               >
                 Professional
@@ -71,8 +67,8 @@ const Experience = () => {
                 onClick={() => setActiveTab('Volunteering')}
                 className={`px-8 py-3 rounded-xl font-bold transition-all duration-300 ${
                   activeTab === 'Volunteering'
-                    ? 'bg-gradient-to-r from-leaf-600 to-leaf-500 text-white shadow-md scale-105'
-                    : 'text-gray-600 hover:bg-gray-50 hover:text-gray-900'
+                    ? 'bg-gradient-to-r from-coral-500 to-coral-600 text-white shadow-lg'
+                    : 'text-slate-400 hover:text-white hover:bg-white/5'
                 }`}
               >
                 Volunteering
@@ -80,86 +76,77 @@ const Experience = () => {
             </div>
           </div>
 
-          {/* Modern Bento Grid Layout */}
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 auto-rows-auto">
-            {filteredExperience.map((exp, index) => {
-              // Varied card sizes for visual interest
-              const isLarge = index === 0 || index === 3;
-              const colSpan = isLarge ? 'lg:col-span-2' : 'lg:col-span-1';
-              
-              return (
-                <Card
-                  key={exp.id}
-                  className={`group relative p-8 bg-white border-2 border-gray-200 hover:border-leaf-500 hover:shadow-2xl transition-all duration-500 rounded-3xl overflow-hidden ${colSpan} ${
-                    isVisible
-                      ? 'translate-y-0 opacity-100'
-                      : 'translate-y-10 opacity-0'
-                  }`}
-                  style={{ transitionDelay: `${index * 100}ms` }}
-                >
-                  {/* Decorative corner gradient */}
-                  <div className="absolute top-0 right-0 w-32 h-32 bg-gradient-to-br from-leaf-500/10 to-transparent rounded-bl-full opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
-
-                  {/* Company Icon */}
-                  <div className="flex items-start justify-between mb-6">
-                    <div className="p-4 bg-gradient-to-br from-leaf-100 to-leaf-50 rounded-2xl shadow-md group-hover:scale-110 transition-transform duration-300">
-                      <Briefcase className="w-6 h-6 text-leaf-600" />
-                    </div>
-                    <Badge
-                      className="bg-gray-100 text-gray-700 border border-gray-200 font-semibold px-3 py-1"
-                    >
-                      {exp.type}
-                    </Badge>
-                  </div>
-
-                  {/* Job Title */}
-                  <h3 className="text-2xl font-bold text-gray-900 mb-3 leading-tight group-hover:text-leaf-600 transition-colors">
-                    {exp.role}
-                  </h3>
-
-                  {/* Company & Location */}
-                  <div className="space-y-2 mb-6">
-                    <div className="flex items-center gap-2 text-gray-700">
-                      <Building2 className="w-4 h-4 text-leaf-600" />
-                      <span className="font-semibold text-sm">{exp.company}</span>
-                    </div>
-                    <div className="flex items-center gap-4 text-sm text-gray-600">
-                      <div className="flex items-center gap-1.5">
-                        <Calendar className="w-4 h-4 text-leaf-600" />
-                        <span>{exp.period}</span>
+          {/* Compact List Layout */}
+          <div className="space-y-4 max-w-5xl mx-auto">
+            {filteredExperience.map((exp, index) => (
+              <div
+                key={exp.id}
+                className={`group transition-all duration-700 ${
+                  isVisible
+                    ? 'translate-y-0 opacity-100'
+                    : 'translate-y-10 opacity-0'
+                }`}
+                style={{ transitionDelay: `${index * 100}ms` }}
+              >
+                {/* Compact Card */}
+                <div className="relative p-6 bg-white/5 backdrop-blur-xl border border-white/10 rounded-2xl hover:bg-white/10 hover:border-coral-400/50 transition-all duration-300">
+                  {/* Header Row */}
+                  <div className="flex flex-col md:flex-row md:items-start md:justify-between gap-4 mb-4">
+                    <div className="flex-1">
+                      <div className="flex items-start gap-3 mb-3">
+                        <div className="p-2.5 bg-gradient-to-br from-coral-500 to-coral-600 rounded-lg">
+                          <Building2 className="w-5 h-5 text-white" />
+                        </div>
+                        <div className="flex-1">
+                          <h3 className="text-xl font-bold text-white group-hover:text-coral-400 transition-colors leading-tight">
+                            {exp.role}
+                          </h3>
+                          <p className="text-navy-300 font-semibold text-sm mt-1">{exp.company}</p>
+                        </div>
                       </div>
-                      <div className="flex items-center gap-1.5">
-                        <MapPin className="w-4 h-4 text-leaf-600" />
-                        <span>{exp.location}</span>
+                      
+                      {/* Meta Info */}
+                      <div className="flex flex-wrap items-center gap-4 text-sm text-slate-400">
+                        <div className="flex items-center gap-1.5">
+                          <Calendar className="w-4 h-4 text-coral-400" />
+                          <span>{exp.period}</span>
+                        </div>
+                        <div className="flex items-center gap-1.5">
+                          <MapPin className="w-4 h-4 text-coral-400" />
+                          <span>{exp.location}</span>
+                        </div>
+                        <Badge className="bg-coral-500/20 text-coral-300 border-coral-500/30 font-semibold">
+                          {exp.type}
+                        </Badge>
                       </div>
                     </div>
                   </div>
 
-                  {/* Achievements - Show first 2 for compact cards, all for large cards */}
-                  <div className="space-y-3">
-                    {exp.achievements.slice(0, isLarge ? undefined : 2).map((achievement, achIndex) => (
+                  {/* Achievements - Compact List */}
+                  <div className="space-y-2 pl-0 md:pl-14">
+                    {exp.achievements.slice(0, 3).map((achievement, achIndex) => (
                       <div
                         key={achIndex}
-                        className="flex items-start gap-3 p-3 rounded-xl bg-gray-50 hover:bg-leaf-50 transition-colors duration-200"
+                        className="flex items-start gap-3 text-sm"
                       >
-                        <div className="w-1.5 h-1.5 bg-leaf-500 rounded-full mt-2 flex-shrink-0"></div>
-                        <p className="text-sm text-gray-700 leading-relaxed">
+                        <div className="w-1.5 h-1.5 bg-coral-400 rounded-full mt-2 flex-shrink-0"></div>
+                        <p className="text-slate-300 leading-relaxed">
                           {achievement}
                         </p>
                       </div>
                     ))}
-                    {!isLarge && exp.achievements.length > 2 && (
-                      <p className="text-xs text-gray-500 italic pt-2">
-                        +{exp.achievements.length - 2} more achievements
+                    {exp.achievements.length > 3 && (
+                      <p className="text-xs text-slate-500 italic pl-5">
+                        +{exp.achievements.length - 3} more achievements
                       </p>
                     )}
                   </div>
 
-                  {/* Hover indicator */}
-                  <div className="absolute bottom-0 left-0 w-full h-1 bg-gradient-to-r from-leaf-600 to-leaf-400 transform scale-x-0 group-hover:scale-x-100 transition-transform duration-500 origin-left"></div>
-                </Card>
-              );
-            })}
+                  {/* Bottom accent */}
+                  <div className="absolute bottom-0 left-0 w-full h-1 bg-gradient-to-r from-coral-500 to-coral-600 transform scale-x-0 group-hover:scale-x-100 transition-transform duration-500 origin-left rounded-b-2xl"></div>
+                </div>
+              </div>
+            ))}
           </div>
         </div>
       </div>
