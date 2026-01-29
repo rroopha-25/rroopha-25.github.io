@@ -1,13 +1,182 @@
 export const mockData = {
   hero: {
     name: "Roopha Rajagopal",
-    title: "Product Owner | Business Systems Strategist",
+    title: "Product Manager",
+    subtitle: "Turning data into strategy and strategy into results",
     tagline: "Transforming business challenges into data-driven solutions through agile leadership and enterprise systems expertise",
     email: "rroopha@gmail.com",
     phone: "+1 (602) 565-9001",
     linkedin: "https://www.linkedin.com/in/roopha-rajagopal",
     github: "https://github.com/roopha"
   },
+  whyPM: {
+    title: "Why Product Management?",
+    pillars: [
+      {
+        icon: "heart",
+        title: "Empathy First",
+        description: "Understanding user needs deeply to build solutions that truly matter. I start every project by listening - to customers, stakeholders, and data.",
+        image: "https://images.unsplash.com/photo-1522071820081-009f0129c71c?crop=entropy&cs=srgb&fm=jpg&ixid=M3w4NTYxNzV8MHwxfHNlYXJjaHwyfHxidXNpbmVzcyUyMHRlYW13b3JrfGVufDB8fHx8MTc2OTY1ODM2OHww&ixlib=rb-4.1.0&q=85"
+      },
+      {
+        icon: "lightbulb",
+        title: "Problem Solver",
+        description: "I thrive on complex challenges. Whether it's migrating 200K+ loan records or improving user activation rates, I break down problems systematically and find elegant solutions.",
+        image: "https://images.unsplash.com/photo-1600880292089-90a7e086ee0c?crop=entropy&cs=srgb&fm=jpg&ixid=M3w4NTYxNzV8MHwxfHNlYXJjaHwxfHxjb2xsYWJvcmF0aW9ufGVufDB8fHx8MTc2OTY1ODM3M3ww&ixlib=rb-4.1.0&q=85"
+      },
+      {
+        icon: "target",
+        title: "Execution Focus",
+        description: "Ideas mean nothing without execution. I deliver results through agile methodologies, clear prioritization, and relentless follow-through.",
+        image: "https://images.pexels.com/photos/7691694/pexels-photo-7691694.jpeg"
+      },
+      {
+        icon: "users",
+        title: "Cross-functional",
+        description: "I bridge business, engineering, and design. My superpower is translating technical constraints into business opportunities and vice versa.",
+        image: "https://images.pexels.com/photos/1181304/pexels-photo-1181304.jpeg"
+      }
+    ]
+  },
+  projects: [
+    {
+      id: 1,
+      title: "AI-Enabled Loan Migration Platform",
+      company: "Vero Technologies",
+      role: "Product Owner - AI/ML Business Systems Strategy",
+      duration: "3 months (Jul - Oct 2025)",
+      category: "Platform Migration",
+      tags: ["AI/ML", "MongoDB", "Azure DevOps", "Agile", "Risk Management"],
+      image: "https://images.unsplash.com/photo-1666875753105-c63a6f3bdc86?crop=entropy&cs=srgb&fm=jpg&ixid=M3w3NTY2OTV8MHwxfHNlYXJjaHwzfHxwcm9kdWN0JTIwbWFuYWdlbWVudCUyMGRhc2hib2FyZHxlbnwwfHx8fDE3Njk2NTgzMDB8MA&ixlib=rb-4.1.0&q=85",
+      summary: "Led migration of 200K+ active loan records to AI-enabled MongoDB platform with 99.97% accuracy and zero downtime.",
+      challenge: "Migrate legacy lending platform to modern, AI-enabled infrastructure supporting $500M+ in loans with zero tolerance for data loss and no downtime.",
+      solution: "Designed phased migration strategy with MongoDB architecture, automated CI/CD pipelines, and comprehensive risk mitigation through 5 dress rehearsals.",
+      impact: [
+        "200K+ loan records migrated with 99.97% accuracy",
+        "87-minute total migration time (under 90-min target)",
+        "50% reduction in release cycles (8hrs → 4hrs)",
+        "Zero compliance violations",
+        "99% dealer satisfaction during migration",
+        "Foundation for $2M+ ML revenue potential"
+      ],
+      keyDecisions: [
+        "Big Bang vs. Phased Migration: Chose big bang with extensive testing to avoid 10 weeks of dual-system overhead",
+        "MongoDB Schema Design: Implemented hybrid approach balancing operational speed with ML training needs",
+        "Data Completeness: Migrated with nulls for non-critical fields, maintained timeline while ensuring 92% backfill within 45 days"
+      ],
+      metrics: {
+        before: {
+          "API Response Time": "850ms",
+          "Release Cycle": "8 hours",
+          "Deployment Failures": "22%",
+          "ML Model Updates": "Monthly"
+        },
+        after: {
+          "API Response Time": "510ms (-40%)",
+          "Release Cycle": "4 hours (-50%)",
+          "Deployment Failures": "3% (-86%)",
+          "ML Model Updates": "Weekly (4x)"
+        }
+      }
+    },
+    {
+      id: 2,
+      title: "SaaS Onboarding Redesign",
+      company: "Case Study",
+      role: "Product Manager",
+      duration: "3 weeks",
+      category: "User Experience",
+      tags: ["UX Design", "Conversion Optimization", "B2B SaaS", "User Research"],
+      image: "https://images.unsplash.com/photo-1576153192396-180ecef2a715?crop=entropy&cs=srgb&fm=jpg&ixid=M3w4NTYxNzV8MHwxfHNlYXJjaHwxfHx1c2VyJTIwZXhwZXJpZW5jZSUyMGRlc2lnbnxlbnwwfHx8fDE3Njk2NTgzNTV8MA&ixlib=rb-4.1.0&q=85",
+      summary: "Redesigned B2B SaaS onboarding flow to reduce time-to-value by 40% and increase activation rates by 35%.",
+      challenge: "Most B2B SaaS products lose 40-60% of new users during onboarding. Only 23% of signups became active users, representing millions in lost revenue.",
+      solution: "Applied 'Value Before Work' principle with progressive 3-stage onboarding: Instant Value (2 min) → Simplified Setup (3 min) → Optional Team Growth.",
+      impact: [
+        "40% reduction in time-to-first-value (18min → 11min)",
+        "35% increase in activation rate (23% → 31%)",
+        "Estimated $800K additional ARR for 10K monthly signups",
+        "67% of users experienced 'aha moment' in first session"
+      ],
+      research: [
+        "User Interviews: 15 participants, 67% abandoned during complex account setup",
+        "Behavioral Data: Drop-off spike at Step 3 (52% abandonment)",
+        "Key Finding: Users asked to invest effort before experiencing value"
+      ],
+      principles: [
+        "Progressive Disclosure: Show complexity gradually",
+        "Jobs-to-be-Done: Users hire products to solve problems, not configure settings",
+        "Friction Mapping: Every input field is a conversion killer"
+      ]
+    },
+    {
+      id: 3,
+      title: "Enterprise Feature Adoption Strategy",
+      company: "Arizona State University",
+      role: "Product Manager",
+      duration: "6 months",
+      category: "Change Management",
+      tags: ["Canvas LMS", "User Adoption", "Training", "Analytics"],
+      image: "https://images.unsplash.com/photo-1551288049-bebda4e38f71?crop=entropy&cs=srgb&fm=jpg&ixid=M3w3NTY2OTV8MHwxfHNlYXJjaHw0fHxwcm9kdWN0JTIwbWFuYWdlbWVudCUyMGRhc2hib2FyZHxlbnwwfHx8fDE3Njk2NTgzMDB8MA&ixlib=rb-4.1.0&q=85",
+      summary: "Increased Canvas LMS collaboration feature adoption from 12% to 67% across 100K+ users through systematic change management.",
+      challenge: "Only 12% of instructors used collaboration tools in Canvas LMS serving 100K+ users, underutilizing $2M+ platform investment.",
+      solution: "Three-phase strategy: Remove Friction (template creation, 6-min setup) → Enable Success (90-sec videos, champions) → Build Momentum (social proof, in-app prompts).",
+      impact: [
+        "Feature adoption: 12% → 67% (458% increase)",
+        "Active courses: 300 → 1,675",
+        "Student engagement: +35% in participating courses",
+        "Instructor NPS: +28 points",
+        "Support tickets: -42%"
+      ],
+      phases: [
+        {
+          phase: "Remove Friction (Months 1-2)",
+          actions: "Created 5 pre-configured templates, reduced setup from 23 min to 6 min",
+          result: "74% reduction in setup time"
+        },
+        {
+          phase: "Enable Success (Months 2-4)",
+          actions: "90-second video tutorials, trained 50 faculty champions",
+          result: "67% video completion, champions influenced 800+ colleagues"
+        },
+        {
+          phase: "Build Momentum (Months 4-6)",
+          actions: "Success metrics in newsletter, community forum, in-app prompts",
+          result: "34% of resistant segment began experimenting"
+        }
+      ]
+    },
+    {
+      id: 4,
+      title: "AI Support Automation - ROI Framework",
+      company: "AMBC Inc.",
+      role: "Product Manager",
+      duration: "Implementation Study",
+      category: "AI/Automation",
+      tags: ["AI Chatbot", "ROI Analysis", "Customer Support", "Cost Optimization"],
+      image: "https://images.unsplash.com/photo-1697577418970-95d99b5a55cf?crop=entropy&cs=srgb&fm=jpg&ixid=M3w3NTY2OTV8MHwxfHNlYXJjaHwxfHxhcnRpZmljaWFsJTIwaW50ZWxsaWdlbmNlfGVufDB8fHx8MTc2OTY1ODMwNHww&ixlib=rb-4.1.0&q=85",
+      summary: "Built AI chatbot implementation that deflected 45% of support tickets, achieving 3.5-month payback period and $156K annual savings.",
+      challenge: "Companies struggle to justify AI chatbot investments. Created systematic ROI methodology for build vs. buy decisions.",
+      solution: "Developed repeatable framework calculating direct cost savings, customer experience impact, and payback periods with industry benchmarks.",
+      impact: [
+        "45% ticket deflection (1,080 tickets/month)",
+        "$156K annual cost savings",
+        "3.5-month payback period",
+        "CSAT improvement: 3.8 → 4.2 (5-point scale)",
+        "20 support hours/week freed up"
+      ],
+      framework: [
+        "Input Variables: Ticket volume, handle time, agent costs, AI implementation costs",
+        "Output Calculations: Direct savings, CX impact, payback period",
+        "Industry Benchmarks: SaaS (40-55%), E-commerce (35-50%), FinTech (30-45%)"
+      ],
+      roiBreakdown: {
+        "Implementation Cost (Licensed)": "$45K",
+        "Annual Cost Savings": "$156K",
+        "Payback Period": "3.5 months",
+        "3-Year NPV": "$312K"
+      }
+    }
+  ],
   about: {
     summary: "Product Owner with 6+ years IT experience leading agile business systems and CPQ projects, specializing in Configure, Price, Quote (CPQ) solution architecture and digital transformation, conducting requirement analysis and translating business needs into data-driven solutions through hands-on SQL and Python analysis, product backlog management, and agile ceremonies leadership across Fortune 500 clients in financial services, consulting, and technology sectors.",
     highlights: [
