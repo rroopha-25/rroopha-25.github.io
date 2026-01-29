@@ -82,8 +82,8 @@ const Projects = () => {
             <h2 className="text-5xl md:text-7xl font-black text-white mb-6">
               Featured Projects
             </h2>
-            <div className="w-32 h-2 bg-gradient-to-r from-coral-500 via-pink-500 to-coral-500 mx-auto rounded-full mb-6"></div>
-            <p className="text-xl text-slate-400 max-w-3xl mx-auto">
+            <div className="w-32 h-2 bg-gradient-to-r from-blue-400 via-cyan-400 to-blue-500 mx-auto rounded-full mb-6"></div>
+            <p className="text-xl text-blue-200/80 max-w-3xl mx-auto">
               Real-world case studies showcasing data-driven product strategy, cross-functional leadership, and measurable business impact
             </p>
           </div>
@@ -101,7 +101,7 @@ const Projects = () => {
                 onClick={() => setSelectedProject(project)}
               >
                 {/* Glass card with image */}
-                <div className="relative rounded-3xl overflow-hidden bg-white/5 backdrop-blur-xl border border-white/10 hover:border-coral-400/50 transition-all duration-300 hover:scale-[1.02] hover:shadow-2xl hover:shadow-coral-500/20">
+                <div className="relative rounded-3xl overflow-hidden bg-blue-950/40 backdrop-blur-xl border border-blue-400/20 hover:border-blue-400/50 transition-all duration-300 hover:scale-[1.02] hover:shadow-2xl hover:shadow-blue-500/30">
                   {/* Project Image with overlay */}
                   <div className="relative h-72 overflow-hidden">
                     <img
@@ -113,14 +113,14 @@ const Projects = () => {
                     
                     {/* Category Badge */}
                     <Badge
-                      className="absolute top-4 right-4 bg-gradient-to-r from-coral-500 to-pink-500 text-white border-0 px-4 py-1.5 font-semibold shadow-lg"
+                      className="absolute top-4 right-4 bg-gradient-to-r from-blue-500 to-cyan-500 text-white border-0 px-4 py-1.5 font-semibold shadow-lg"
                     >
                       {project.category}
                     </Badge>
 
                     {/* Title overlay */}
                     <div className="absolute bottom-4 left-4 right-4">
-                      <h3 className="text-2xl font-bold text-white mb-1 group-hover:text-coral-400 transition-colors">
+                      <h3 className="text-2xl font-bold text-white mb-1 group-hover:text-blue-300 transition-colors">
                         {project.title}
                       </h3>
                       <p className="text-slate-300 text-sm font-medium">
