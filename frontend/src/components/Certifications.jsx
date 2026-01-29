@@ -34,37 +34,37 @@ const Certifications = () => {
     <section
       id="certifications"
       ref={sectionRef}
-      className="py-24 px-6 bg-gradient-to-b from-blue-100 via-blue-50 to-white"
+      className="py-32 px-6 bg-gradient-to-b from-slate-900 via-navy-950 to-slate-900"
     >
-      <div className="max-w-6xl mx-auto">
+      <div className="max-w-7xl mx-auto">
         <div
           className={`transition-all duration-1000 transform ${
             isVisible ? 'translate-y-0 opacity-100' : 'translate-y-10 opacity-0'
           }`}
         >
-          <div className="text-center mb-16">
-            <h2 className="text-5xl md:text-6xl font-bold text-blue-900 mb-4">
+          <div className="text-center mb-20">
+            <h2 className="text-6xl md:text-7xl font-black text-white mb-6">
               Certifications & Education
             </h2>
-            <div className="w-32 h-1.5 bg-gradient-to-r from-coral-500 via-pink-500 to-coral-500 mx-auto rounded-full"></div>
+            <div className="w-32 h-2 bg-gradient-to-r from-coral-500 to-coral-600 mx-auto rounded-full"></div>
           </div>
 
           <div className="grid md:grid-cols-2 gap-12">
             {/* Certifications */}
             <div>
-              <div className="flex items-center gap-3 mb-6">
-                <div className="p-4 bg-gradient-to-br from-coral-500 to-pink-500 rounded-xl shadow-lg">
+              <div className="flex items-center gap-4 mb-8">
+                <div className="p-4 bg-gradient-to-br from-coral-500 to-coral-600 rounded-2xl shadow-lg">
                   <Award className="w-6 h-6 text-white" />
                 </div>
-                <h3 className="text-2xl font-semibold text-blue-900">
+                <h3 className="text-3xl font-bold text-white">
                   Certifications
                 </h3>
               </div>
-              <div className="space-y-3">
+              <div className="space-y-4">
                 {certifications.map((cert, index) => (
                   <Card
                     key={index}
-                    className={`p-4 border-2 border-blue-200 hover:shadow-lg hover:scale-105 hover:border-coral-400 transition-all duration-300 bg-gradient-to-br from-white to-blue-50 cursor-pointer ${
+                    className={`p-5 bg-white/5 backdrop-blur-xl border border-white/10 hover:border-coral-400/50 hover:bg-white/10 hover:shadow-lg transition-all duration-300 rounded-2xl cursor-pointer ${
                       isVisible
                         ? 'translate-x-0 opacity-100'
                         : '-translate-x-10 opacity-0'
@@ -72,8 +72,8 @@ const Certifications = () => {
                     style={{ transitionDelay: `${index * 100}ms` }}
                   >
                     <div className="flex items-start gap-3">
-                      <div className="w-2 h-2 bg-gradient-to-br from-coral-500 to-pink-500 rounded-full mt-2 flex-shrink-0"></div>
-                      <p className="text-blue-900 font-semibold">{cert}</p>
+                      <div className="w-2 h-2 bg-coral-500 rounded-full mt-2 flex-shrink-0"></div>
+                      <p className="text-white font-semibold leading-relaxed">{cert}</p>
                     </div>
                   </Card>
                 ))}
@@ -82,11 +82,11 @@ const Certifications = () => {
 
             {/* Education */}
             <div>
-              <div className="flex items-center gap-3 mb-6">
-                <div className="p-4 bg-gradient-to-br from-blue-600 to-blue-700 rounded-xl shadow-lg">
+              <div className="flex items-center gap-4 mb-8">
+                <div className="p-4 bg-gradient-to-br from-navy-500 to-navy-600 rounded-2xl shadow-lg">
                   <GraduationCap className="w-6 h-6 text-white" />
                 </div>
-                <h3 className="text-2xl font-semibold text-blue-900">
+                <h3 className="text-3xl font-bold text-white">
                   Education
                 </h3>
               </div>
@@ -94,22 +94,22 @@ const Certifications = () => {
                 {education.map((edu, index) => (
                   <Card
                     key={index}
-                    className={`p-6 border-2 border-blue-300 hover:shadow-lg hover:scale-105 hover:border-coral-400 transition-all duration-300 bg-gradient-to-br from-white to-blue-50 ${
+                    className={`p-6 bg-white/5 backdrop-blur-xl border border-white/10 hover:border-coral-400/50 hover:bg-white/10 hover:shadow-lg transition-all duration-300 rounded-2xl ${
                       isVisible
                         ? 'translate-x-0 opacity-100'
                         : 'translate-x-10 opacity-0'
                     }`}
                     style={{ transitionDelay: `${index * 100}ms` }}
                   >
-                    <h4 className="text-lg font-bold text-blue-900 mb-2">
+                    <h4 className="text-xl font-bold text-white mb-2">
                       {edu.degree}
                     </h4>
-                    <p className="text-blue-800 font-semibold mb-2">
+                    <p className="text-navy-300 font-semibold mb-2">
                       {edu.institution}
                     </p>
                     <Badge
                       variant="secondary"
-                      className="bg-gradient-to-r from-coral-100 to-pink-100 text-coral-800 border-coral-300 font-medium"
+                      className="bg-coral-500/20 text-coral-300 border-coral-500/30 font-medium"
                     >
                       {edu.location}
                     </Badge>

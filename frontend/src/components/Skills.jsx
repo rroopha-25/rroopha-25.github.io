@@ -57,39 +57,39 @@ const Skills = () => {
     <section
       id="skills"
       ref={sectionRef}
-      className="py-24 px-6 bg-gradient-to-b from-blue-50 via-blue-100 to-white"
+      className="py-32 px-6 bg-gradient-to-b from-slate-900 via-navy-950 to-slate-900"
     >
-      <div className="max-w-6xl mx-auto">
+      <div className="max-w-7xl mx-auto">
         <div
           className={`transition-all duration-1000 transform ${
             isVisible ? 'translate-y-0 opacity-100' : 'translate-y-10 opacity-0'
           }`}
         >
-          <div className="text-center mb-16">
-            <h2 className="text-5xl md:text-6xl font-bold text-blue-900 mb-4">
+          <div className="text-center mb-20">
+            <h2 className="text-6xl md:text-7xl font-black text-white mb-6">
               Skills & Expertise
             </h2>
-            <div className="w-32 h-1.5 bg-gradient-to-r from-coral-500 via-pink-500 to-coral-500 mx-auto rounded-full"></div>
+            <div className="w-32 h-2 bg-gradient-to-r from-coral-500 to-coral-600 mx-auto rounded-full"></div>
           </div>
 
-          <div className="grid md:grid-cols-2 gap-8">
+          <div className="grid md:grid-cols-2 gap-6">
             {skillCategories.map((category, categoryIndex) => {
               const Icon = category.icon;
               return (
                 <Card
                   key={categoryIndex}
-                  className={`p-8 border-2 border-blue-300 hover:shadow-2xl hover:scale-105 hover:border-coral-400 transition-all duration-300 bg-gradient-to-br from-white to-blue-50 ${
+                  className={`p-8 bg-white/5 backdrop-blur-xl border border-white/10 hover:border-coral-400/50 hover:bg-white/10 hover:shadow-2xl transition-all duration-300 rounded-3xl ${
                     isVisible
                       ? 'translate-y-0 opacity-100'
                       : 'translate-y-10 opacity-0'
                   }`}
                   style={{ transitionDelay: `${categoryIndex * 150}ms` }}
                 >
-                  <div className="flex items-center gap-3 mb-6">
-                    <div className="p-4 bg-gradient-to-br from-coral-500 to-pink-500 rounded-xl shadow-lg">
+                  <div className="flex items-center gap-4 mb-6">
+                    <div className="p-4 bg-gradient-to-br from-coral-500 to-coral-600 rounded-2xl shadow-lg">
                       <Icon className="w-6 h-6 text-white" />
                     </div>
-                    <h3 className="text-xl font-semibold text-blue-900">
+                    <h3 className="text-2xl font-bold text-white">
                       {category.title}
                     </h3>
                   </div>
@@ -98,7 +98,7 @@ const Skills = () => {
                       <Badge
                         key={skillIndex}
                         variant="secondary"
-                        className="px-3 py-1.5 bg-blue-100 text-blue-800 border border-blue-300 hover:bg-coral-100 hover:text-coral-800 hover:border-coral-400 transition-all duration-200 text-sm font-medium"
+                        className="px-4 py-2 bg-white/10 text-slate-300 border border-white/20 hover:bg-coral-500/20 hover:text-coral-300 hover:border-coral-400 transition-all duration-200 text-sm font-medium rounded-lg"
                       >
                         {skill}
                       </Badge>
