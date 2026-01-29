@@ -430,5 +430,59 @@ export const mockData = {
       institution: "Anna University",
       location: "Chennai, India"
     }
+  ],
+  blogs: [
+    {
+      id: 1,
+      title: "What the Ocean Taught Me About Product Management",
+      date: "January 25, 2025",
+      readTime: "5 min read",
+      category: "Personal",
+      tags: ["Personal", "Reflective", "Leadership"],
+      excerpt: "Standing at the edge of the water, I learned everything I need to know about product management. The ocean taught me about currents, hiking taught me about steps, and stargazing taught me about perspective.",
+      content: `I'm an ocean person. Always have been. There's something about standing at the edge of the water—the vastness, the rhythm, the reminder that you're part of something much bigger than yourself. It's where I go to think, to reset, to remember perspective.
+
+But lately I've been exploring something new. Hiking. And let me tell you, as someone whose idea of adventure used to be "which beach today," mountains hit different. At first it felt wrong—too much effort, too far from water, too many uphills. But the more I do it, the more I realize that hiking, stargazing, and the ocean have taught me everything I need to know about product management.
+
+The ocean taught me that you can't control the current. You can only work with it. I grew up watching waves and learned quickly that fighting them gets you nowhere. You have to understand the rhythm, find the flow, and ride it. When I joined Vero for a three-month loan migration with two hundred thousand records and a non-negotiable deadline, I couldn't change the constraints. I could only navigate them. Study the current, find the path of least resistance, respect the power of the system. We launched on time with 99.97% accuracy because I worked with the forces at play instead of fighting them.
+
+Hiking taught me that you don't climb a mountain all at once. You take one step, then another. The first time I looked up at a trail I thought there was no way I'd make it to the top. But you don't stare at the summit the whole time—you focus on the next switchback. At ASU we had to go from twelve percent feature adoption to something that justified a two-million-dollar investment. That goal felt massive until I broke it into phases. Templates first, then videos, then champions, then community. Small consistent steps compound into summits. We hit sixty-seven percent adoption in six months, one deliberate step at a time.
+
+Stargazing taught me perspective. There's something about lying on your back staring at light that left a star thousands of years ago. Your sprint planning drama suddenly doesn't feel that urgent. I've been in rooms where people are screaming about button colors and teams burning weekends over features that three percent of users will touch. When data science wanted two more months to improve model accuracy by seven percent, I asked myself if it would actually change customer outcomes. It wouldn't. Shipping two months earlier would. I launched at seventy-eight percent accuracy and used the saved time to build explainability—the feature that became our competitive moat. Most things that feel urgent aren't.
+
+Before making big decisions now, I ask three questions. What are the forces at play? What's the smallest step I can take right now? Will this matter in six months? That clarity beats any framework nine times out of ten.
+
+The ocean doesn't care about your plans. The mountain doesn't move faster because you want it to. The stars don't shine brighter because you're stressed. And neither does your product roadmap. You can't force adoption, skip steps, or control every variable. But you can understand the current, take the next step, and keep perspective. And honestly, that's enough.
+
+I used to think being a PM was about having all the answers. Now I think it's about knowing when to ride the current, when to take the next step, and when to zoom out and remember that the stars have been shining for billions of years. They'll keep shining whether you ship next week or next month. So take a breath, find your flow, take the step. The summit's closer than you think.
+
+And yes, I'm still very much an ocean person. But the mountains are growing on me. Turns out you can love more than one kind of vastness.`
+    },
+    {
+      id: 2,
+      title: "How I Prioritize When Everything Feels Urgent",
+      date: "January 20, 2025",
+      readTime: "6 min read",
+      category: "Professional",
+      tags: ["Strategy", "Frameworks", "Prioritization"],
+      excerpt: "Your backlog has fifty items. Stakeholders want everything yesterday. Engineering is at capacity. Here's how I decide what to build next.",
+      content: `Every PM knows this feeling. Your backlog has fifty items. Stakeholders want everything yesterday. Engineering is at capacity. And you're supposed to figure out what to build next.
+
+Early in my career, I made decisions based on who asked loudest or what felt most exciting. The result? I shipped features nobody used, burned out my team, and lost stakeholder trust. So I built a system.
+
+The core problem is simple: infinite demand meets finite resources. Without a framework, prioritization becomes political, reactive, or emotional. The cost is invisible but massive—wrong priorities waste millions, and teams lose trust in your roadmap.
+
+Over six years across EdTech, FinTech, and Enterprise SaaS, I've learned that your roadmap is your strategy made visible. What you say no to matters more than what you say yes to. Frameworks remove politics by creating objective criteria everyone agrees on upfront. But context determines the tool—a startup looks nothing like an enterprise migration.
+
+I use five frameworks depending on the situation. RICE scoring works when I'm comparing features for the roadmap. At ASU, I scored discussion board templates against gradebook customization. Templates won with a score thirty-one times higher because they'd reach more users with less effort. Value-Effort matrices help during sprint planning when I need quick visual decisions. At Vero, this helped me identify quick wins like the loan status API versus time sinks like custom reports for single clients.
+
+MoSCoW becomes critical with fixed deadlines. During the Vero migration, when engineering discovered data quality issues in week nine, I used MoSCoW to protect must-haves while moving nice-to-haves to post-launch. We shipped on time with 99.97% accuracy because the framework gave us shared language for trade-offs.
+
+The Kano model helps me avoid over-engineering. When data science wanted to push model accuracy from seventy-eight to eighty-five percent, customer feedback showed they valued explainability more than marginal accuracy gains. I shipped two months early and built the feature that became our competitive moat.
+
+The hard truth is that good prioritization means saying no constantly. Your job isn't making everyone happy—it's making the right trade-offs. Start with one framework this week. Pick Value-Effort if you're drowning in requests. The framework matters less than having any objective system. Because prioritization isn't about finding perfect answers—it's about making transparent, defensible decisions that move your business forward.`
+    }
   ]
 };
+
+export default mockData;
