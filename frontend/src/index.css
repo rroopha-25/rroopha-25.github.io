@@ -9,7 +9,7 @@ body {
         "Helvetica Neue", sans-serif;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
-    background: #0f172a;
+    background: #ffffff;
 }
 
 code {
@@ -20,31 +20,31 @@ code {
 
 @layer base {
   :root {
-        --background: 240 10% 3.9%;
-        --foreground: 0 0% 98%;
-        --card: 240 10% 3.9%;
-        --card-foreground: 0 0% 98%;
-        --popover: 240 10% 3.9%;
-        --popover-foreground: 0 0% 98%;
-        --primary: 221 83% 53%;
-        --primary-foreground: 210 40% 98%;
-        --secondary: 7 89% 75%;
-        --secondary-foreground: 222 47% 11%;
-        --muted: 217.9 32.6% 17.5%;
-        --muted-foreground: 215 20.2% 65.1%;
-        --accent: 7 89% 75%;
-        --accent-foreground: 222 47% 11%;
+        --background: 0 0% 100%;
+        --foreground: 220 13% 13%;
+        --card: 0 0% 100%;
+        --card-foreground: 220 13% 13%;
+        --popover: 0 0% 100%;
+        --popover-foreground: 220 13% 13%;
+        --primary: 142 71% 45%;
+        --primary-foreground: 0 0% 100%;
+        --secondary: 220 13% 46%;
+        --secondary-foreground: 0 0% 100%;
+        --muted: 220 13% 96%;
+        --muted-foreground: 220 9% 46%;
+        --accent: 142 76% 36%;
+        --accent-foreground: 0 0% 100%;
         --destructive: 0 84.2% 60.2%;
-        --destructive-foreground: 210 40% 98%;
-        --border: 240 3.7% 15.9%;
-        --input: 240 3.7% 15.9%;
-        --ring: 221 83% 53%;
-        --chart-1: 221 83% 53%;
-        --chart-2: 7 89% 75%;
+        --destructive-foreground: 0 0% 98%;
+        --border: 220 13% 91%;
+        --input: 220 13% 91%;
+        --ring: 142 71% 45%;
+        --chart-1: 142 71% 45%;
+        --chart-2: 220 13% 46%;
         --chart-3: 197 37% 24%;
         --chart-4: 43 74% 66%;
         --chart-5: 27 87% 67%;
-        --radius: 0.5rem;
+        --radius: 0.75rem;
     }
 }
 
@@ -53,20 +53,21 @@ code {
     @apply border-border;
     }
   body {
-    @apply bg-slate-950 text-foreground;
+    @apply bg-white text-foreground;
     }
 }
 
-/* Glass morphism utility */
+/* Modern utilities */
 @layer utilities {
-  .glass {
-    background: rgba(255, 255, 255, 0.05);
+  .glass-white {
+    background: rgba(255, 255, 255, 0.7);
     backdrop-filter: blur(20px);
-    border: 1px solid rgba(255, 255, 255, 0.1);
+    border: 1px solid rgba(0, 0, 0, 0.05);
   }
   
-  .glass-hover:hover {
-    background: rgba(255, 255, 255, 0.1);
-    border-color: rgba(255, 255, 255, 0.2);
+  .glass-green {
+    background: rgba(34, 197, 94, 0.05);
+    backdrop-filter: blur(20px);
+    border: 1px solid rgba(34, 197, 94, 0.1);
   }
 }
