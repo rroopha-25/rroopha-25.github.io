@@ -1,6 +1,8 @@
 import React from 'react';
 import './App.css';
 import Hero from './components/Hero';
+import WhyPM from './components/WhyPM';
+import Projects from './components/Projects';
 import About from './components/About';
 import Skills from './components/Skills';
 import Experience from './components/Experience';
@@ -11,6 +13,8 @@ function App() {
   return (
     <div className="App">
       <Hero />
+      <WhyPM />
+      <Projects />
       <About />
       <Skills />
       <Experience />
