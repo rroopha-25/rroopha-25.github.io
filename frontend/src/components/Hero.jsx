@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import { Button } from './ui/button';
-import { ArrowDown, Linkedin, Github, Mail, Phone } from 'lucide-react';
+import { ArrowDown, Linkedin, Github, Mail } from 'lucide-react';
 import { mockData } from '../mock';
 
 const Hero = () => {
@@ -20,28 +20,43 @@ const Hero = () => {
 
   return (
     <section className="hero-section relative min-h-screen flex items-center justify-center overflow-hidden bg-gradient-to-br from-navy-950 via-slate-900 to-navy-900">
-      {/* Animated geometric shapes */}
+      {/* Aurora/Northern Lights Effect */}
       <div className="absolute inset-0 overflow-hidden">
-        {/* Floating circles */}
-        <div className="absolute top-20 left-10 w-32 md:w-48 h-32 md:h-48 border border-coral-500/20 rounded-full animate-float"></div>
-        <div className="absolute top-40 right-20 w-24 md:w-36 h-24 md:h-36 border border-blue-500/20 rounded-full animate-float-delayed"></div>
-        <div className="absolute bottom-32 left-1/4 w-20 md:w-28 h-20 md:h-28 border border-coral-400/15 rounded-full animate-float"></div>
+        {/* Flowing aurora waves */}
+        <div className="absolute top-0 left-0 w-full h-full">
+          <div className="absolute top-0 left-1/4 w-[600px] h-[600px] bg-gradient-to-br from-coral-500/20 via-pink-500/10 to-transparent rounded-full filter blur-[100px] animate-aurora-1"></div>
+          <div className="absolute top-1/4 right-1/4 w-[500px] h-[500px] bg-gradient-to-bl from-blue-500/15 via-cyan-500/10 to-transparent rounded-full filter blur-[80px] animate-aurora-2"></div>
+          <div className="absolute bottom-0 left-1/3 w-[700px] h-[400px] bg-gradient-to-tr from-coral-400/15 via-purple-500/10 to-transparent rounded-full filter blur-[120px] animate-aurora-3"></div>
+        </div>
         
-        {/* Gradient blobs */}
-        <div className="absolute top-1/4 right-1/4 w-64 md:w-96 h-64 md:h-96 bg-coral-500/10 rounded-full filter blur-3xl animate-pulse"></div>
-        <div className="absolute bottom-1/4 left-1/4 w-64 md:w-96 h-64 md:h-96 bg-blue-500/10 rounded-full filter blur-3xl animate-pulse" style={{ animationDelay: '1s' }}></div>
+        {/* Constellation dots */}
+        <div className="constellation-pattern absolute inset-0"></div>
         
-        {/* Decorative lines */}
-        <div className="absolute top-1/3 left-0 w-full h-px bg-gradient-to-r from-transparent via-coral-500/20 to-transparent"></div>
-        <div className="absolute top-2/3 left-0 w-full h-px bg-gradient-to-r from-transparent via-blue-500/10 to-transparent"></div>
+        {/* Animated particles */}
+        <div className="absolute top-1/4 left-1/5 w-2 h-2 bg-coral-400/60 rounded-full animate-twinkle"></div>
+        <div className="absolute top-1/3 right-1/4 w-1.5 h-1.5 bg-blue-400/50 rounded-full animate-twinkle-delayed"></div>
+        <div className="absolute bottom-1/3 left-1/3 w-2 h-2 bg-white/40 rounded-full animate-twinkle"></div>
+        <div className="absolute top-2/3 right-1/3 w-1 h-1 bg-coral-300/70 rounded-full animate-twinkle-delayed"></div>
+        <div className="absolute bottom-1/4 right-1/5 w-1.5 h-1.5 bg-cyan-400/50 rounded-full animate-twinkle"></div>
         
-        {/* Corner accents */}
-        <div className="absolute top-0 left-0 w-32 h-32 border-l-2 border-t-2 border-coral-500/10 rounded-tl-3xl"></div>
-        <div className="absolute bottom-0 right-0 w-32 h-32 border-r-2 border-b-2 border-blue-500/10 rounded-br-3xl"></div>
+        {/* Subtle mesh gradient overlay */}
+        <div className="absolute inset-0 bg-gradient-to-b from-transparent via-navy-950/30 to-navy-950/60"></div>
       </div>
-
-      {/* Dot pattern overlay */}
-      <div className="absolute inset-0 hero-pattern opacity-30"></div>
+      
+      {/* Geometric accent lines */}
+      <div className="absolute inset-0 pointer-events-none">
+        <svg className="absolute w-full h-full opacity-10" xmlns="http://www.w3.org/2000/svg">
+          <defs>
+            <linearGradient id="line-gradient" x1="0%" y1="0%" x2="100%" y2="0%">
+              <stop offset="0%" stopColor="transparent" />
+              <stop offset="50%" stopColor="#ff6b7f" />
+              <stop offset="100%" stopColor="transparent" />
+            </linearGradient>
+          </defs>
+          <line x1="0" y1="30%" x2="100%" y2="30%" stroke="url(#line-gradient)" strokeWidth="1" />
+          <line x1="0" y1="70%" x2="100%" y2="70%" stroke="url(#line-gradient)" strokeWidth="1" />
+        </svg>
+      </div>
 
       <div className="relative z-10 max-w-7xl mx-auto px-4 md:px-6 py-20 md:py-32 text-center">
         <div
@@ -99,7 +114,6 @@ const Hero = () => {
           <div className="flex flex-wrap justify-center gap-2 md:gap-3 px-4">
             {[
               { icon: Mail, text: hero.email, href: `mailto:${hero.email}`, shortText: 'Email' },
-              { icon: Phone, text: hero.phone, href: `tel:${hero.phone}`, shortText: 'Phone' },
               { icon: Linkedin, text: 'LinkedIn', href: hero.linkedin, shortText: 'LinkedIn' },
               { icon: Github, text: 'GitHub', href: hero.github, shortText: 'GitHub' }
             ].map((item, index) => {
