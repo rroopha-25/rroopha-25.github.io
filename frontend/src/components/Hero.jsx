@@ -19,16 +19,16 @@ const Hero = () => {
   };
 
   return (
-    <section className="relative min-h-screen flex items-center justify-center overflow-hidden bg-gradient-to-br from-slate-950 via-blue-950 to-slate-900">
-      {/* Animated gradient orbs */}
+    <section className="relative min-h-screen flex items-center justify-center overflow-hidden bg-gradient-to-br from-white via-leaf-50 to-gray-50">
+      {/* Decorative elements */}
       <div className="absolute inset-0">
-        <div className="absolute top-1/4 left-1/4 w-96 h-96 bg-coral-500/30 rounded-full filter blur-3xl animate-pulse"></div>
-        <div className="absolute bottom-1/4 right-1/4 w-96 h-96 bg-blue-500/30 rounded-full filter blur-3xl animate-pulse" style={{ animationDelay: '1s' }}></div>
-        <div className="absolute top-1/2 left-1/2 w-96 h-96 bg-pink-500/20 rounded-full filter blur-3xl animate-pulse" style={{ animationDelay: '2s' }}></div>
+        <div className="absolute top-20 right-20 w-72 h-72 bg-leaf-200 rounded-full filter blur-3xl opacity-20 animate-pulse"></div>
+        <div className="absolute bottom-20 left-20 w-96 h-96 bg-leaf-300 rounded-full filter blur-3xl opacity-15 animate-pulse" style={{ animationDelay: '2s' }}></div>
+        <div className="absolute top-1/2 left-1/3 w-64 h-64 bg-gray-200 rounded-full filter blur-3xl opacity-10 animate-pulse" style={{ animationDelay: '1s' }}></div>
       </div>
 
-      {/* Grid overlay */}
-      <div className="absolute inset-0 bg-[url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNjAiIGhlaWdodD0iNjAiIHZpZXdCb3g9IjAgMCA2MCA2MCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj48ZyBmaWxsPSJub25lIiBmaWxsLXJ1bGU9ImV2ZW5vZGQiPjxwYXRoIGQ9Ik0zNiAxOGMwLTkuOTQtOC4wNi0xOC0xOC0xOCIgc3Ryb2tlPSJyZ2JhKDI1NSwgMjU1LCAyNTUsIDAuMSkiIHN0cm9rZS13aWR0aD0iMSIvPjwvZz48L3N2Zz4=')] opacity-20"></div>
+      {/* Dot pattern */}
+      <div className="absolute inset-0 bg-[radial-gradient(circle_at_1px_1px,rgb(0_0_0/0.05)_1px,transparent_0)] [background-size:40px_40px]"></div>
 
       <div className="relative z-10 max-w-7xl mx-auto px-6 py-32 text-center">
         <div
@@ -36,30 +36,31 @@ const Hero = () => {
             isVisible ? 'translate-y-0 opacity-100' : 'translate-y-10 opacity-0'
           }`}
         >
-          {/* Badge */}
-          <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white/10 backdrop-blur-xl border border-white/20 mb-8 hover:scale-105 transition-transform">
-            <Sparkles className="w-4 h-4 text-coral-400" />
-            <span className="text-sm text-white font-medium">Available for new opportunities</span>
+          {/* Status Badge */}
+          <div className="inline-flex items-center gap-2 px-5 py-2.5 rounded-full bg-leaf-100 border border-leaf-200 mb-8 hover:scale-105 transition-transform shadow-sm">
+            <div className="w-2 h-2 bg-leaf-500 rounded-full animate-pulse"></div>
+            <span className="text-sm text-gray-700 font-semibold">Available for opportunities</span>
           </div>
 
-          {/* Main heading */}
-          <h1 className="text-7xl md:text-9xl font-black text-white mb-6 tracking-tight leading-none">
-            {hero.name.split(' ')[0]}
-            <br />
-            <span className="bg-gradient-to-r from-coral-400 via-pink-400 to-coral-500 bg-clip-text text-transparent">
+          {/* Name with creative layout */}
+          <div className="mb-6">
+            <h1 className="text-7xl md:text-9xl font-black text-gray-900 mb-2 tracking-tight leading-none">
+              {hero.name.split(' ')[0]}
+            </h1>
+            <h1 className="text-7xl md:text-9xl font-black bg-gradient-to-r from-leaf-600 via-leaf-500 to-leaf-600 bg-clip-text text-transparent tracking-tight leading-none">
               {hero.name.split(' ')[1]}
-            </span>
-          </h1>
+            </h1>
+          </div>
 
-          <p className="text-3xl md:text-4xl font-bold bg-gradient-to-r from-white to-blue-200 bg-clip-text text-transparent mb-4">
+          <p className="text-3xl md:text-4xl font-bold text-gray-800 mb-4">
             {hero.title}
           </p>
           
-          <p className="text-xl md:text-2xl text-blue-200 font-light mb-4 max-w-3xl mx-auto">
+          <p className="text-xl md:text-2xl text-leaf-600 font-medium mb-4 max-w-3xl mx-auto">
             {hero.subtitle}
           </p>
 
-          <p className="text-base md:text-lg text-slate-300 max-w-2xl mx-auto mb-12 leading-relaxed">
+          <p className="text-base md:text-lg text-gray-600 max-w-2xl mx-auto mb-12 leading-relaxed">
             {hero.tagline}
           </p>
 
@@ -68,22 +69,21 @@ const Hero = () => {
             <Button
               onClick={() => scrollToSection('projects')}
               size="lg"
-              className="group relative px-8 py-6 text-lg font-bold rounded-2xl bg-gradient-to-r from-coral-500 to-pink-500 hover:from-coral-600 hover:to-pink-600 text-white shadow-2xl shadow-coral-500/50 hover:shadow-coral-500/70 transition-all duration-300 hover:scale-105 border-0"
+              className="group relative px-10 py-7 text-lg font-bold rounded-2xl bg-gradient-to-r from-leaf-600 to-leaf-500 hover:from-leaf-700 hover:to-leaf-600 text-white shadow-xl shadow-leaf-500/30 hover:shadow-leaf-500/50 transition-all duration-300 hover:scale-105 border-0"
             >
               <span className="relative z-10">View My Work</span>
-              <div className="absolute inset-0 rounded-2xl bg-gradient-to-r from-white/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity"></div>
             </Button>
             <Button
               onClick={() => scrollToSection('contact')}
               size="lg"
               variant="outline"
-              className="px-8 py-6 text-lg font-bold rounded-2xl bg-white/5 backdrop-blur-xl border-2 border-white/20 text-white hover:bg-white/10 hover:border-white/40 transition-all duration-300 hover:scale-105"
+              className="px-10 py-7 text-lg font-bold rounded-2xl bg-white border-2 border-gray-300 text-gray-900 hover:bg-gray-50 hover:border-leaf-500 transition-all duration-300 hover:scale-105 shadow-lg"
             >
               Let's Connect
             </Button>
           </div>
 
-          {/* Contact Links - Glass Cards */}
+          {/* Contact Links - Modern Pills */}
           <div className="flex flex-wrap justify-center gap-3 mb-16">
             {[
               { icon: Mail, text: hero.email, href: `mailto:${hero.email}` },
@@ -98,10 +98,10 @@ const Hero = () => {
                   href={item.href}
                   target={item.href.startsWith('http') ? '_blank' : undefined}
                   rel={item.href.startsWith('http') ? 'noopener noreferrer' : undefined}
-                  className="group inline-flex items-center gap-3 px-5 py-3 rounded-xl bg-white/5 backdrop-blur-xl border border-white/10 hover:bg-white/10 hover:border-coral-400/50 transition-all duration-300 hover:scale-105 hover:shadow-lg hover:shadow-coral-500/20"
+                  className="group inline-flex items-center gap-3 px-6 py-3 rounded-full bg-white border border-gray-200 hover:border-leaf-500 hover:bg-leaf-50 transition-all duration-300 hover:scale-105 shadow-md hover:shadow-lg"
                 >
-                  <Icon className="w-4 h-4 text-coral-400 group-hover:text-coral-300 transition-colors" />
-                  <span className="text-sm text-white font-medium">{item.text}</span>
+                  <Icon className="w-4 h-4 text-leaf-600 group-hover:text-leaf-700 transition-colors" />
+                  <span className="text-sm text-gray-700 font-medium">{item.text}</span>
                 </a>
               );
             })}
@@ -116,10 +116,10 @@ const Hero = () => {
         >
           <button
             onClick={() => scrollToSection('whypm')}
-            className="group p-4 rounded-full bg-white/5 backdrop-blur-xl border border-white/20 hover:bg-white/10 hover:border-coral-400/50 transition-all duration-300 animate-bounce hover:animate-none"
+            className="group p-4 rounded-full bg-white border-2 border-gray-200 hover:border-leaf-500 hover:bg-leaf-50 transition-all duration-300 animate-bounce hover:animate-none shadow-lg"
             aria-label="Scroll down"
           >
-            <ArrowDown className="w-6 h-6 text-white group-hover:text-coral-400 transition-colors" />
+            <ArrowDown className="w-6 h-6 text-gray-700 group-hover:text-leaf-600 transition-colors" />
           </button>
         </div>
       </div>
