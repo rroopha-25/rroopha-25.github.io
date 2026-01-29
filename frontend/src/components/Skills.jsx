@@ -61,7 +61,7 @@ const Skills = () => {
     <section
       id="skills"
       ref={sectionRef}
-      className="py-24 px-6 bg-gradient-to-br from-pink-50 via-white to-pink-50"
+      className="py-24 px-6 bg-gradient-to-b from-white to-blue-50"
     >
       <div className="max-w-6xl mx-auto">
         <div
