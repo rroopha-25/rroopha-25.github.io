@@ -42,10 +42,10 @@ const About = () => {
           }`}
         >
           <div className="text-center mb-16">
-            <h2 className="text-5xl md:text-6xl font-bold text-gray-900 mb-4">
+            <h2 className="text-5xl md:text-6xl font-bold text-blue-900 mb-4">
               About Me
             </h2>
-            <div className="w-24 h-1 bg-gradient-to-r from-pink-400 to-pink-600 mx-auto rounded-full"></div>
+            <div className="w-32 h-1.5 bg-gradient-to-r from-coral-500 via-pink-500 to-coral-500 mx-auto rounded-full"></div>
           </div>
 
           <div className="grid md:grid-cols-2 gap-12 items-center">
