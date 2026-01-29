@@ -35,25 +35,21 @@ const Skills = () => {
       title: 'Project & Delivery Management',
       icon: Briefcase,
       skills: skills.projectManagement,
-      color: 'pink',
     },
     {
       title: 'Technical Skills',
       icon: Code,
       skills: skills.technical,
-      color: 'pink',
     },
     {
       title: 'Business Analysis',
       icon: LineChart,
       skills: skills.businessAnalysis,
-      color: 'pink',
     },
     {
       title: 'Platforms & Tools',
       icon: Settings,
       skills: skills.platforms,
-      color: 'pink',
     },
   ];
 
@@ -61,7 +57,7 @@ const Skills = () => {
     <section
       id="skills"
       ref={sectionRef}
-      className="py-24 px-6 bg-gradient-to-b from-white to-blue-50"
+      className="py-24 px-6 bg-gradient-to-b from-blue-50 via-blue-100 to-white"
     >
       <div className="max-w-6xl mx-auto">
         <div
@@ -82,7 +78,7 @@ const Skills = () => {
               return (
                 <Card
                   key={categoryIndex}
-                  className={`p-8 border-blue-200 hover:shadow-xl hover:scale-105 hover:border-coral-300 transition-all duration-300 bg-white ${
+                  className={`p-8 border-2 border-blue-300 hover:shadow-2xl hover:scale-105 hover:border-coral-400 transition-all duration-300 bg-gradient-to-br from-white to-blue-50 ${
                     isVisible
                       ? 'translate-y-0 opacity-100'
                       : 'translate-y-10 opacity-0'
@@ -90,10 +86,10 @@ const Skills = () => {
                   style={{ transitionDelay: `${categoryIndex * 150}ms` }}
                 >
                   <div className="flex items-center gap-3 mb-6">
-                    <div className="p-3 bg-blue-100 rounded-lg">
-                      <Icon className="w-6 h-6 text-blue-600" />
+                    <div className="p-4 bg-gradient-to-br from-coral-500 to-pink-500 rounded-xl shadow-lg">
+                      <Icon className="w-6 h-6 text-white" />
                     </div>
-                    <h3 className="text-xl font-semibold text-gray-900">
+                    <h3 className="text-xl font-semibold text-blue-900">
                       {category.title}
                     </h3>
                   </div>
@@ -102,7 +98,7 @@ const Skills = () => {
                       <Badge
                         key={skillIndex}
                         variant="secondary"
-                        className="px-3 py-1 bg-blue-50 text-blue-700 border border-blue-200 hover:bg-coral-50 hover:border-coral-300 transition-all duration-200 text-sm"
+                        className="px-3 py-1.5 bg-blue-100 text-blue-800 border border-blue-300 hover:bg-coral-100 hover:text-coral-800 hover:border-coral-400 transition-all duration-200 text-sm font-medium"
                       >
                         {skill}
                       </Badge>
