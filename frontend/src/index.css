@@ -2,6 +2,42 @@
 @tailwind components;
 @tailwind utilities;
 
+/* ============================================
+   UNIFIED COLOR SCHEME
+   
+   Dark Mode:
+   - Background: #0F172A (Deep Navy)
+   - Text: #F1F5F9 (Off White)
+   - Accent: #60A5FA (Light Blue)
+   - Secondary: #94A3B8 (Light Slate)
+
+   Light Mode:
+   - Background: #FFFFFF (White)
+   - Text: #1A202C (Near Black)
+   - Accent: #3B82F6 (Bright Blue)
+   - Secondary: #64748B (Slate Gray)
+   ============================================ */
+
+:root {
+    --bg-primary: #0F172A;
+    --text-primary: #F1F5F9;
+    --accent: #60A5FA;
+    --accent-hover: #3B82F6;
+    --secondary: #94A3B8;
+    --card-bg: rgba(255, 255, 255, 0.05);
+    --border-color: rgba(255, 255, 255, 0.1);
+}
+
+html.light-mode {
+    --bg-primary: #FFFFFF;
+    --text-primary: #1A202C;
+    --accent: #3B82F6;
+    --accent-hover: #2563EB;
+    --secondary: #64748B;
+    --card-bg: rgba(59, 130, 246, 0.05);
+    --border-color: rgba(59, 130, 246, 0.15);
+}
+
 body {
     margin: 0;
     font-family: 'Inter', -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto",
@@ -9,27 +45,24 @@ body {
         "Helvetica Neue", sans-serif;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
-    background: #0f172a;
-    transition: background-color 0.3s ease;
+    background: var(--bg-primary);
+    color: var(--text-primary);
+    transition: background-color 0.3s ease, color 0.3s ease;
 }
 
-/* Hero pattern - works in both modes */
-.hero-pattern {
-    background-image: radial-gradient(circle, currentColor 1px, transparent 1px);
-    background-size: 32px 32px;
-    color: rgba(255, 255, 255, 0.03);
+code {
+    font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
+        monospace;
 }
 
-/* Constellation pattern */
-.constellation-pattern {
-    background-image: 
-        radial-gradient(1px 1px at 20px 30px, rgba(255,255,255,0.3), transparent),
-        radial-gradient(1px 1px at 40px 70px, rgba(255,107,127,0.2), transparent),
-        radial-gradient(1.5px 1.5px at 90px 40px, rgba(255,255,255,0.25), transparent),
-        radial-gradient(1px 1px at 130px 80px, rgba(59,130,246,0.2), transparent),
-        radial-gradient(1.5px 1.5px at 160px 30px, rgba(255,255,255,0.2), transparent);
-    background-size: 200px 100px;
+/* Smooth scroll */
+html {
+    scroll-behavior: smooth;
 }
+
+/* ============================================
+   ANIMATIONS
+   ============================================ */
 
 /* Aurora animations */
 @keyframes aurora-1 {
@@ -65,197 +98,194 @@ body {
 .animate-twinkle { animation: twinkle 3s ease-in-out infinite; }
 .animate-twinkle-delayed { animation: twinkle-delayed 4s ease-in-out infinite 1s; }
 
-/* Floating animations */
-@keyframes float {
-    0%, 100% { transform: translateY(0) rotate(0deg); }
-    50% { transform: translateY(-20px) rotate(5deg); }
-}
-
-@keyframes float-delayed {
-    0%, 100% { transform: translateY(0) rotate(0deg); }
-    50% { transform: translateY(-15px) rotate(-5deg); }
-}
-
-.animate-float {
-    animation: float 6s ease-in-out infinite;
-}
-
-.animate-float-delayed {
-    animation: float-delayed 8s ease-in-out infinite;
-}
-
-/* Light Mode - White, Grey, Blue Theme */
-html.light-mode body {
-    background: #f8fafc;
-}
-
-html.light-mode .hero-pattern {
-    color: rgba(59, 130, 246, 0.08);
-}
-
-html.light-mode .hero-section {
-    background: linear-gradient(135deg, #ffffff 0%, #f1f5f9 50%, #e2e8f0 100%) !important;
-}
-
-html.light-mode .constellation-pattern {
+/* Constellation pattern */
+.constellation-pattern {
     background-image: 
-        radial-gradient(1px 1px at 20px 30px, rgba(59,130,246,0.3), transparent),
-        radial-gradient(1px 1px at 40px 70px, rgba(59,130,246,0.2), transparent),
-        radial-gradient(1.5px 1.5px at 90px 40px, rgba(100,116,139,0.25), transparent),
-        radial-gradient(1px 1px at 130px 80px, rgba(59,130,246,0.2), transparent),
-        radial-gradient(1.5px 1.5px at 160px 30px, rgba(100,116,139,0.2), transparent);
+        radial-gradient(1px 1px at 20px 30px, rgba(96, 165, 250, 0.4), transparent),
+        radial-gradient(1px 1px at 40px 70px, rgba(96, 165, 250, 0.3), transparent),
+        radial-gradient(1.5px 1.5px at 90px 40px, rgba(148, 163, 184, 0.3), transparent),
+        radial-gradient(1px 1px at 130px 80px, rgba(96, 165, 250, 0.25), transparent),
+        radial-gradient(1.5px 1.5px at 160px 30px, rgba(148, 163, 184, 0.2), transparent);
+    background-size: 200px 100px;
 }
 
-html.light-mode .projects-section {
-    background: linear-gradient(to bottom, #eff6ff, #dbeafe, #f1f5f9) !important;
-}
-
-html.light-mode {
-    --background: 210 40% 98%;
-    --foreground: 222 47% 11%;
-    --card: 0 0% 100%;
-    --card-foreground: 222 47% 11%;
-    --popover: 0 0% 100%;
-    --popover-foreground: 222 47% 11%;
-    --muted: 210 40% 96%;
-    --muted-foreground: 215 16% 47%;
-    --border: 214 32% 91%;
-}
-
-code {
-    font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
-        monospace;
-}
+/* ============================================
+   BASE LAYER
+   ============================================ */
 
 @layer base {
-  :root {
+    :root {
         --background: 222 47% 11%;
         --foreground: 210 40% 98%;
         --card: 222 47% 11%;
         --card-foreground: 210 40% 98%;
         --popover: 222 47% 11%;
         --popover-foreground: 210 40% 98%;
-        --primary: 0 90% 71%;
+        --primary: 217 91% 60%;
         --primary-foreground: 210 40% 98%;
         --secondary: 217 91% 60%;
         --secondary-foreground: 210 40% 98%;
         --muted: 217 33% 17%;
         --muted-foreground: 215 20% 65%;
-        --accent: 0 90% 71%;
+        --accent: 217 91% 60%;
         --accent-foreground: 210 40% 98%;
         --destructive: 0 84% 60%;
         --destructive-foreground: 210 40% 98%;
         --border: 217 33% 17%;
         --input: 217 33% 17%;
-        --ring: 0 90% 71%;
+        --ring: 217 91% 60%;
         --radius: 0.75rem;
     }
 }
 
 @layer base {
-  * {
-    @apply border-border;
+    * {
+        @apply border-border;
     }
-  body {
-    @apply bg-slate-950 text-foreground;
+    body {
+        @apply text-foreground;
     }
 }
 
-/* Light mode overrides - White, Grey, Blue Theme */
+/* ============================================
+   DARK MODE (DEFAULT)
+   ============================================ */
+
+/* Dark mode sections */
+section {
+    background: linear-gradient(to bottom, #0F172A, #1E293B, #0F172A);
+}
+
+.hero-section {
+    background: linear-gradient(135deg, #0F172A 0%, #1E293B 50%, #0F172A 100%);
+}
+
+.projects-section {
+    background: linear-gradient(to bottom, #0F172A, #172554, #0F172A);
+}
+
+/* ============================================
+   LIGHT MODE OVERRIDES
+   ============================================ */
+
+html.light-mode body {
+    background: #FFFFFF;
+}
+
 html.light-mode section {
-    background: linear-gradient(to bottom, #f8fafc, #ffffff, #f1f5f9) !important;
+    background: linear-gradient(to bottom, #FFFFFF, #F8FAFC, #FFFFFF) !important;
 }
 
-html.light-mode .bg-slate-900,
-html.light-mode .bg-navy-950,
-html.light-mode .bg-slate-950 {
-    background: #ffffff !important;
+html.light-mode .hero-section {
+    background: linear-gradient(135deg, #FFFFFF 0%, #F1F5F9 50%, #E2E8F0 100%) !important;
 }
 
+html.light-mode .projects-section {
+    background: linear-gradient(to bottom, #EFF6FF, #DBEAFE, #F1F5F9) !important;
+}
+
+html.light-mode .constellation-pattern {
+    background-image: 
+        radial-gradient(1px 1px at 20px 30px, rgba(59, 130, 246, 0.4), transparent),
+        radial-gradient(1px 1px at 40px 70px, rgba(59, 130, 246, 0.3), transparent),
+        radial-gradient(1.5px 1.5px at 90px 40px, rgba(100, 116, 139, 0.3), transparent),
+        radial-gradient(1px 1px at 130px 80px, rgba(59, 130, 246, 0.25), transparent),
+        radial-gradient(1.5px 1.5px at 160px 30px, rgba(100, 116, 139, 0.2), transparent);
+}
+
+/* Light mode text colors */
 html.light-mode .text-white {
-    color: #1e3a5f !important;
+    color: #1A202C !important;
 }
 
 html.light-mode .text-slate-300,
 html.light-mode .text-slate-400,
-html.light-mode .text-navy-200 {
-    color: #64748b !important;
+html.light-mode .text-navy-200,
+html.light-mode .text-navy-300 {
+    color: #64748B !important;
 }
 
+/* Light mode backgrounds */
 html.light-mode .bg-white\/5,
 html.light-mode .bg-white\/10 {
     background: rgba(59, 130, 246, 0.08) !important;
 }
 
+html.light-mode .bg-slate-900,
+html.light-mode .bg-navy-950,
+html.light-mode .bg-slate-950 {
+    background: #FFFFFF !important;
+}
+
+/* Light mode borders */
 html.light-mode .border-white\/10,
 html.light-mode .border-white\/20 {
     border-color: rgba(59, 130, 246, 0.15) !important;
 }
 
-html.light-mode .border-coral-500\/20,
-html.light-mode .border-coral-400\/15 {
-    border-color: rgba(59, 130, 246, 0.15) !important;
+html.light-mode .border-blue-400\/20,
+html.light-mode .border-blue-400\/30,
+html.light-mode .border-blue-500\/20 {
+    border-color: rgba(59, 130, 246, 0.2) !important;
 }
 
-html.light-mode .border-blue-500\/20,
-html.light-mode .border-blue-500\/10 {
-    border-color: rgba(59, 130, 246, 0.12) !important;
+/* Light mode hover states */
+html.light-mode .hover\:border-blue-400\/50:hover {
+    border-color: rgba(59, 130, 246, 0.5) !important;
 }
 
-html.light-mode .bg-coral-500\/10,
-html.light-mode .bg-blue-500\/10 {
-    background: rgba(59, 130, 246, 0.08) !important;
-}
-
-html.light-mode .hover\:border-coral-400\/50:hover {
-    border-color: rgba(59, 130, 246, 0.4) !important;
-}
-
-html.light-mode .via-coral-500\/20,
-html.light-mode .via-blue-500\/10 {
-    --tw-gradient-via: rgba(59, 130, 246, 0.15) !important;
-}
-
-/* Light mode decorative elements */
-html.light-mode .border-coral-500\/10,
-html.light-mode .border-blue-500\/10 {
-    border-color: rgba(59, 130, 246, 0.1) !important;
-}
-
-/* Light mode Projects section specific */
-html.light-mode .projects-section {
-    background: linear-gradient(to bottom, #eff6ff, #dbeafe, #e0f2fe) !important;
-}
-
-html.light-mode .projects-section .text-white {
-    color: #1e3a5f !important;
-}
-
-html.light-mode .projects-section .text-blue-200\/80,
-html.light-mode .projects-section .text-blue-100,
-html.light-mode .projects-section .text-blue-200 {
-    color: #475569 !important;
-}
-
+/* Light mode cards in projects */
 html.light-mode .projects-section .bg-blue-950\/40 {
-    background: rgba(255, 255, 255, 0.9) !important;
-    box-shadow: 0 4px 30px rgba(59, 130, 246, 0.1);
+    background: rgba(255, 255, 255, 0.95) !important;
+    box-shadow: 0 4px 30px rgba(59, 130, 246, 0.15);
 }
 
-html.light-mode .projects-section .border-blue-400\/20 {
-    border-color: rgba(59, 130, 246, 0.25) !important;
-}
-
-html.light-mode .projects-section .bg-gradient-to-br.from-blue-500\/15 {
-    background: rgba(59, 130, 246, 0.1) !important;
+html.light-mode .projects-section .text-blue-100,
+html.light-mode .projects-section .text-blue-200,
+html.light-mode .projects-section .text-blue-200\/80 {
+    color: #475569 !important;
 }
 
 html.light-mode .projects-section .text-blue-300,
 html.light-mode .projects-section .text-blue-400 {
-    color: #2563eb !important;
+    color: #2563EB !important;
 }
 
-/* Smooth scroll */
-html {
-  scroll-behavior: smooth;
+/* Light mode accent colors */
+html.light-mode .text-blue-400 {
+    color: #3B82F6 !important;
+}
+
+html.light-mode .bg-blue-500\/20,
+html.light-mode .bg-blue-500\/15,
+html.light-mode .bg-blue-500\/10 {
+    background: rgba(59, 130, 246, 0.12) !important;
+}
+
+/* Light mode gradients */
+html.light-mode .from-blue-500,
+html.light-mode .from-blue-400 {
+    --tw-gradient-from: #3B82F6;
+}
+
+html.light-mode .to-blue-600,
+html.light-mode .to-cyan-500 {
+    --tw-gradient-to: #2563EB;
+}
+
+/* Light mode modal */
+html.light-mode .bg-blue-950\/90 {
+    background: rgba(241, 245, 249, 0.95) !important;
+}
+
+html.light-mode .bg-gradient-to-b.from-blue-900 {
+    background: linear-gradient(to bottom, #EFF6FF, #FFFFFF) !important;
+}
+
+html.light-mode .bg-blue-950\/50 {
+    background: rgba(59, 130, 246, 0.08) !important;
+}
+
+html.light-mode .bg-gradient-to-b.from-blue-900\/50 {
+    background: linear-gradient(to bottom, rgba(59, 130, 246, 0.08), #FFFFFF) !important;
 }
