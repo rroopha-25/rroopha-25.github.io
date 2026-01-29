@@ -222,6 +222,39 @@ html.light-mode .border-blue-500\/10 {
     border-color: rgba(59, 130, 246, 0.1) !important;
 }
 
+/* Light mode Projects section specific */
+html.light-mode .projects-section {
+    background: linear-gradient(to bottom, #eff6ff, #dbeafe, #e0f2fe) !important;
+}
+
+html.light-mode .projects-section .text-white {
+    color: #1e3a5f !important;
+}
+
+html.light-mode .projects-section .text-blue-200\/80,
+html.light-mode .projects-section .text-blue-100,
+html.light-mode .projects-section .text-blue-200 {
+    color: #475569 !important;
+}
+
+html.light-mode .projects-section .bg-blue-950\/40 {
+    background: rgba(255, 255, 255, 0.9) !important;
+    box-shadow: 0 4px 30px rgba(59, 130, 246, 0.1);
+}
+
+html.light-mode .projects-section .border-blue-400\/20 {
+    border-color: rgba(59, 130, 246, 0.25) !important;
+}
+
+html.light-mode .projects-section .bg-gradient-to-br.from-blue-500\/15 {
+    background: rgba(59, 130, 246, 0.1) !important;
+}
+
+html.light-mode .projects-section .text-blue-300,
+html.light-mode .projects-section .text-blue-400 {
+    color: #2563eb !important;
+}
+
 /* Smooth scroll */
 html {
   scroll-behavior: smooth;
