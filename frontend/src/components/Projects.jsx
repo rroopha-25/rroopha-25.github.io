@@ -45,10 +45,32 @@ const Projects = () => {
     <section
       id="projects"
       ref={sectionRef}
-      className="py-32 px-6 bg-gradient-to-b from-slate-950 via-slate-900 to-slate-950 relative overflow-hidden"
+      className="projects-section py-32 px-6 bg-gradient-to-b from-blue-950 via-blue-900 to-slate-950 relative overflow-hidden"
     >
-      {/* Background decoration */}
-      <div className="absolute inset-0 bg-[url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNjAiIGhlaWdodD0iNjAiIHZpZXdCb3g9IjAgMCA2MCA2MCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj48ZyBmaWxsPSJub25lIiBmaWxsLXJ1bGU9ImV2ZW5vZGQiPjxwYXRoIGQ9Ik0zNiAxOGMwLTkuOTQtOC4wNi0xOC0xOC0xOCIgc3Ryb2tlPSJyZ2JhKDI1NSwgMjU1LCAyNTUsIDAuMDUpIiBzdHJva2Utd2lkdGg9IjEiLz48L2c+PC9zdmc+')] opacity-40\"></div>
+      {/* Brilliant Blue Background Pattern */}
+      <div className="absolute inset-0 overflow-hidden">
+        {/* Glowing orbs */}
+        <div className="absolute top-1/4 left-1/4 w-[500px] h-[500px] bg-blue-500/20 rounded-full filter blur-[100px] animate-pulse"></div>
+        <div className="absolute bottom-1/4 right-1/4 w-[400px] h-[400px] bg-cyan-500/15 rounded-full filter blur-[80px] animate-pulse" style={{ animationDelay: '2s' }}></div>
+        <div className="absolute top-1/2 right-1/3 w-[300px] h-[300px] bg-indigo-500/10 rounded-full filter blur-[60px] animate-pulse" style={{ animationDelay: '4s' }}></div>
+        
+        {/* Hexagon pattern overlay */}
+        <div className="absolute inset-0 opacity-20" style={{
+          backgroundImage: `url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M30 5L55 20V40L30 55L5 40V20L30 5Z' fill='none' stroke='%233b82f6' stroke-width='0.5'/%3E%3C/svg%3E")`,
+          backgroundSize: '60px 60px'
+        }}></div>
+        
+        {/* Diagonal lines */}
+        <div className="absolute inset-0 opacity-10" style={{
+          backgroundImage: 'repeating-linear-gradient(45deg, transparent, transparent 50px, rgba(59, 130, 246, 0.1) 50px, rgba(59, 130, 246, 0.1) 51px)'
+        }}></div>
+        
+        {/* Floating particles */}
+        <div className="absolute top-20 left-1/5 w-2 h-2 bg-blue-400/50 rounded-full animate-twinkle"></div>
+        <div className="absolute top-1/3 right-1/6 w-1.5 h-1.5 bg-cyan-400/60 rounded-full animate-twinkle-delayed"></div>
+        <div className="absolute bottom-1/3 left-1/4 w-2 h-2 bg-blue-300/40 rounded-full animate-twinkle"></div>
+        <div className="absolute top-2/3 right-1/4 w-1.5 h-1.5 bg-indigo-400/50 rounded-full animate-twinkle-delayed"></div>
+      </div>
 
       <div className="max-w-7xl mx-auto relative z-10">
         <div
