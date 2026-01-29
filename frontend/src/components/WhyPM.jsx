@@ -39,23 +39,20 @@ const WhyPM = () => {
     <section
       id="whypm"
       ref={sectionRef}
-      className="py-32 px-6 bg-gradient-to-b from-white via-leaf-50/30 to-gray-50 relative overflow-hidden"
+      className="py-32 px-6 bg-gradient-to-b from-slate-900 via-navy-950 to-slate-900"
     >
-      {/* Background decoration */}
-      <div className="absolute inset-0 bg-[radial-gradient(circle_at_1px_1px,rgb(107_114_128/0.05)_1px,transparent_0)] [background-size:40px_40px]"></div>
-
-      <div className="max-w-7xl mx-auto relative z-10">
+      <div className="max-w-7xl mx-auto">
         <div
           className={`transition-all duration-1000 transform ${
             isVisible ? 'translate-y-0 opacity-100' : 'translate-y-10 opacity-0'
           }`}
         >
           <div className="text-center mb-20">
-            <h2 className="text-6xl md:text-7xl font-black text-gray-900 mb-6">
+            <h2 className="text-6xl md:text-7xl font-black text-white mb-6">
               {whyPM.title}
             </h2>
-            <div className="w-32 h-2 bg-gradient-to-r from-leaf-600 to-leaf-400 mx-auto rounded-full mb-6"></div>
-            <p className="text-xl text-gray-600 max-w-2xl mx-auto">
+            <div className="w-32 h-2 bg-gradient-to-r from-coral-500 to-coral-600 mx-auto rounded-full mb-6"></div>
+            <p className="text-xl text-slate-400 max-w-2xl mx-auto">
               Four principles that drive my approach to product management
             </p>
           </div>
@@ -66,38 +63,36 @@ const WhyPM = () => {
               return (
                 <div
                   key={index}
-                  className={`group relative transition-all duration-700 ${
+                  className={`group transition-all duration-700 ${
                     isVisible
                       ? 'translate-y-0 opacity-100'
                       : 'translate-y-10 opacity-0'
                   }`}
                   style={{ transitionDelay: `${index * 150}ms` }}
                 >
-                  <div className="relative p-8 rounded-3xl bg-white border-2 border-gray-200 hover:border-leaf-500 hover:shadow-2xl transition-all duration-300 hover:scale-[1.02]">
-                    {/* Gradient overlay on hover */}
-                    <div className="absolute inset-0 rounded-3xl bg-gradient-to-br from-leaf-500/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+                  <div className="relative p-8 rounded-3xl bg-white/5 backdrop-blur-xl border border-white/10 hover:bg-white/10 hover:border-coral-400/50 transition-all duration-300">
+                    <div className="absolute inset-0 rounded-3xl bg-gradient-to-br from-coral-500/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
                     
                     <div className="relative z-10">
                       <div className="flex items-start gap-6 mb-6">
                         <div className="relative">
-                          <div className="absolute inset-0 bg-gradient-to-br from-leaf-500 to-leaf-600 rounded-2xl blur-md opacity-30"></div>
-                          <div className="relative p-4 bg-gradient-to-br from-leaf-500 to-leaf-600 rounded-2xl shadow-lg group-hover:scale-110 transition-transform duration-300">
+                          <div className="absolute inset-0 bg-gradient-to-br from-coral-500 to-coral-600 rounded-2xl blur-md opacity-50"></div>
+                          <div className="relative p-4 bg-gradient-to-br from-coral-500 to-coral-600 rounded-2xl shadow-lg group-hover:scale-110 transition-transform duration-300">
                             <Icon className="w-7 h-7 text-white" />
                           </div>
                         </div>
                         <div className="flex-1">
-                          <h3 className="text-2xl font-bold text-gray-900 mb-3 group-hover:text-leaf-600 transition-colors">
+                          <h3 className="text-2xl font-bold text-white mb-3 group-hover:text-coral-400 transition-colors">
                             {pillar.title}
                           </h3>
                         </div>
                       </div>
-                      <p className="text-gray-600 leading-relaxed text-lg">
+                      <p className="text-slate-300 leading-relaxed text-lg">
                         {pillar.description}
                       </p>
                     </div>
 
-                    {/* Bottom accent line */}
-                    <div className="absolute bottom-0 left-0 w-full h-1 bg-gradient-to-r from-leaf-600 to-leaf-400 transform scale-x-0 group-hover:scale-x-100 transition-transform duration-500 origin-left rounded-b-3xl"></div>
+                    <div className="absolute bottom-0 left-0 w-full h-1 bg-gradient-to-r from-coral-500 to-coral-600 transform scale-x-0 group-hover:scale-x-100 transition-transform duration-500 origin-left rounded-b-3xl"></div>
                   </div>
                 </div>
               );
