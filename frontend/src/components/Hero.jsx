@@ -46,13 +46,18 @@ const Hero = () => {
           <h1 className="text-5xl md:text-7xl lg:text-9xl font-black text-white mb-3 md:mb-4 tracking-tight leading-none px-4">
             {hero.name.split(' ')[0]}
             <br />
-            <span className="bg-gradient-to-r from-coral-400 via-coral-500 to-coral-600 bg-clip-text text-transparent">
+            <span className="bg-gradient-to-r from-yellow-400 via-yellow-500 to-amber-500 bg-clip-text text-transparent">
               {hero.name.split(' ')[1]}
             </span>
           </h1>
 
           <p className="text-xl md:text-3xl lg:text-4xl font-bold text-white mb-2 md:mb-3 px-4">
             {hero.title}
+          </p>
+          
+          {/* Tagline */}
+          <p className="text-lg md:text-2xl lg:text-3xl font-bold bg-gradient-to-r from-coral-400 to-coral-500 bg-clip-text text-transparent mb-3 md:mb-4 px-4">
+            Ocean. Mountains. Products.
           </p>
           
           <p className="text-lg md:text-xl lg:text-2xl text-navy-200 font-light mb-3 md:mb-4 max-w-3xl mx-auto px-4">
