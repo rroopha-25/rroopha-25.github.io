@@ -82,7 +82,7 @@ const Skills = () => {
               return (
                 <Card
                   key={categoryIndex}
-                  className={`p-8 border-pink-200 hover:shadow-xl hover:scale-105 transition-all duration-300 bg-white ${
+                  className={`p-8 border-blue-200 hover:shadow-xl hover:scale-105 hover:border-coral-300 transition-all duration-300 bg-white ${
                     isVisible
                       ? 'translate-y-0 opacity-100'
                       : 'translate-y-10 opacity-0'
