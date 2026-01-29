@@ -9,7 +9,8 @@ import {
   Clock,
   CheckCircle2,
   Zap,
-  BarChart3 
+  BarChart3,
+  Lightbulb
 } from 'lucide-react';
 import { mockData } from '../mock';
 
