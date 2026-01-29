@@ -167,25 +167,25 @@ const Projects = () => {
       {/* Project Detail Modal */}
       {selectedProject && (
         <div
-          className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/70 backdrop-blur-sm"
+          className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-slate-950/90 backdrop-blur-xl"
           onClick={() => setSelectedProject(null)}
         >
           <div
-            className="bg-white rounded-2xl max-w-5xl w-full max-h-[90vh] overflow-y-auto shadow-2xl"
+            className="bg-slate-900 rounded-3xl max-w-5xl w-full max-h-[90vh] overflow-y-auto shadow-2xl border border-white/10"
             onClick={(e) => e.stopPropagation()}
           >
             {/* Modal Header */}
-            <div className="relative h-80 bg-gradient-to-br from-blue-900 to-blue-700">
+            <div className="relative h-96 bg-gradient-to-br from-slate-900 to-slate-800">
               <img
                 src={selectedProject.image}
                 alt={selectedProject.title}
-                className="w-full h-full object-cover opacity-60"
+                className="w-full h-full object-cover opacity-40"
               />
-              <div className="absolute inset-0 bg-gradient-to-t from-blue-900 to-transparent"></div>
+              <div className="absolute inset-0 bg-gradient-to-t from-slate-900 via-slate-900/80 to-transparent"></div>
               
               <button
                 onClick={() => setSelectedProject(null)}
-                className="absolute top-6 right-6 p-2 bg-white/20 hover:bg-white/30 backdrop-blur-sm rounded-full transition-colors"
+                className="absolute top-6 right-6 p-3 bg-white/10 hover:bg-white/20 backdrop-blur-xl rounded-full border border-white/20 transition-all duration-300 hover:scale-110"
               >
                 <svg className="w-6 h-6 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
@@ -193,27 +193,27 @@ const Projects = () => {
               </button>
 
               <div className="absolute bottom-6 left-6 right-6">
-                <Badge className="bg-coral-500 text-white mb-3">
+                <Badge className="bg-gradient-to-r from-coral-500 to-pink-500 text-white mb-4 px-4 py-1.5 font-semibold shadow-lg border-0">
                   {selectedProject.category}
                 </Badge>
-                <h2 className="text-4xl font-bold text-white mb-2">
+                <h2 className="text-5xl font-black text-white mb-2">
                   {selectedProject.title}
                 </h2>
-                <p className="text-blue-200 text-lg">
+                <p className="text-slate-300 text-lg">
                   {selectedProject.role} • {selectedProject.company}
                 </p>
               </div>
             </div>
 
             {/* Modal Content */}
-            <div className="p-8">
+            <div className="p-8 bg-slate-900">
               {/* Tags */}
               <div className="flex flex-wrap gap-2 mb-8">
                 {selectedProject.tags.map((tag, index) => (
                   <Badge
                     key={index}
                     variant="secondary"
-                    className="bg-blue-100 text-blue-700 border border-blue-200"
+                    className="bg-white/10 text-slate-300 border border-white/20 hover:bg-coral-500/20 hover:text-coral-300 hover:border-coral-500/30"
                   >
                     {tag}
                   </Badge>
@@ -221,55 +221,61 @@ const Projects = () => {
               </div>
 
               {/* Challenge */}
-              <div className="mb-8">
-                <h3 className="text-2xl font-bold text-blue-900 mb-3 flex items-center gap-2">
-                  <Zap className="w-6 h-6 text-coral-500" />
+              <div className="mb-8 p-6 rounded-2xl bg-white/5 backdrop-blur-xl border border-white/10">
+                <h3 className="text-2xl font-bold text-white mb-4 flex items-center gap-3">
+                  <div className="p-2 bg-gradient-to-br from-coral-500 to-pink-500 rounded-lg">
+                    <Zap className="w-5 h-5 text-white" />
+                  </div>
                   The Challenge
                 </h3>
-                <p className="text-gray-700 leading-relaxed text-lg">
+                <p className="text-slate-300 leading-relaxed text-lg">
                   {selectedProject.challenge}
                 </p>
               </div>
 
               {/* Solution */}
-              <div className="mb-8">
-                <h3 className="text-2xl font-bold text-blue-900 mb-3 flex items-center gap-2">
-                  <Lightbulb className="w-6 h-6 text-coral-500" />
+              <div className="mb-8 p-6 rounded-2xl bg-white/5 backdrop-blur-xl border border-white/10">
+                <h3 className="text-2xl font-bold text-white mb-4 flex items-center gap-3">
+                  <div className="p-2 bg-gradient-to-br from-blue-500 to-blue-600 rounded-lg">
+                    <Lightbulb className="w-5 h-5 text-white" />
+                  </div>
                   Solution Approach
                 </h3>
-                <p className="text-gray-700 leading-relaxed text-lg">
+                <p className="text-slate-300 leading-relaxed text-lg">
                   {selectedProject.solution}
                 </p>
               </div>
 
               {/* Impact Metrics */}
               <div className="mb-8">
-                <h3 className="text-2xl font-bold text-blue-900 mb-4 flex items-center gap-2">
-                  <BarChart3 className="w-6 h-6 text-coral-500" />
+                <h3 className="text-2xl font-bold text-white mb-6 flex items-center gap-3">
+                  <div className="p-2 bg-gradient-to-br from-coral-500 to-pink-500 rounded-lg">
+                    <BarChart3 className="w-5 h-5 text-white" />
+                  </div>
                   Business Impact
                 </h3>
                 <div className="grid md:grid-cols-2 gap-4">
                   {selectedProject.impact.map((metric, index) => (
                     <div
                       key={index}
-                      className="flex items-start gap-3 p-4 bg-gradient-to-br from-blue-50 to-coral-50 rounded-lg border border-blue-100"
+                      className="flex items-start gap-3 p-5 rounded-xl bg-gradient-to-br from-coral-500/10 to-pink-500/10 border border-coral-500/20 hover:border-coral-500/40 transition-colors"
                     >
-                      <CheckCircle2 className="w-5 h-5 text-coral-500 flex-shrink-0 mt-0.5" />
-                      <p className="text-gray-700 font-medium">{metric}</p>
+                      <CheckCircle2 className="w-5 h-5 text-coral-400 flex-shrink-0 mt-0.5" />
+                      <p className="text-slate-300 font-medium leading-relaxed">{metric}</p>
                     </div>
                   ))}
                 </div>
               </div>
 
-              {/* Additional sections for some projects */}
+              {/* Additional sections */}
               {selectedProject.keyDecisions && (
-                <div className="mb-8 p-6 bg-blue-50 rounded-xl border border-blue-100">
-                  <h3 className="text-xl font-bold text-blue-900 mb-4">
+                <div className="mb-8 p-6 rounded-2xl bg-gradient-to-br from-blue-500/10 to-coral-500/10 border border-blue-500/20">
+                  <h3 className="text-xl font-bold text-white mb-4">
                     Key Product Decisions
                   </h3>
                   <div className="space-y-3">
                     {selectedProject.keyDecisions.map((decision, index) => (
-                      <p key={index} className="text-gray-700 leading-relaxed pl-4 border-l-2 border-coral-400">
+                      <p key={index} className="text-slate-300 leading-relaxed pl-4 border-l-2 border-coral-400">
                         {decision}
                       </p>
                     ))}
@@ -278,13 +284,13 @@ const Projects = () => {
               )}
 
               {selectedProject.principles && (
-                <div className="mb-8 p-6 bg-coral-50 rounded-xl border border-coral-100">
-                  <h3 className="text-xl font-bold text-blue-900 mb-4">
+                <div className="p-6 rounded-2xl bg-gradient-to-br from-coral-500/10 to-pink-500/10 border border-coral-500/20">
+                  <h3 className="text-xl font-bold text-white mb-4">
                     Product Principles Applied
                   </h3>
                   <div className="space-y-3">
                     {selectedProject.principles.map((principle, index) => (
-                      <p key={index} className="text-gray-700 leading-relaxed pl-4 border-l-2 border-blue-400">
+                      <p key={index} className="text-slate-300 leading-relaxed pl-4 border-l-2 border-blue-400">
                         {principle}
                       </p>
                     ))}
