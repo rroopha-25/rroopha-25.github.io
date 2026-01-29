@@ -19,13 +19,16 @@ const Hero = () => {
   };
 
   return (
-    <section className="relative min-h-screen flex items-center justify-center bg-gradient-to-br from-white via-pink-50 to-pink-100 overflow-hidden">
+    <section className="relative min-h-screen flex items-center justify-center bg-gradient-to-br from-blue-900 via-blue-800 to-blue-950 overflow-hidden">
       {/* Animated background elements */}
       <div className="absolute inset-0 overflow-hidden">
-        <div className="absolute top-20 left-10 w-72 h-72 bg-pink-200 rounded-full mix-blend-multiply filter blur-xl opacity-30 animate-blob"></div>
-        <div className="absolute top-40 right-10 w-72 h-72 bg-pink-300 rounded-full mix-blend-multiply filter blur-xl opacity-20 animate-blob animation-delay-2000"></div>
-        <div className="absolute bottom-20 left-1/2 w-72 h-72 bg-pink-100 rounded-full mix-blend-multiply filter blur-xl opacity-30 animate-blob animation-delay-4000"></div>
+        <div className="absolute top-20 left-10 w-96 h-96 bg-coral-400/20 rounded-full mix-blend-overlay filter blur-3xl opacity-40 animate-blob"></div>
+        <div className="absolute top-40 right-10 w-96 h-96 bg-pink-400/20 rounded-full mix-blend-overlay filter blur-3xl opacity-30 animate-blob animation-delay-2000"></div>
+        <div className="absolute bottom-20 left-1/2 w-96 h-96 bg-blue-400/20 rounded-full mix-blend-overlay filter blur-3xl opacity-30 animate-blob animation-delay-4000"></div>
       </div>
+
+      {/* Grid pattern overlay */}
+      <div className="absolute inset-0 bg-grid-pattern opacity-5"></div>
 
       <div className="relative z-10 max-w-6xl mx-auto px-6 py-24 text-center">
         <div
@@ -33,58 +36,61 @@ const Hero = () => {
             isVisible ? 'translate-y-0 opacity-100' : 'translate-y-10 opacity-0'
           }`}
         >
-          <h1 className="text-6xl md:text-8xl font-bold text-gray-900 mb-4 tracking-tight">
+          <h1 className="text-6xl md:text-8xl font-bold text-white mb-4 tracking-tight">
             {hero.name}
           </h1>
-          <p className="text-2xl md:text-3xl text-gray-700 font-light mb-6">
+          <p className="text-2xl md:text-4xl text-coral-300 font-semibold mb-3">
             {hero.title}
           </p>
-          <p className="text-lg md:text-xl text-gray-600 max-w-3xl mx-auto mb-12 leading-relaxed">
+          <p className="text-xl md:text-2xl text-blue-200 font-light mb-8">
+            {hero.subtitle}
+          </p>
+          <p className="text-base md:text-lg text-blue-100 max-w-3xl mx-auto mb-12 leading-relaxed">
             {hero.tagline}
           </p>
 
           {/* Contact Links */}
-          <div className="flex flex-wrap justify-center gap-4 mb-12">
+          <div className="flex flex-wrap justify-center gap-3 mb-12">
             <a
               href={`mailto:${hero.email}`}
-              className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white/80 backdrop-blur-sm border border-pink-200 text-gray-700 hover:bg-pink-50 hover:border-pink-300 transition-all duration-300 hover:scale-105"
+              className="inline-flex items-center gap-2 px-5 py-2.5 rounded-full bg-white/10 backdrop-blur-md border border-white/20 text-white hover:bg-coral-500 hover:border-coral-400 transition-all duration-300 hover:scale-105 shadow-lg"
             >
               <Mail className="w-4 h-4" />
-              {hero.email}
+              <span className="text-sm font-medium">{hero.email}</span>
             </a>
             <a
               href={`tel:${hero.phone}`}
-              className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white/80 backdrop-blur-sm border border-pink-200 text-gray-700 hover:bg-pink-50 hover:border-pink-300 transition-all duration-300 hover:scale-105"
+              className="inline-flex items-center gap-2 px-5 py-2.5 rounded-full bg-white/10 backdrop-blur-md border border-white/20 text-white hover:bg-coral-500 hover:border-coral-400 transition-all duration-300 hover:scale-105 shadow-lg"
             >
               <Phone className="w-4 h-4" />
-              {hero.phone}
+              <span className="text-sm font-medium">{hero.phone}</span>
             </a>
             <a
               href={hero.linkedin}
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white/80 backdrop-blur-sm border border-pink-200 text-gray-700 hover:bg-pink-50 hover:border-pink-300 transition-all duration-300 hover:scale-105"
+              className="inline-flex items-center gap-2 px-5 py-2.5 rounded-full bg-white/10 backdrop-blur-md border border-white/20 text-white hover:bg-coral-500 hover:border-coral-400 transition-all duration-300 hover:scale-105 shadow-lg"
             >
               <Linkedin className="w-4 h-4" />
-              LinkedIn
+              <span className="text-sm font-medium">LinkedIn</span>
             </a>
             <a
               href={hero.github}
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white/80 backdrop-blur-sm border border-pink-200 text-gray-700 hover:bg-pink-50 hover:border-pink-300 transition-all duration-300 hover:scale-105"
+              className="inline-flex items-center gap-2 px-5 py-2.5 rounded-full bg-white/10 backdrop-blur-md border border-white/20 text-white hover:bg-coral-500 hover:border-coral-400 transition-all duration-300 hover:scale-105 shadow-lg"
             >
               <Github className="w-4 h-4" />
-              GitHub
+              <span className="text-sm font-medium">GitHub</span>
             </a>
           </div>
 
           {/* CTA Buttons */}
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <Button
-              onClick={() => scrollToSection('experience')}
+              onClick={() => scrollToSection('projects')}
               size="lg"
-              className="bg-gray-900 text-white hover:bg-gray-800 px-8 py-6 text-lg rounded-full transition-all duration-300 hover:scale-105 hover:shadow-xl"
+              className="bg-coral-500 text-white hover:bg-coral-600 px-10 py-7 text-lg rounded-full transition-all duration-300 hover:scale-105 hover:shadow-2xl font-semibold"
             >
               View My Work
             </Button>
@@ -92,7 +98,7 @@ const Hero = () => {
               onClick={() => scrollToSection('contact')}
               size="lg"
               variant="outline"
-              className="border-2 border-gray-900 text-gray-900 hover:bg-gray-900 hover:text-white px-8 py-6 text-lg rounded-full transition-all duration-300 hover:scale-105"
+              className="border-2 border-white text-white hover:bg-white hover:text-blue-900 px-10 py-7 text-lg rounded-full transition-all duration-300 hover:scale-105 font-semibold"
             >
               Get In Touch
             </Button>
@@ -106,11 +112,11 @@ const Hero = () => {
           }`}
         >
           <button
-            onClick={() => scrollToSection('about')}
-            className="animate-bounce p-2 rounded-full bg-white/80 backdrop-blur-sm border border-pink-200 hover:bg-pink-50 hover:border-pink-300 transition-all duration-300"
-            aria-label="Scroll to about section"
+            onClick={() => scrollToSection('whypm')}
+            className="animate-bounce p-3 rounded-full bg-white/10 backdrop-blur-md border border-white/20 hover:bg-coral-500 hover:border-coral-400 transition-all duration-300"
+            aria-label="Scroll to why product management section"
           >
-            <ArrowDown className="w-6 h-6 text-gray-700" />
+            <ArrowDown className="w-6 h-6 text-white" />
           </button>
         </div>
       </div>
