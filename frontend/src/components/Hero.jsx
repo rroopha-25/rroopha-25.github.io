@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import { Button } from './ui/button';
-import { ArrowDown, Linkedin, Github, Mail, Phone } from 'lucide-react';
+import { ArrowDown, Linkedin, Github, Mail, Phone, Sparkles } from 'lucide-react';
 import { mockData } from '../mock';
 
 const Hero = () => {
@@ -19,104 +19,107 @@ const Hero = () => {
   };
 
   return (
-    <section className="relative min-h-screen flex items-center justify-center bg-gradient-to-br from-blue-900 via-blue-800 to-blue-950 overflow-hidden">
-      {/* Animated background elements */}
-      <div className="absolute inset-0 overflow-hidden">
-        <div className="absolute top-20 left-10 w-96 h-96 bg-coral-400/20 rounded-full mix-blend-overlay filter blur-3xl opacity-40 animate-blob"></div>
-        <div className="absolute top-40 right-10 w-96 h-96 bg-pink-400/20 rounded-full mix-blend-overlay filter blur-3xl opacity-30 animate-blob animation-delay-2000"></div>
-        <div className="absolute bottom-20 left-1/2 w-96 h-96 bg-blue-400/20 rounded-full mix-blend-overlay filter blur-3xl opacity-30 animate-blob animation-delay-4000"></div>
+    <section className="relative min-h-screen flex items-center justify-center overflow-hidden bg-gradient-to-br from-slate-950 via-blue-950 to-slate-900">
+      {/* Animated gradient orbs */}
+      <div className="absolute inset-0">
+        <div className="absolute top-1/4 left-1/4 w-96 h-96 bg-coral-500/30 rounded-full filter blur-3xl animate-pulse"></div>
+        <div className="absolute bottom-1/4 right-1/4 w-96 h-96 bg-blue-500/30 rounded-full filter blur-3xl animate-pulse" style={{ animationDelay: '1s' }}></div>
+        <div className="absolute top-1/2 left-1/2 w-96 h-96 bg-pink-500/20 rounded-full filter blur-3xl animate-pulse" style={{ animationDelay: '2s' }}></div>
       </div>
 
-      {/* Grid pattern overlay */}
-      <div className="absolute inset-0 bg-grid-pattern opacity-5"></div>
+      {/* Grid overlay */}
+      <div className="absolute inset-0 bg-[url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNjAiIGhlaWdodD0iNjAiIHZpZXdCb3g9IjAgMCA2MCA2MCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj48ZyBmaWxsPSJub25lIiBmaWxsLXJ1bGU9ImV2ZW5vZGQiPjxwYXRoIGQ9Ik0zNiAxOGMwLTkuOTQtOC4wNi0xOC0xOC0xOCIgc3Ryb2tlPSJyZ2JhKDI1NSwgMjU1LCAyNTUsIDAuMSkiIHN0cm9rZS13aWR0aD0iMSIvPjwvZz48L3N2Zz4=')] opacity-20"></div>
 
-      <div className="relative z-10 max-w-6xl mx-auto px-6 py-24 text-center">
+      <div className="relative z-10 max-w-7xl mx-auto px-6 py-32 text-center">
         <div
           className={`transition-all duration-1000 transform ${
             isVisible ? 'translate-y-0 opacity-100' : 'translate-y-10 opacity-0'
           }`}
         >
-          <h1 className="text-6xl md:text-8xl font-bold text-white mb-4 tracking-tight">
-            {hero.name}
+          {/* Badge */}
+          <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white/10 backdrop-blur-xl border border-white/20 mb-8 hover:scale-105 transition-transform">
+            <Sparkles className="w-4 h-4 text-coral-400" />
+            <span className="text-sm text-white font-medium">Available for new opportunities</span>
+          </div>
+
+          {/* Main heading */}
+          <h1 className="text-7xl md:text-9xl font-black text-white mb-6 tracking-tight leading-none">
+            {hero.name.split(' ')[0]}
+            <br />
+            <span className="bg-gradient-to-r from-coral-400 via-pink-400 to-coral-500 bg-clip-text text-transparent">
+              {hero.name.split(' ')[1]}
+            </span>
           </h1>
-          <p className="text-2xl md:text-4xl text-coral-300 font-semibold mb-3">
+
+          <p className="text-3xl md:text-4xl font-bold bg-gradient-to-r from-white to-blue-200 bg-clip-text text-transparent mb-4">
             {hero.title}
           </p>
-          <p className="text-xl md:text-2xl text-blue-200 font-light mb-8">
+          
+          <p className="text-xl md:text-2xl text-blue-200 font-light mb-4 max-w-3xl mx-auto">
             {hero.subtitle}
           </p>
-          <p className="text-base md:text-lg text-blue-100 max-w-3xl mx-auto mb-12 leading-relaxed">
+
+          <p className="text-base md:text-lg text-slate-300 max-w-2xl mx-auto mb-12 leading-relaxed">
             {hero.tagline}
           </p>
 
-          {/* Contact Links */}
-          <div className="flex flex-wrap justify-center gap-3 mb-12">
-            <a
-              href={`mailto:${hero.email}`}
-              className="inline-flex items-center gap-2 px-5 py-2.5 rounded-full bg-white/10 backdrop-blur-md border border-white/20 text-white hover:bg-coral-500 hover:border-coral-400 transition-all duration-300 hover:scale-105 shadow-lg"
-            >
-              <Mail className="w-4 h-4" />
-              <span className="text-sm font-medium">{hero.email}</span>
-            </a>
-            <a
-              href={`tel:${hero.phone}`}
-              className="inline-flex items-center gap-2 px-5 py-2.5 rounded-full bg-white/10 backdrop-blur-md border border-white/20 text-white hover:bg-coral-500 hover:border-coral-400 transition-all duration-300 hover:scale-105 shadow-lg"
-            >
-              <Phone className="w-4 h-4" />
-              <span className="text-sm font-medium">{hero.phone}</span>
-            </a>
-            <a
-              href={hero.linkedin}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="inline-flex items-center gap-2 px-5 py-2.5 rounded-full bg-white/10 backdrop-blur-md border border-white/20 text-white hover:bg-coral-500 hover:border-coral-400 transition-all duration-300 hover:scale-105 shadow-lg"
-            >
-              <Linkedin className="w-4 h-4" />
-              <span className="text-sm font-medium">LinkedIn</span>
-            </a>
-            <a
-              href={hero.github}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="inline-flex items-center gap-2 px-5 py-2.5 rounded-full bg-white/10 backdrop-blur-md border border-white/20 text-white hover:bg-coral-500 hover:border-coral-400 transition-all duration-300 hover:scale-105 shadow-lg"
-            >
-              <Github className="w-4 h-4" />
-              <span className="text-sm font-medium">GitHub</span>
-            </a>
-          </div>
-
           {/* CTA Buttons */}
-          <div className="flex flex-col sm:flex-row gap-4 justify-center">
+          <div className="flex flex-col sm:flex-row gap-4 justify-center mb-16">
             <Button
               onClick={() => scrollToSection('projects')}
               size="lg"
-              className="bg-coral-500 text-white hover:bg-coral-600 px-10 py-7 text-lg rounded-full transition-all duration-300 hover:scale-105 hover:shadow-2xl font-semibold"
+              className="group relative px-8 py-6 text-lg font-bold rounded-2xl bg-gradient-to-r from-coral-500 to-pink-500 hover:from-coral-600 hover:to-pink-600 text-white shadow-2xl shadow-coral-500/50 hover:shadow-coral-500/70 transition-all duration-300 hover:scale-105 border-0"
             >
-              View My Work
+              <span className="relative z-10">View My Work</span>
+              <div className="absolute inset-0 rounded-2xl bg-gradient-to-r from-white/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity"></div>
             </Button>
             <Button
               onClick={() => scrollToSection('contact')}
               size="lg"
               variant="outline"
-              className="border-2 border-white text-white hover:bg-white hover:text-blue-900 px-10 py-7 text-lg rounded-full transition-all duration-300 hover:scale-105 font-semibold"
+              className="px-8 py-6 text-lg font-bold rounded-2xl bg-white/5 backdrop-blur-xl border-2 border-white/20 text-white hover:bg-white/10 hover:border-white/40 transition-all duration-300 hover:scale-105"
             >
-              Get In Touch
+              Let's Connect
             </Button>
+          </div>
+
+          {/* Contact Links - Glass Cards */}
+          <div className="flex flex-wrap justify-center gap-3 mb-16">
+            {[
+              { icon: Mail, text: hero.email, href: `mailto:${hero.email}` },
+              { icon: Phone, text: hero.phone, href: `tel:${hero.phone}` },
+              { icon: Linkedin, text: 'LinkedIn', href: hero.linkedin },
+              { icon: Github, text: 'GitHub', href: hero.github }
+            ].map((item, index) => {
+              const Icon = item.icon;
+              return (
+                <a
+                  key={index}
+                  href={item.href}
+                  target={item.href.startsWith('http') ? '_blank' : undefined}
+                  rel={item.href.startsWith('http') ? 'noopener noreferrer' : undefined}
+                  className="group inline-flex items-center gap-3 px-5 py-3 rounded-xl bg-white/5 backdrop-blur-xl border border-white/10 hover:bg-white/10 hover:border-coral-400/50 transition-all duration-300 hover:scale-105 hover:shadow-lg hover:shadow-coral-500/20"
+                >
+                  <Icon className="w-4 h-4 text-coral-400 group-hover:text-coral-300 transition-colors" />
+                  <span className="text-sm text-white font-medium">{item.text}</span>
+                </a>
+              );
+            })}
           </div>
         </div>
 
         {/* Scroll indicator */}
         <div
-          className={`absolute bottom-12 left-1/2 transform -translate-x-1/2 transition-all duration-1000 delay-500 ${
+          className={`absolute bottom-12 left-1/2 transform -translate-x-1/2 transition-all duration-1000 delay-700 ${
             isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-4'
           }`}
         >
           <button
             onClick={() => scrollToSection('whypm')}
-            className="animate-bounce p-3 rounded-full bg-white/10 backdrop-blur-md border border-white/20 hover:bg-coral-500 hover:border-coral-400 transition-all duration-300"
-            aria-label="Scroll to why product management section"
+            className="group p-4 rounded-full bg-white/5 backdrop-blur-xl border border-white/20 hover:bg-white/10 hover:border-coral-400/50 transition-all duration-300 animate-bounce hover:animate-none"
+            aria-label="Scroll down"
           >
-            <ArrowDown className="w-6 h-6 text-white" />
+            <ArrowDown className="w-6 h-6 text-white group-hover:text-coral-400 transition-colors" />
           </button>
         </div>
       </div>
