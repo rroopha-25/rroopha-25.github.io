@@ -90,8 +90,8 @@ const Skills = () => {
                   style={{ transitionDelay: `${categoryIndex * 150}ms` }}
                 >
                   <div className="flex items-center gap-3 mb-6">
-                    <div className="p-3 bg-pink-100 rounded-lg">
-                      <Icon className="w-6 h-6 text-pink-600" />
+                    <div className="p-3 bg-blue-100 rounded-lg">
+                      <Icon className="w-6 h-6 text-blue-600" />
                     </div>
                     <h3 className="text-xl font-semibold text-gray-900">
                       {category.title}
