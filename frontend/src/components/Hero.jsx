@@ -68,7 +68,7 @@ const Hero = () => {
             <Button
               onClick={() => scrollToSection('projects')}
               size="lg"
-              className=\"group relative px-10 py-7 text-lg font-bold rounded-2xl bg-gradient-to-r from-coral-500 to-coral-600 hover:from-coral-600 hover:to-coral-700 text-white shadow-2xl shadow-coral-500/30 hover:shadow-coral-500/50 transition-all duration-300 hover:scale-105 border-0\"
+              className="group relative px-10 py-7 text-lg font-bold rounded-2xl bg-gradient-to-r from-coral-500 to-coral-600 hover:from-coral-600 hover:to-coral-700 text-white shadow-2xl shadow-coral-500/30 hover:shadow-coral-500/50 transition-all duration-300 hover:scale-105 border-0"
             >
               View My Work
             </Button>
