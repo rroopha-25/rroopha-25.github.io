@@ -74,7 +74,7 @@ const About = () => {
                     }`}
                     style={{ transitionDelay: `${index * 150}ms` }}
                   >
-                    <CheckCircle2 className="w-6 h-6 text-pink-500 flex-shrink-0 mt-1" />
+                    <CheckCircle2 className="w-6 h-6 text-coral-500 flex-shrink-0 mt-1" />
                     <p className="text-gray-700 text-lg">{highlight}</p>
                   </div>
                 ))}
