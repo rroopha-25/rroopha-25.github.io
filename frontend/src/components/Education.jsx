@@ -63,7 +63,7 @@ const Education = () => {
             {/* Education */}
             <div>
               <div className="flex items-center gap-3 md:gap-4 mb-6 md:mb-8">
-                <div className="p-3 md:p-4 bg-gradient-to-br from-coral-500 to-coral-600 rounded-2xl shadow-lg">
+                <div className="p-3 md:p-4 bg-gradient-to-br from-blue-500 to-cyan-500 rounded-2xl shadow-lg">
                   <GraduationCap className="w-5 h-5 md:w-6 md:h-6 text-white" />
                 </div>
                 <h3 className="text-2xl md:text-3xl font-bold text-white">
@@ -74,7 +74,7 @@ const Education = () => {
                 {education.map((edu, index) => (
                   <Card
                     key={index}
-                    className={`p-5 md:p-6 bg-white/5 backdrop-blur-xl border border-white/10 hover:border-coral-400/50 hover:bg-white/10 hover:shadow-lg transition-all duration-300 rounded-2xl ${
+                    className={`p-5 md:p-6 bg-blue-950/40 backdrop-blur-xl border border-blue-400/20 hover:border-blue-400/50 hover:bg-blue-950/60 hover:shadow-lg hover:shadow-blue-500/10 transition-all duration-300 rounded-2xl ${
                       isVisible
                         ? 'translate-x-0 opacity-100'
                         : 'translate-x-10 opacity-0'
@@ -84,12 +84,12 @@ const Education = () => {
                     <h4 className="text-lg md:text-xl font-bold text-white mb-2">
                       {edu.degree}
                     </h4>
-                    <p className="text-navy-300 font-semibold mb-2 text-sm md:text-base">
+                    <p className="text-blue-200 font-semibold mb-2 text-sm md:text-base">
                       {edu.institution}
                     </p>
                     <Badge
                       variant="secondary"
-                      className="bg-coral-500/20 text-coral-300 border-coral-500/30 font-medium text-xs md:text-sm"
+                      className="bg-blue-500/20 text-blue-200 border-blue-400/30 font-medium text-xs md:text-sm"
                     >
                       {edu.location}
                     </Badge>
@@ -101,7 +101,7 @@ const Education = () => {
             {/* Certifications */}
             <div>
               <div className="flex items-center gap-3 md:gap-4 mb-6 md:mb-8">
-                <div className="p-3 md:p-4 bg-gradient-to-br from-navy-500 to-navy-600 rounded-2xl shadow-lg">
+                <div className="p-3 md:p-4 bg-gradient-to-br from-cyan-500 to-blue-600 rounded-2xl shadow-lg">
                   <Award className="w-5 h-5 md:w-6 md:h-6 text-white" />
                 </div>
                 <h3 className="text-2xl md:text-3xl font-bold text-white">
@@ -112,7 +112,7 @@ const Education = () => {
                 {certifications.map((cert, index) => (
                   <Card
                     key={index}
-                    className={`p-4 md:p-5 bg-white/5 backdrop-blur-xl border border-white/10 hover:border-coral-400/50 hover:bg-white/10 hover:shadow-lg transition-all duration-300 rounded-2xl cursor-pointer ${
+                    className={`p-4 md:p-5 bg-blue-950/40 backdrop-blur-xl border border-blue-400/20 hover:border-blue-400/50 hover:bg-blue-950/60 hover:shadow-lg hover:shadow-blue-500/10 transition-all duration-300 rounded-2xl cursor-pointer ${
                       isVisible
                         ? 'translate-x-0 opacity-100'
                         : '-translate-x-10 opacity-0'
@@ -120,7 +120,7 @@ const Education = () => {
                     style={{ transitionDelay: `${index * 100}ms` }}
                   >
                     <div className="flex items-start gap-3">
-                      <div className="w-1.5 md:w-2 h-1.5 md:h-2 bg-coral-500 rounded-full mt-2 flex-shrink-0"></div>
+                      <div className="w-1.5 md:w-2 h-1.5 md:h-2 bg-blue-400 rounded-full mt-2 flex-shrink-0"></div>
                       <p className="text-white font-semibold leading-relaxed text-sm md:text-base">{cert}</p>
                     </div>
                   </Card>
