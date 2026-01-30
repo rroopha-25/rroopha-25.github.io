@@ -1,12 +1,12 @@
 import React, { useEffect, useRef, useState } from 'react';
 import { Card } from './ui/card';
-import { Mail, Linkedin, Github, MapPin, Sparkles } from 'lucide-react';
+import { Mail, Linkedin, Github, Briefcase, TrendingUp, Users, Target } from 'lucide-react';
 import { mockData } from '../mock';
 
 const Contact = () => {
   const [isVisible, setIsVisible] = useState(false);
   const sectionRef = useRef(null);
-  const { hero } = mockData;
+  const { hero, projects } = mockData;
 
   useEffect(() => {
     const observer = new IntersectionObserver(
@@ -28,6 +28,14 @@ const Contact = () => {
       }
     };
   }, []);
+
+  // Project highlights for visual display
+  const projectHighlights = [
+    { icon: TrendingUp, stat: '40%', label: 'Revenue Increase', color: 'from-green-500 to-emerald-500' },
+    { icon: Users, stat: '1M+', label: 'Users Impacted', color: 'from-blue-500 to-cyan-500' },
+    { icon: Target, stat: '6+', label: 'Products Launched', color: 'from-coral-500 to-pink-500' },
+    { icon: Briefcase, stat: '8+', label: 'Years Experience', color: 'from-purple-500 to-violet-500' },
+  ];
 
   return (
     <section
@@ -53,53 +61,65 @@ const Contact = () => {
           </div>
 
           {/* Main Content - Two Column Layout */}
-          <div className="grid lg:grid-cols-2 gap-12 items-center">
+          <div className="grid lg:grid-cols-2 gap-12 items-start">
             
-            {/* Left Side - Visual/Illustration */}
+            {/* Left Side - Project Impact Stats */}
             <div 
-              className={`relative transition-all duration-700 ${
+              className={`transition-all duration-700 ${
                 isVisible ? 'translate-x-0 opacity-100' : '-translate-x-10 opacity-0'
               }`}
               style={{ transitionDelay: '200ms' }}
             >
               <div className="relative">
                 {/* Background glow */}
-                <div className="absolute inset-0 bg-gradient-to-br from-coral-500/20 to-pink-500/10 rounded-3xl filter blur-3xl"></div>
+                <div className="absolute inset-0 bg-gradient-to-br from-coral-500/10 to-pink-500/5 rounded-3xl filter blur-3xl"></div>
                 
-                {/* Image Card */}
-                <div className="relative bg-white/5 backdrop-blur-xl border border-white/10 rounded-3xl p-8 hover:border-coral-400/50 transition-all duration-300">
-                  {/* Profile Image */}
-                  <div className="relative mb-6">
-                    <div className="absolute -inset-1 bg-gradient-to-r from-coral-500 to-coral-600 rounded-2xl blur opacity-30"></div>
-                    <img
-                      src="https://customer-assets.emergentagent.com/job_roopha-portfolio/artifacts/cvkjcwev_ROOPA.jpeg"
-                      alt="Roopha Rajagopal"
-                      className="relative rounded-2xl w-full max-w-[280px] mx-auto shadow-2xl"
-                    />
-                  </div>
+                {/* Stats Card */}
+                <div className="relative bg-white/5 backdrop-blur-xl border border-white/10 rounded-3xl p-8 hover:border-coral-400/30 transition-all duration-300">
+                  <h3 className="text-2xl font-bold text-white mb-6 text-center">My Impact in Numbers</h3>
                   
-                  {/* Name & Title */}
-                  <div className="text-center">
-                    <h3 className="text-2xl font-bold text-white mb-2">{hero.name}</h3>
-                    <p className="text-coral-400 font-semibold mb-4">{hero.title}</p>
-                    
-                    {/* Location */}
-                    <div className="inline-flex items-center gap-2 px-4 py-2 bg-white/5 rounded-full border border-white/10">
-                      <MapPin className="w-4 h-4 text-coral-400" />
-                      <span className="text-slate-300 text-sm">San Francisco Bay Area</span>
+                  {/* Stats Grid */}
+                  <div className="grid grid-cols-2 gap-4">
+                    {projectHighlights.map((item, index) => {
+                      const Icon = item.icon;
+                      return (
+                        <div
+                          key={index}
+                          className={`p-5 bg-white/5 rounded-2xl border border-white/10 hover:border-coral-400/30 transition-all duration-300 text-center group ${
+                            isVisible ? 'translate-y-0 opacity-100' : 'translate-y-5 opacity-0'
+                          }`}
+                          style={{ transitionDelay: `${300 + index * 100}ms` }}
+                        >
+                          <div className={`w-12 h-12 mx-auto mb-3 rounded-xl bg-gradient-to-br ${item.color} flex items-center justify-center group-hover:scale-110 transition-transform duration-300`}>
+                            <Icon className="w-6 h-6 text-white" />
+                          </div>
+                          <p className="text-3xl font-black text-white mb-1">{item.stat}</p>
+                          <p className="text-sm text-slate-400">{item.label}</p>
+                        </div>
+                      );
+                    })}
+                  </div>
+
+                  {/* Featured Projects Preview */}
+                  <div className="mt-6 pt-6 border-t border-white/10">
+                    <p className="text-sm text-slate-400 mb-3 text-center">Recent Projects</p>
+                    <div className="flex flex-wrap justify-center gap-2">
+                      {projects.slice(0, 4).map((project, index) => (
+                        <span
+                          key={index}
+                          className="px-3 py-1.5 bg-coral-500/10 text-coral-300 text-xs font-medium rounded-full border border-coral-500/20"
+                        >
+                          {project.title.length > 20 ? project.title.substring(0, 20) + '...' : project.title}
+                        </span>
+                      ))}
                     </div>
-                  </div>
-                  
-                  {/* Decorative elements */}
-                  <div className="absolute top-4 right-4">
-                    <Sparkles className="w-6 h-6 text-coral-400/50" />
                   </div>
                 </div>
               </div>
             </div>
 
             {/* Right Side - Contact Cards */}
-            <div className="space-y-6">
+            <div className="space-y-5">
               {/* Email Card */}
               <a
                 href={`mailto:${hero.email}`}
@@ -169,7 +189,7 @@ const Contact = () => {
 
               {/* CTA Message */}
               <div 
-                className={`mt-8 p-6 bg-gradient-to-r from-coral-500/10 to-pink-500/10 border border-coral-500/20 rounded-2xl transition-all duration-500 ${
+                className={`mt-6 p-6 bg-gradient-to-r from-coral-500/10 to-pink-500/10 border border-coral-500/20 rounded-2xl transition-all duration-500 ${
                   isVisible ? 'translate-y-0 opacity-100' : 'translate-y-10 opacity-0'
                 }`}
                 style={{ transitionDelay: '600ms' }}
