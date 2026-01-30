@@ -1,6 +1,6 @@
 import React, { useEffect, useRef, useState } from 'react';
 import { Card } from './ui/card';
-import { Mail, Phone, Linkedin, Github } from 'lucide-react';
+import { Mail, Linkedin, Github } from 'lucide-react';
 import { mockData } from '../mock';
 
 const Contact = () => {
@@ -51,7 +51,7 @@ const Contact = () => {
             </p>
           </div>
 
-          <div className="grid md:grid-cols-2 gap-6 mb-16">
+          <div className="grid md:grid-cols-3 gap-6 mb-16">
             {/* Contact Cards */}
             <a
               href={`mailto:${hero.email}`}
@@ -62,7 +62,7 @@ const Contact = () => {
               }`}
               style={{ transitionDelay: '100ms' }}
             >
-              <Card className="p-6 bg-white/5 backdrop-blur-xl border border-white/10 hover:border-coral-400/50 hover:bg-white/10 hover:shadow-2xl transition-all duration-300 rounded-2xl cursor-pointer group">
+              <Card className="p-6 bg-white/5 backdrop-blur-xl border border-white/10 hover:border-coral-400/50 hover:bg-white/10 hover:shadow-2xl transition-all duration-300 rounded-2xl cursor-pointer group h-full">
                 <div className="flex items-center gap-4">
                   <div className="p-4 bg-gradient-to-br from-coral-500 to-coral-600 rounded-2xl group-hover:scale-110 transition-transform duration-300 shadow-lg">
                     <Mail className="w-6 h-6 text-white" />
@@ -70,28 +70,6 @@ const Contact = () => {
                   <div>
                     <p className="text-sm text-slate-400 mb-1 font-medium">Email</p>
                     <p className="text-white font-bold text-lg">{hero.email}</p>
-                  </div>
-                </div>
-              </Card>
-            </a>
-
-            <a
-              href={`tel:${hero.phone}`}
-              className={`transition-all duration-500 transform ${
-                isVisible
-                  ? 'translate-y-0 opacity-100'
-                  : 'translate-y-10 opacity-0'
-              }`}
-              style={{ transitionDelay: '200ms' }}
-            >
-              <Card className="p-6 bg-white/5 backdrop-blur-xl border border-white/10 hover:border-coral-400/50 hover:bg-white/10 hover:shadow-2xl transition-all duration-300 rounded-2xl cursor-pointer group">
-                <div className="flex items-center gap-4">
-                  <div className="p-4 bg-gradient-to-br from-navy-500 to-navy-600 rounded-2xl group-hover:scale-110 transition-transform duration-300 shadow-lg">
-                    <Phone className="w-6 h-6 text-white" />
-                  </div>
-                  <div>
-                    <p className="text-sm text-slate-400 mb-1 font-medium">Phone</p>
-                    <p className="text-white font-bold text-lg">{hero.phone}</p>
                   </div>
                 </div>
               </Card>
@@ -106,16 +84,16 @@ const Contact = () => {
                   ? 'translate-y-0 opacity-100'
                   : 'translate-y-10 opacity-0'
               }`}
-              style={{ transitionDelay: '300ms' }}
+              style={{ transitionDelay: '200ms' }}
             >
-              <Card className="p-6 bg-white/5 backdrop-blur-xl border border-white/10 hover:border-coral-400/50 hover:bg-white/10 hover:shadow-2xl transition-all duration-300 rounded-2xl cursor-pointer group">
+              <Card className="p-6 bg-white/5 backdrop-blur-xl border border-white/10 hover:border-coral-400/50 hover:bg-white/10 hover:shadow-2xl transition-all duration-300 rounded-2xl cursor-pointer group h-full">
                 <div className="flex items-center gap-4">
                   <div className="p-4 bg-gradient-to-br from-coral-500 to-coral-600 rounded-2xl group-hover:scale-110 transition-transform duration-300 shadow-lg">
                     <Linkedin className="w-6 h-6 text-white" />
                   </div>
                   <div>
                     <p className="text-sm text-slate-400 mb-1 font-medium">LinkedIn</p>
-                    <p className="text-white font-bold text-lg">Connect on LinkedIn</p>
+                    <p className="text-white font-bold text-lg">Connect with me</p>
                   </div>
                 </div>
               </Card>
@@ -130,9 +108,9 @@ const Contact = () => {
                   ? 'translate-y-0 opacity-100'
                   : 'translate-y-10 opacity-0'
               }`}
-              style={{ transitionDelay: '400ms' }}
+              style={{ transitionDelay: '300ms' }}
             >
-              <Card className="p-6 bg-white/5 backdrop-blur-xl border border-white/10 hover:border-coral-400/50 hover:bg-white/10 hover:shadow-2xl transition-all duration-300 rounded-2xl cursor-pointer group">
+              <Card className="p-6 bg-white/5 backdrop-blur-xl border border-white/10 hover:border-coral-400/50 hover:bg-white/10 hover:shadow-2xl transition-all duration-300 rounded-2xl cursor-pointer group h-full">
                 <div className="flex items-center gap-4">
                   <div className="p-4 bg-gradient-to-br from-navy-500 to-navy-600 rounded-2xl group-hover:scale-110 transition-transform duration-300 shadow-lg">
                     <Github className="w-6 h-6 text-white" />
