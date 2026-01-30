@@ -34,9 +34,19 @@ const Education = () => {
     <section
       id="education"
       ref={sectionRef}
-      className="py-20 md:py-32 px-4 md:px-6 bg-gradient-to-b from-slate-900 via-navy-950 to-slate-900"
+      className="py-20 md:py-32 px-4 md:px-6 bg-gradient-to-b from-blue-950 via-blue-900 to-slate-950 relative overflow-hidden"
     >
-      <div className="max-w-7xl mx-auto">
+      {/* Blue Background Pattern */}
+      <div className="absolute inset-0 overflow-hidden">
+        <div className="absolute top-1/3 right-1/4 w-[400px] h-[400px] bg-blue-500/15 rounded-full filter blur-[100px]"></div>
+        <div className="absolute bottom-1/3 left-1/4 w-[350px] h-[350px] bg-cyan-500/10 rounded-full filter blur-[80px]"></div>
+        <div className="absolute inset-0 opacity-15" style={{
+          backgroundImage: `url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M30 5L55 20V40L30 55L5 40V20L30 5Z' fill='none' stroke='%233b82f6' stroke-width='0.5'/%3E%3C/svg%3E")`,
+          backgroundSize: '60px 60px'
+        }}></div>
+      </div>
+
+      <div className="max-w-7xl mx-auto relative z-10">
         <div
           className={`transition-all duration-1000 transform ${
             isVisible ? 'translate-y-0 opacity-100' : 'translate-y-10 opacity-0'
@@ -46,7 +56,7 @@ const Education = () => {
             <h2 className="text-4xl md:text-6xl lg:text-7xl font-black text-white mb-4 md:mb-6">
               Education & Certifications
             </h2>
-            <div className="w-24 md:w-32 h-1.5 md:h-2 bg-gradient-to-r from-coral-500 to-coral-600 mx-auto rounded-full"></div>
+            <div className="w-24 md:w-32 h-1.5 md:h-2 bg-gradient-to-r from-blue-400 to-cyan-400 mx-auto rounded-full"></div>
           </div>
 
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 md:gap-12">
