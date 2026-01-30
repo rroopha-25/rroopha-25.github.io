@@ -72,13 +72,13 @@ const Contact = () => {
               }`}
               style={{ transitionDelay: '100ms' }}
             >
-              <Card className="p-6 bg-white/5 backdrop-blur-xl border border-white/10 hover:border-coral-400/50 hover:bg-white/10 hover:shadow-2xl transition-all duration-300 rounded-2xl cursor-pointer group h-full">
+              <Card className="p-6 bg-blue-950/40 backdrop-blur-xl border border-blue-400/20 hover:border-blue-400/50 hover:bg-blue-950/60 hover:shadow-2xl hover:shadow-blue-500/10 transition-all duration-300 rounded-2xl cursor-pointer group h-full">
                 <div className="flex items-center gap-4">
-                  <div className="p-4 bg-gradient-to-br from-coral-500 to-coral-600 rounded-2xl group-hover:scale-110 transition-transform duration-300 shadow-lg">
+                  <div className="p-4 bg-gradient-to-br from-blue-500 to-cyan-500 rounded-2xl group-hover:scale-110 transition-transform duration-300 shadow-lg">
                     <Mail className="w-6 h-6 text-white" />
                   </div>
                   <div>
-                    <p className="text-sm text-slate-400 mb-1 font-medium">Email</p>
+                    <p className="text-sm text-blue-200/70 mb-1 font-medium">Email</p>
                     <p className="text-white font-bold text-lg">{hero.email}</p>
                   </div>
                 </div>
@@ -96,13 +96,13 @@ const Contact = () => {
               }`}
               style={{ transitionDelay: '200ms' }}
             >
-              <Card className="p-6 bg-white/5 backdrop-blur-xl border border-white/10 hover:border-coral-400/50 hover:bg-white/10 hover:shadow-2xl transition-all duration-300 rounded-2xl cursor-pointer group h-full">
+              <Card className="p-6 bg-blue-950/40 backdrop-blur-xl border border-blue-400/20 hover:border-blue-400/50 hover:bg-blue-950/60 hover:shadow-2xl hover:shadow-blue-500/10 transition-all duration-300 rounded-2xl cursor-pointer group h-full">
                 <div className="flex items-center gap-4">
-                  <div className="p-4 bg-gradient-to-br from-coral-500 to-coral-600 rounded-2xl group-hover:scale-110 transition-transform duration-300 shadow-lg">
+                  <div className="p-4 bg-gradient-to-br from-blue-500 to-cyan-500 rounded-2xl group-hover:scale-110 transition-transform duration-300 shadow-lg">
                     <Linkedin className="w-6 h-6 text-white" />
                   </div>
                   <div>
-                    <p className="text-sm text-slate-400 mb-1 font-medium">LinkedIn</p>
+                    <p className="text-sm text-blue-200/70 mb-1 font-medium">LinkedIn</p>
                     <p className="text-white font-bold text-lg">Connect with me</p>
                   </div>
                 </div>
@@ -120,13 +120,13 @@ const Contact = () => {
               }`}
               style={{ transitionDelay: '300ms' }}
             >
-              <Card className="p-6 bg-white/5 backdrop-blur-xl border border-white/10 hover:border-coral-400/50 hover:bg-white/10 hover:shadow-2xl transition-all duration-300 rounded-2xl cursor-pointer group h-full">
+              <Card className="p-6 bg-blue-950/40 backdrop-blur-xl border border-blue-400/20 hover:border-blue-400/50 hover:bg-blue-950/60 hover:shadow-2xl hover:shadow-blue-500/10 transition-all duration-300 rounded-2xl cursor-pointer group h-full">
                 <div className="flex items-center gap-4">
-                  <div className="p-4 bg-gradient-to-br from-navy-500 to-navy-600 rounded-2xl group-hover:scale-110 transition-transform duration-300 shadow-lg">
+                  <div className="p-4 bg-gradient-to-br from-cyan-500 to-blue-600 rounded-2xl group-hover:scale-110 transition-transform duration-300 shadow-lg">
                     <Github className="w-6 h-6 text-white" />
                   </div>
                   <div>
-                    <p className="text-sm text-slate-400 mb-1 font-medium">GitHub</p>
+                    <p className="text-sm text-blue-200/70 mb-1 font-medium">GitHub</p>
                     <p className="text-white font-bold text-lg">View my work</p>
                   </div>
                 </div>
@@ -135,8 +135,8 @@ const Contact = () => {
           </div>
 
           {/* Footer */}
-          <div className="text-center pt-12 border-t border-white/10">
-            <p className="text-slate-400">
+          <div className="text-center pt-12 border-t border-blue-400/20">
+            <p className="text-blue-200/60">
               © 2025 {hero.name}. Built with passion for creating impactful solutions.
             </p>
           </div>
