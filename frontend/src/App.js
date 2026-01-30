@@ -1,6 +1,6 @@
 import React from 'react';
 import './App.css';
-import ThemeToggle from './components/ThemeToggle';
+import Navbar from './components/Navbar';
 import Hero from './components/Hero';
 import About from './components/About';
 import Education from './components/Education';
@@ -13,7 +13,7 @@ import Contact from './components/Contact';
 function App() {
   return (
     <div className="App">
-      <ThemeToggle />
+      <Navbar />
       <Hero />
       <About />
       <Education />
