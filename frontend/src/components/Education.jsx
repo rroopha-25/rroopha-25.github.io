@@ -34,19 +34,9 @@ const Education = () => {
     <section
       id="education"
       ref={sectionRef}
-      className="py-20 md:py-32 px-4 md:px-6 bg-gradient-to-b from-blue-950 via-blue-900 to-slate-950 relative overflow-hidden"
+      className="py-20 md:py-32 px-4 md:px-6 bg-gradient-to-b from-slate-900 via-navy-950 to-slate-900"
     >
-      {/* Blue Background Pattern */}
-      <div className="absolute inset-0 overflow-hidden">
-        <div className="absolute top-1/3 right-1/4 w-[400px] h-[400px] bg-blue-500/15 rounded-full filter blur-[100px]"></div>
-        <div className="absolute bottom-1/3 left-1/4 w-[350px] h-[350px] bg-cyan-500/10 rounded-full filter blur-[80px]"></div>
-        <div className="absolute inset-0 opacity-15" style={{
-          backgroundImage: `url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M30 5L55 20V40L30 55L5 40V20L30 5Z' fill='none' stroke='%233b82f6' stroke-width='0.5'/%3E%3C/svg%3E")`,
-          backgroundSize: '60px 60px'
-        }}></div>
-      </div>
-
-      <div className="max-w-7xl mx-auto relative z-10">
+      <div className="max-w-7xl mx-auto">
         <div
           className={`transition-all duration-1000 transform ${
             isVisible ? 'translate-y-0 opacity-100' : 'translate-y-10 opacity-0'
@@ -56,14 +46,14 @@ const Education = () => {
             <h2 className="text-4xl md:text-6xl lg:text-7xl font-black text-white mb-4 md:mb-6">
               Education & Certifications
             </h2>
-            <div className="w-24 md:w-32 h-1.5 md:h-2 bg-gradient-to-r from-blue-400 to-cyan-400 mx-auto rounded-full"></div>
+            <div className="w-24 md:w-32 h-1.5 md:h-2 bg-gradient-to-r from-coral-500 to-coral-600 mx-auto rounded-full"></div>
           </div>
 
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 md:gap-12">
             {/* Education */}
             <div>
               <div className="flex items-center gap-3 md:gap-4 mb-6 md:mb-8">
-                <div className="p-3 md:p-4 bg-gradient-to-br from-blue-500 to-cyan-500 rounded-2xl shadow-lg">
+                <div className="p-3 md:p-4 bg-gradient-to-br from-coral-500 to-coral-600 rounded-2xl shadow-lg">
                   <GraduationCap className="w-5 h-5 md:w-6 md:h-6 text-white" />
                 </div>
                 <h3 className="text-2xl md:text-3xl font-bold text-white">
@@ -74,7 +64,7 @@ const Education = () => {
                 {education.map((edu, index) => (
                   <Card
                     key={index}
-                    className={`p-5 md:p-6 bg-blue-950/40 backdrop-blur-xl border border-blue-400/20 hover:border-blue-400/50 hover:bg-blue-950/60 hover:shadow-lg hover:shadow-blue-500/10 transition-all duration-300 rounded-2xl ${
+                    className={`p-5 md:p-6 bg-white/5 backdrop-blur-xl border border-white/10 hover:border-coral-400/50 hover:bg-white/10 hover:shadow-lg transition-all duration-300 rounded-2xl ${
                       isVisible
                         ? 'translate-x-0 opacity-100'
                         : 'translate-x-10 opacity-0'
@@ -84,12 +74,12 @@ const Education = () => {
                     <h4 className="text-lg md:text-xl font-bold text-white mb-2">
                       {edu.degree}
                     </h4>
-                    <p className="text-blue-200 font-semibold mb-2 text-sm md:text-base">
+                    <p className="text-slate-300 font-semibold mb-2 text-sm md:text-base">
                       {edu.institution}
                     </p>
                     <Badge
                       variant="secondary"
-                      className="bg-blue-500/20 text-blue-200 border-blue-400/30 font-medium text-xs md:text-sm"
+                      className="bg-coral-500/20 text-coral-300 border-coral-500/30 font-medium text-xs md:text-sm"
                     >
                       {edu.location}
                     </Badge>
@@ -101,7 +91,7 @@ const Education = () => {
             {/* Certifications */}
             <div>
               <div className="flex items-center gap-3 md:gap-4 mb-6 md:mb-8">
-                <div className="p-3 md:p-4 bg-gradient-to-br from-cyan-500 to-blue-600 rounded-2xl shadow-lg">
+                <div className="p-3 md:p-4 bg-gradient-to-br from-navy-500 to-navy-600 rounded-2xl shadow-lg">
                   <Award className="w-5 h-5 md:w-6 md:h-6 text-white" />
                 </div>
                 <h3 className="text-2xl md:text-3xl font-bold text-white">
@@ -112,7 +102,7 @@ const Education = () => {
                 {certifications.map((cert, index) => (
                   <Card
                     key={index}
-                    className={`p-4 md:p-5 bg-blue-950/40 backdrop-blur-xl border border-blue-400/20 hover:border-blue-400/50 hover:bg-blue-950/60 hover:shadow-lg hover:shadow-blue-500/10 transition-all duration-300 rounded-2xl cursor-pointer ${
+                    className={`p-4 md:p-5 bg-white/5 backdrop-blur-xl border border-white/10 hover:border-coral-400/50 hover:bg-white/10 hover:shadow-lg transition-all duration-300 rounded-2xl cursor-pointer ${
                       isVisible
                         ? 'translate-x-0 opacity-100'
                         : '-translate-x-10 opacity-0'
@@ -120,7 +110,7 @@ const Education = () => {
                     style={{ transitionDelay: `${index * 100}ms` }}
                   >
                     <div className="flex items-start gap-3">
-                      <div className="w-1.5 md:w-2 h-1.5 md:h-2 bg-blue-400 rounded-full mt-2 flex-shrink-0"></div>
+                      <div className="w-1.5 md:w-2 h-1.5 md:h-2 bg-coral-500 rounded-full mt-2 flex-shrink-0"></div>
                       <p className="text-white font-semibold leading-relaxed text-sm md:text-base">{cert}</p>
                     </div>
                   </Card>
