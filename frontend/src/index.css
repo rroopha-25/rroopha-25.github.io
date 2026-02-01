@@ -243,7 +243,35 @@ html.light-mode section {
 }
 
 html.light-mode .hero-section {
-    background: linear-gradient(135deg, #f8fafc 0%, #fff1f2 30%, #eff6ff 70%, #f8fafc 100%) !important;
+    background: linear-gradient(135deg, #ffffff 0%, #fff5f5 30%, #f0f9ff 70%, #ffffff 100%) !important;
+}
+
+/* Force hero section text to be dark in light mode */
+html.light-mode .hero-section h1 {
+    color: #0f172a !important;
+}
+
+html.light-mode .hero-section .text-coral-400 {
+    color: #f43f5e !important;
+}
+
+html.light-mode .hero-section p {
+    color: #475569 !important;
+}
+
+html.light-mode .hero-section .text-slate-300,
+html.light-mode .hero-section .text-slate-400 {
+    color: #64748b !important;
+}
+
+/* Hero section contact links in light mode */
+html.light-mode .hero-section a span {
+    color: #334155 !important;
+}
+
+/* Keep the illustration dark */
+html.light-mode .hero-section svg {
+    filter: none;
 }
 
 html.light-mode .projects-section {
