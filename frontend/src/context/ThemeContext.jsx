@@ -27,8 +27,10 @@ export const ThemeProvider = ({ children }) => {
     document.documentElement.classList.toggle('light-mode', newTheme === 'light');
   };
 
+  const isDarkMode = theme === 'dark';
+
   return (
-    <ThemeContext.Provider value={{ theme, toggleTheme }}>
+    <ThemeContext.Provider value={{ theme, toggleTheme, isDarkMode }}>
       {children}
     </ThemeContext.Provider>
   );
