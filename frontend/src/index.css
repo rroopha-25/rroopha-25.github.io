@@ -237,6 +237,7 @@ html.light-mode {
     --foreground: 222 47% 11%;
 }
 
+/* Light mode section backgrounds */
 html.light-mode section {
     background: linear-gradient(to bottom, #ffffff, #f8fafc, #ffffff) !important;
 }
@@ -249,21 +250,64 @@ html.light-mode .projects-section {
     background: linear-gradient(to bottom, #f8fafc, #ffffff, #f8fafc) !important;
 }
 
-html.light-mode .text-white {
+/* Light mode - Only change text color for elements NOT inside cards/badges with colored backgrounds */
+html.light-mode section > div > div > .text-white,
+html.light-mode section > div > div > div > .text-white:not([class*="bg-gradient"]):not([class*="bg-coral"]):not([class*="bg-blue"]):not([class*="bg-navy"]) {
     color: #1e293b !important;
 }
 
+/* Keep white text on gradient backgrounds */
+html.light-mode [class*="bg-gradient"] .text-white,
+html.light-mode [class*="bg-coral"] .text-white,
+html.light-mode [class*="bg-blue"] .text-white,
+html.light-mode [class*="bg-navy"] .text-white {
+    color: #ffffff !important;
+}
+
+/* Light mode headings - dark text */
+html.light-mode h1.text-white,
+html.light-mode h2.text-white,
+html.light-mode h3.text-white:not([class*="bg-"]),
+html.light-mode section > div > div > h2,
+html.light-mode section > div > div > div > h2 {
+    color: #1e293b !important;
+}
+
+/* Light mode secondary text */
 html.light-mode .text-slate-300,
 html.light-mode .text-slate-400 {
     color: #64748b !important;
 }
 
+/* Light mode card backgrounds */
 html.light-mode .bg-white\/5,
 html.light-mode .bg-white\/10 {
     background: rgba(30, 58, 138, 0.05) !important;
 }
 
+/* Light mode borders */
 html.light-mode .border-white\/10,
 html.light-mode .border-white\/20 {
-    border-color: rgba(30, 58, 138, 0.1) !important;
+    border-color: rgba(30, 58, 138, 0.15) !important;
 }
+
+/* Light mode navbar */
+html.light-mode nav {
+    background: rgba(255, 255, 255, 0.9) !important;
+}
+
+html.light-mode nav .text-white {
+    color: #1e293b !important;
+}
+
+html.light-mode nav .text-slate-300 {
+    color: #475569 !important;
+}
+
+/* Ensure text inside gradient buttons stays white */
+html.light-mode .bg-gradient-to-r .text-white,
+html.light-mode .bg-gradient-to-br .text-white,
+html.light-mode button[class*="from-coral"] {
+    color: #ffffff !important;
+}
+
