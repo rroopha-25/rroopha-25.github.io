@@ -45,7 +45,7 @@ const Projects = () => {
     <section
       id="projects"
       ref={sectionRef}
-      className="projects-section py-32 px-6 bg-gradient-to-b from-slate-900 via-navy-950 to-slate-900 relative overflow-hidden"
+      className="projects-section py-16 md:py-24 lg:py-32 px-4 md:px-6 bg-gradient-to-b from-slate-900 via-navy-950 to-slate-900 relative overflow-hidden"
     >
       <div className="max-w-7xl mx-auto relative z-10">
         <div
@@ -53,17 +53,17 @@ const Projects = () => {
             isVisible ? 'translate-y-0 opacity-100' : 'translate-y-10 opacity-0'
           }`}
         >
-          <div className="text-center mb-20">
-            <h2 className="text-5xl md:text-7xl font-black text-white mb-6">
+          <div className="text-center mb-12 md:mb-16 lg:mb-20">
+            <h2 className="text-4xl md:text-5xl lg:text-7xl font-black text-white mb-4 md:mb-6">
               Featured Projects
             </h2>
-            <div className="w-32 h-2 bg-gradient-to-r from-blue-400 via-cyan-400 to-blue-500 mx-auto rounded-full mb-6"></div>
-            <p className="text-xl text-blue-200/80 max-w-3xl mx-auto">
+            <div className="w-24 md:w-32 h-1.5 md:h-2 bg-gradient-to-r from-blue-400 via-cyan-400 to-blue-500 mx-auto rounded-full mb-4 md:mb-6"></div>
+            <p className="text-base md:text-lg lg:text-xl text-blue-200/80 max-w-3xl mx-auto px-4">
               Real-world case studies showcasing data-driven product strategy, cross-functional leadership, and measurable business impact
             </p>
           </div>
 
-          <div className="grid md:grid-cols-2 gap-6">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-4 md:gap-6">
             {projects.map((project, index) => (
               <div
                 key={project.id}
@@ -76,9 +76,9 @@ const Projects = () => {
                 onClick={() => setSelectedProject(project)}
               >
                 {/* Glass card with image */}
-                <div className="relative rounded-3xl overflow-hidden bg-blue-950/40 backdrop-blur-xl border border-blue-400/20 hover:border-blue-400/50 transition-all duration-300 hover:scale-[1.02] hover:shadow-2xl hover:shadow-blue-500/30">
+                <div className="relative rounded-2xl md:rounded-3xl overflow-hidden bg-blue-950/40 backdrop-blur-xl border border-blue-400/20 hover:border-blue-400/50 transition-all duration-300 hover:scale-[1.02] hover:shadow-2xl hover:shadow-blue-500/30">
                   {/* Project Image with overlay */}
-                  <div className="relative h-72 overflow-hidden">
+                  <div className="relative h-48 md:h-64 lg:h-72 overflow-hidden">
                     <img
                       src={project.image}
                       alt={project.title}
@@ -88,14 +88,14 @@ const Projects = () => {
                     
                     {/* Category Badge */}
                     <Badge
-                      className="absolute top-4 right-4 bg-gradient-to-r from-blue-500 to-cyan-500 text-white border-0 px-4 py-1.5 font-semibold shadow-lg"
+                      className="absolute top-3 right-3 md:top-4 md:right-4 bg-gradient-to-r from-blue-500 to-cyan-500 text-white border-0 px-2 md:px-4 py-1 md:py-1.5 font-semibold shadow-lg text-xs md:text-sm"
                     >
                       {project.category}
                     </Badge>
 
                     {/* Title overlay */}
-                    <div className="absolute bottom-4 left-4 right-4">
-                      <h3 className="text-2xl font-bold text-white mb-1 group-hover:text-blue-300 transition-colors">
+                    <div className="absolute bottom-3 left-3 right-3 md:bottom-4 md:left-4 md:right-4">
+                      <h3 className="text-lg md:text-xl lg:text-2xl font-bold text-white mb-1 group-hover:text-blue-300 transition-colors">
                         {project.title}
                       </h3>
                       <p className="text-slate-300 text-sm font-medium">
