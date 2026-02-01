@@ -82,13 +82,17 @@ const Navbar = () => {
             {/* Theme Toggle */}
             <button
               onClick={toggleTheme}
-              className="p-2.5 rounded-lg bg-white/5 border border-white/10 hover:bg-white/10 hover:border-coral-400/50 transition-all duration-300"
+              className={`p-2.5 rounded-lg border transition-all duration-300 ${
+                isDarkMode 
+                  ? 'bg-white/5 border-white/10 hover:bg-white/10 hover:border-coral-400/50' 
+                  : 'bg-slate-100 border-slate-200 hover:bg-slate-200 hover:border-coral-400'
+              }`}
               aria-label="Toggle theme"
             >
               {isDarkMode ? (
-                <Sun className="w-5 h-5 text-coral-400" />
+                <Sun className="w-5 h-5 text-yellow-400" />
               ) : (
-                <Moon className="w-5 h-5 text-coral-400" />
+                <Moon className="w-5 h-5 text-slate-600" />
               )}
             </button>
 
