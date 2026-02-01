@@ -124,11 +124,15 @@ const Hero = () => {
                     href={item.href}
                     target={item.href.startsWith('http') ? '_blank' : undefined}
                     rel={item.href.startsWith('http') ? 'noopener noreferrer' : undefined}
-                    className="group inline-flex items-center gap-2 px-4 py-2.5 rounded-lg bg-white/5 backdrop-blur-xl border border-white/10 hover:bg-white/10 hover:border-coral-400/50 transition-all duration-300"
+                    className={`group inline-flex items-center gap-2 px-4 py-2.5 rounded-lg backdrop-blur-xl border transition-all duration-300 ${
+                      isDarkMode 
+                        ? 'bg-white/5 border-white/10 hover:bg-white/10 hover:border-coral-400/50' 
+                        : 'bg-slate-900/5 border-slate-300 hover:bg-slate-900/10 hover:border-coral-400'
+                    }`}
                   >
                     <Icon className="w-4 h-4 text-coral-400 group-hover:text-coral-300 transition-colors" />
-                    <span className="text-sm text-white font-medium hidden sm:inline">{item.text}</span>
-                    <span className="text-sm text-white font-medium sm:hidden">{item.shortText}</span>
+                    <span className={`text-sm font-medium hidden sm:inline ${isDarkMode ? 'text-white' : 'text-slate-700'}`}>{item.text}</span>
+                    <span className={`text-sm font-medium sm:hidden ${isDarkMode ? 'text-white' : 'text-slate-700'}`}>{item.shortText}</span>
                   </a>
                 );
               })}
