@@ -79,11 +79,11 @@ const Hero = () => {
               </p>
             )}
             
-            <p className="text-base md:text-lg text-slate-300 mb-3 max-w-xl mx-auto lg:mx-0">
+            <p className={`text-base md:text-lg mb-3 max-w-xl mx-auto lg:mx-0 ${isDarkMode ? 'text-slate-300' : 'text-slate-600'}`}>
               {hero.subtitle}
             </p>
 
-            <p className="text-sm md:text-base text-slate-400 max-w-lg mx-auto lg:mx-0 mb-8 leading-relaxed">
+            <p className={`text-sm md:text-base max-w-lg mx-auto lg:mx-0 mb-8 leading-relaxed ${isDarkMode ? 'text-slate-400' : 'text-slate-500'}`}>
               {hero.tagline}
             </p>
 
@@ -100,7 +100,11 @@ const Hero = () => {
                 onClick={() => scrollToSection('contact')}
                 size="lg"
                 variant="outline"
-                className="px-8 py-6 text-base font-bold rounded-xl bg-white/5 backdrop-blur-xl border-2 border-white/20 text-white hover:bg-white/10 hover:border-coral-400 transition-all duration-300 hover:scale-105"
+                className={`px-8 py-6 text-base font-bold rounded-xl backdrop-blur-xl border-2 transition-all duration-300 hover:scale-105 ${
+                  isDarkMode 
+                    ? 'bg-white/5 border-white/20 text-white hover:bg-white/10 hover:border-coral-400' 
+                    : 'bg-slate-900/5 border-slate-300 text-slate-800 hover:bg-slate-900/10 hover:border-coral-400'
+                }`}
               >
                 Let's Connect
               </Button>
