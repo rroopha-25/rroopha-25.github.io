@@ -386,9 +386,25 @@ html.light-mode #blog h2 {
 /* TEXT ON BLOG IMAGES - KEEP WHITE IN LIGHT MODE */
 html.light-mode #blog .relative .absolute h3,
 html.light-mode #blog .relative .absolute .text-white,
-html.light-mode #blog .relative .absolute p {
+html.light-mode #blog .relative .absolute p,
+html.light-mode #blog .relative .absolute span {
     color: #ffffff !important;
     text-shadow: 0 2px 8px rgba(0,0,0,0.6);
+}
+
+/* Blog modal text on images - keep white */
+html.light-mode #blog .fixed .relative h2,
+html.light-mode #blog .fixed .relative .text-white,
+html.light-mode #blog .fixed .relative span:not(.bg-coral-500 span),
+html.light-mode #blog .fixed .relative .text-slate-300 {
+    color: #ffffff !important;
+    text-shadow: 0 2px 8px rgba(0,0,0,0.6);
+}
+
+/* Keep badge text white on colored badges */
+html.light-mode #blog .bg-coral-500,
+html.light-mode #blog .bg-coral-500 span {
+    color: #ffffff !important;
 }
 
 /* Blog card content text below image */

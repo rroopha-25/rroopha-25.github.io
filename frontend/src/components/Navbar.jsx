@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { useTheme } from '../context/ThemeContext';
-import { Sun, Moon, Menu, X, Download } from 'lucide-react';
+import { Sun, Moon, Menu, X } from 'lucide-react';
 
 const Navbar = () => {
   const [isScrolled, setIsScrolled] = useState(false);
@@ -68,17 +68,8 @@ const Navbar = () => {
             ))}
           </div>
 
-          {/* Right Side - Resume + Theme Toggle */}
+          {/* Right Side - Theme Toggle */}
           <div className="flex items-center gap-3">
-            {/* Resume Download Button */}
-            <button
-              onClick={() => alert('Please upload your resume PDF to /public/resume.pdf to enable this feature.')}
-              className="hidden sm:flex items-center gap-2 px-4 py-2 bg-gradient-to-r from-coral-500 to-coral-600 hover:from-coral-600 hover:to-coral-700 text-white text-sm font-semibold rounded-lg transition-all duration-300 hover:scale-105 shadow-lg shadow-coral-500/25"
-            >
-              <Download className="w-4 h-4" />
-              <span>Resume</span>
-            </button>
-
             {/* Theme Toggle */}
             <button
               onClick={toggleTheme}
@@ -128,14 +119,6 @@ const Navbar = () => {
               {item.label}
             </button>
           ))}
-          {/* Mobile Resume Download */}
-          <button
-            onClick={() => alert('Please upload your resume PDF to /public/resume.pdf to enable this feature.')}
-            className="flex items-center justify-center gap-2 w-full mt-4 px-4 py-3 bg-gradient-to-r from-coral-500 to-coral-600 text-white font-semibold rounded-lg"
-          >
-            <Download className="w-4 h-4" />
-            <span>Download Resume</span>
-          </button>
         </div>
       </div>
     </nav>
