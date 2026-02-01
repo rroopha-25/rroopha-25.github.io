@@ -291,7 +291,100 @@ html.light-mode .hero-section .bg-navy-500\/20 {
 }
 
 html.light-mode .projects-section {
-    background: linear-gradient(to bottom, #ffffff, #f8fafc, #ffffff) !important;
+    background: linear-gradient(to bottom, #f0f9ff, #e0f2fe, #f0f9ff) !important;
+}
+
+/* ============================================
+   LIGHT MODE - PROJECTS SECTION
+   ============================================ */
+
+html.light-mode .projects-section h2 {
+    color: #0f172a !important;
+}
+
+html.light-mode .projects-section p {
+    color: #334155 !important;
+}
+
+html.light-mode .projects-section .text-blue-200\/80,
+html.light-mode .projects-section .text-blue-200,
+html.light-mode .projects-section .text-blue-100 {
+    color: #334155 !important;
+}
+
+html.light-mode .projects-section .text-slate-300 {
+    color: #475569 !important;
+}
+
+html.light-mode .projects-section .text-white {
+    color: #0f172a !important;
+}
+
+html.light-mode .projects-section .bg-blue-950\/40 {
+    background: rgba(255, 255, 255, 0.9) !important;
+    box-shadow: 0 4px 20px rgba(59, 130, 246, 0.15);
+}
+
+html.light-mode .projects-section .border-blue-400\/20 {
+    border-color: rgba(59, 130, 246, 0.25) !important;
+}
+
+html.light-mode .projects-section .text-blue-300,
+html.light-mode .projects-section .text-blue-400 {
+    color: #2563eb !important;
+}
+
+/* ============================================
+   LIGHT MODE - BLOG SECTION
+   ============================================ */
+
+html.light-mode #blog {
+    background: linear-gradient(to bottom, #f8fafc, #ffffff, #f8fafc) !important;
+}
+
+html.light-mode #blog h2 {
+    color: #0f172a !important;
+}
+
+html.light-mode #blog h3 {
+    color: #0f172a !important;
+}
+
+html.light-mode #blog p {
+    color: #334155 !important;
+}
+
+html.light-mode #blog .text-slate-300 {
+    color: #475569 !important;
+}
+
+html.light-mode #blog .text-slate-400 {
+    color: #64748b !important;
+}
+
+html.light-mode #blog .text-coral-300 {
+    color: #f43f5e !important;
+}
+
+html.light-mode #blog .text-coral-400 {
+    color: #e11d48 !important;
+}
+
+html.light-mode #blog .bg-white\/5 {
+    background: rgba(255, 255, 255, 0.95) !important;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+}
+
+html.light-mode #blog .bg-white\/10 {
+    background: rgba(15, 23, 42, 0.05) !important;
+}
+
+html.light-mode #blog .border-white\/10 {
+    border-color: rgba(15, 23, 42, 0.1) !important;
+}
+
+html.light-mode #blog .border-white\/20 {
+    border-color: rgba(15, 23, 42, 0.15) !important;
 }
 
 /* Light mode - text colors for readability */
