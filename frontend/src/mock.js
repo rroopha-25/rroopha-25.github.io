@@ -1,7 +1,7 @@
 export const mockData = {
   hero: {
     name: "Roopha Rajagopal",
-    title: "Product Manager",
+    title: "",
     subtitle: "Turning data into strategy and strategy into results",
     tagline: "Transforming business challenges into data-driven solutions through agile leadership and enterprise systems expertise",
     email: "rroopha@gmail.com",
@@ -247,7 +247,7 @@ export const mockData = {
     summary: "I bridge the gap between \"what customers need\" and \"what engineering can build\" then make sure it actually gets used. I ask \"why\" until I understand the real problem, test ideas fast, and treat every product decision like a hypothesis worth validating. I'm an ocean person learning to love hiking, excited about new experiences and discovering what I'm capable of.",
     photo: "https://customer-assets.emergentagent.com/job_roopha-portfolio/artifacts/cvkjcwev_ROOPA.jpeg",
     highlights: [
-      "6+ years in IT and Product Management",
+      "6+ years in IT and Business Systems",
       "Led enterprise solutions for Fortune 500 clients",
       "Proven track record in CPQ, ServiceNow, and Business Systems",
       "Expert in Agile/SAFe methodologies and stakeholder management"
@@ -354,7 +354,7 @@ export const mockData = {
       role: "Business Technology Analyst – Customer Success & Growth",
       company: "AMBC Inc.",
       location: "Illinois, USA",
-      period: "Nov 2016 – Aug 2021",
+      period: "Nov 2016 – Nov 2019",
       type: "Professional",
       achievements: [
         "Drove end-to-end customer lifecycle for 20+ B2B eCommerce clients from demand generation and sales conversion through post-sale support",
