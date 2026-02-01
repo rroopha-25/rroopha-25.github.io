@@ -316,10 +316,6 @@ html.light-mode .projects-section .text-slate-300 {
     color: #334155 !important;
 }
 
-html.light-mode .projects-section .text-white {
-    color: #0f172a !important;
-}
-
 /* Project cards in light mode - stronger background */
 html.light-mode .projects-section .bg-blue-950\/40 {
     background: rgba(255, 255, 255, 0.98) !important;
@@ -337,8 +333,8 @@ html.light-mode .projects-section .text-blue-400 {
 }
 
 /* Project card content text - make it dark and readable */
-html.light-mode .projects-section .rounded-2xl p,
-html.light-mode .projects-section .rounded-3xl p {
+html.light-mode .projects-section .rounded-2xl > div:last-child p,
+html.light-mode .projects-section .rounded-3xl > div:last-child p {
     color: #1e293b !important;
 }
 
@@ -354,19 +350,25 @@ html.light-mode .projects-section .border-blue-400\/25 {
 }
 
 /* Image overlay - make it darker for better text contrast */
-html.light-mode .projects-section .bg-gradient-to-t {
+html.light-mode .projects-section .relative .bg-gradient-to-t {
     background: linear-gradient(to top, rgba(15, 23, 42, 0.95), rgba(15, 23, 42, 0.7), transparent) !important;
 }
 
-/* Title on images should stay white for contrast */
-html.light-mode .projects-section h3.text-white,
-html.light-mode .projects-section .absolute h3 {
+/* TEXT ON IMAGES - KEEP WHITE IN LIGHT MODE */
+html.light-mode .projects-section .relative .absolute h3,
+html.light-mode .projects-section .relative .absolute .text-white,
+html.light-mode .projects-section .relative .absolute p {
     color: #ffffff !important;
-    text-shadow: 0 2px 4px rgba(0,0,0,0.5);
+    text-shadow: 0 2px 8px rgba(0,0,0,0.6);
 }
 
-html.light-mode .projects-section .absolute .text-slate-400 {
-    color: #cbd5e1 !important;
+html.light-mode .projects-section .relative .absolute .text-slate-400 {
+    color: #e2e8f0 !important;
+}
+
+/* Card content below image - dark text */
+html.light-mode .projects-section > div > div > div > div:not(.relative) .text-white {
+    color: #0f172a !important;
 }
 
 /* ============================================
@@ -381,17 +383,20 @@ html.light-mode #blog h2 {
     color: #0f172a !important;
 }
 
-/* Blog card titles on images should stay white */
-html.light-mode #blog .absolute h3 {
+/* TEXT ON BLOG IMAGES - KEEP WHITE IN LIGHT MODE */
+html.light-mode #blog .relative .absolute h3,
+html.light-mode #blog .relative .absolute .text-white,
+html.light-mode #blog .relative .absolute p {
     color: #ffffff !important;
-    text-shadow: 0 2px 4px rgba(0,0,0,0.5);
+    text-shadow: 0 2px 8px rgba(0,0,0,0.6);
 }
 
-html.light-mode #blog h3:not(.absolute h3) {
+/* Blog card content text below image */
+html.light-mode #blog > div > div > div > div:not(.relative) h3 {
     color: #0f172a !important;
 }
 
-html.light-mode #blog p {
+html.light-mode #blog > div > div > div > div:not(.relative) p {
     color: #334155 !important;
 }
 
@@ -431,7 +436,7 @@ html.light-mode #blog .border-white\/20 {
 }
 
 /* Blog image overlay - darker for text readability */
-html.light-mode #blog .bg-gradient-to-t {
+html.light-mode #blog .relative .bg-gradient-to-t {
     background: linear-gradient(to top, rgba(15, 23, 42, 0.95), rgba(15, 23, 42, 0.6), transparent) !important;
 }
 
