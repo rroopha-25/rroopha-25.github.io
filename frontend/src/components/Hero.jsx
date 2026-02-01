@@ -53,9 +53,11 @@ const Hero = () => {
               </span>
             </h1>
 
-            <p className="text-xl md:text-2xl font-semibold text-white mb-3">
-              {hero.title}
-            </p>
+            {hero.title && (
+              <p className="text-xl md:text-2xl font-semibold text-white mb-3">
+                {hero.title}
+              </p>
+            )}
             
             <p className="text-base md:text-lg text-slate-300 mb-3 max-w-xl mx-auto lg:mx-0">
               {hero.subtitle}
