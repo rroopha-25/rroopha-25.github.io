@@ -246,6 +246,16 @@ html.light-mode .hero-section {
     background: linear-gradient(135deg, #ffffff 0%, #fff5f5 30%, #f0f9ff 70%, #ffffff 100%) !important;
 }
 
+/* Override the dark gradient backgrounds in hero for light mode */
+html.light-mode .hero-section > div:first-child {
+    background: linear-gradient(135deg, #ffffff 0%, #fff5f5 30%, #f0f9ff 70%, #ffffff 100%) !important;
+}
+
+html.light-mode section.hero-section {
+    background: #ffffff !important;
+    background-image: linear-gradient(135deg, #ffffff 0%, #fff5f5 30%, #f0f9ff 70%, #ffffff 100%) !important;
+}
+
 /* Force hero section text to be dark in light mode */
 html.light-mode .hero-section h1 {
     color: #0f172a !important;
@@ -272,6 +282,12 @@ html.light-mode .hero-section a span {
 /* Keep the illustration dark */
 html.light-mode .hero-section svg {
     filter: none;
+}
+
+/* Light mode - hide dark background orbs */
+html.light-mode .hero-section .bg-coral-500\/10,
+html.light-mode .hero-section .bg-navy-500\/20 {
+    opacity: 0.3 !important;
 }
 
 html.light-mode .projects-section {
