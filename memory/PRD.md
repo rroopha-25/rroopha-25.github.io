@@ -1,59 +1,73 @@
-# Portfolio Website PRD - Roopha Rajagopal
+# Roopha Rajagopal - Portfolio Website PRD
 
 ## Original Problem Statement
-Build a modern, professional portfolio website to showcase Roopha Rajagopal's work as a Product Manager.
+Build a modern, professional portfolio website for Roopha Rajagopal, a Product Manager. The website should be visually appealing, mobile-responsive, and feature sections for About Me, Education, Work Experience (Volunteering), Projects, Skills, Blog, and Contact.
+
+## User Persona
+- **Name**: Roopha Rajagopal
+- **Role**: Product Manager
+- **Goal**: Showcase professional experience, projects, and thought leadership
 
 ## Core Requirements
-- **Content**: About Me, Education, Work Experience, Project Case Studies (6), Skills, Blog (2 posts), Contact section
-- **Visuals**: Modern design with glass morphism effects
-- **Branding**: Coral Pink and Navy Blue theme (dark mode default), White/Grey/Blue for light mode
-- **Functionality**: Mobile-responsive, social links (LinkedIn, GitHub), theme toggle
+- Multi-section portfolio: Hero, About, Volunteering, Projects, Skills, Blog, Contact
+- Consistent "Coral Pink and Navy Blue" theme
+- Functional light/dark mode toggle
+- Sticky navigation bar with section links
+- Fully responsive design (desktop, tablet, mobile)
+- Visually engaging animations
 
 ## Tech Stack
-- Frontend: React + TailwindCSS
-- Data: Mocked in `/app/frontend/src/mock.js`
-- No backend required
+- **Frontend**: React, TailwindCSS, Shadcn/UI components
+- **Styling**: CSS variables, custom animations (@keyframes)
+- **State**: React Context API (ThemeContext)
+- **Data**: Centralized mock data (mock.js)
 
-## What's Been Implemented
-
-### Completed (January 2026)
-- [x] Complete multi-section portfolio (Hero, About, Education, Experience, Projects, Skills, Blog, Contact)
-- [x] Coral Pink and Navy Blue dark theme with glass morphism
-- [x] Mobile-responsive design
-- [x] 6 detailed project case studies
-- [x] 2 blog posts
-- [x] Social links integration
-- [x] Section reordering as requested
-- [x] Theme toggle (dark/light mode)
-- [x] Last name "Rajagopal" in coral pink
-- [x] Removed tagline "Ocean. Mountains. Products."
-- [x] New hero background pattern with floating geometric shapes
-- [x] Light mode theme: White, Grey, Blue color scheme
-
-### Files Structure
+## Architecture
 ```
 /app/frontend/src/
 ├── components/
-│   ├── Hero.jsx - Main landing section with new pattern
 │   ├── About.jsx
 │   ├── Blog.jsx
 │   ├── Contact.jsx
 │   ├── Education.jsx
 │   ├── Experience.jsx
+│   ├── Hero.jsx
+│   ├── Navbar.jsx
 │   ├── Projects.jsx
 │   ├── Skills.jsx
-│   ├── ThemeToggle.jsx
-│   └── ui/ (Shadcn components)
+│   └── ThemeToggle.jsx
 ├── context/
 │   └── ThemeContext.jsx
 ├── App.js
-├── index.css - Contains theme variables and light mode overrides
-└── mock.js - All content data
+├── index.css
+└── mock.js
 ```
 
-## Backlog / Future Enhancements
-- [ ] Downloadable resume/CV button
-- [ ] Contact form functionality
-- [ ] Project filtering by category
-- [ ] Blog pagination
-- [ ] SEO optimization
+## What's Been Implemented ✅
+- [x] All sections: Hero, About, Education, Experience (Volunteering), Projects, Skills, Blog, Contact
+- [x] Coral Pink and Navy Blue theme throughout
+- [x] Light/Dark mode toggle with proper theme switching
+- [x] Sticky navigation bar with smooth scroll
+- [x] Responsive design across all breakpoints
+- [x] Custom animations (floating, pulsing, spinning)
+- [x] Blog with modal detail view
+- [x] Contact section with "My Impact in Numbers" grid
+- [x] Text on images stays white in light mode (Feb 2025)
+- [x] Resume download button removed per user request (Feb 2025)
+
+## Completed Bug Fixes
+- [x] Hero section background not changing in light mode - Fixed
+- [x] Theme toggle icon not switching correctly - Fixed
+- [x] Text visibility issues in light mode - Fixed
+- [x] Text on images unreadable in light mode - Fixed (Feb 2025)
+
+## Backlog / Future Tasks
+- [ ] P2: Functional contact form (backend integration needed)
+- [ ] P3: Blog pagination (if more posts added)
+- [ ] P3: CMS integration for dynamic content
+
+## Known Fragile Areas
+- `/app/frontend/src/index.css` - Light mode CSS rules are complex with many `!important` overrides. Test both themes after any CSS changes.
+
+## Last Updated
+February 2025 - Removed resume button, fixed light mode text on images
