@@ -229,7 +229,7 @@ html {
    ============================================ */
 
 html.light-mode body {
-    background: #ffffff;
+    background: #f8fafc;
 }
 
 html.light-mode {
@@ -237,77 +237,98 @@ html.light-mode {
     --foreground: 222 47% 11%;
 }
 
-/* Light mode section backgrounds */
+/* Light mode section backgrounds - keep them light */
 html.light-mode section {
-    background: linear-gradient(to bottom, #ffffff, #f8fafc, #ffffff) !important;
-}
-
-html.light-mode .hero-section {
-    background: linear-gradient(135deg, #ffffff 0%, #fef2f2 30%, #f0f9ff 70%, #ffffff 100%) !important;
-}
-
-html.light-mode .projects-section {
     background: linear-gradient(to bottom, #f8fafc, #ffffff, #f8fafc) !important;
 }
 
-/* Light mode - Only change text color for elements NOT inside cards/badges with colored backgrounds */
-html.light-mode section > div > div > .text-white,
-html.light-mode section > div > div > div > .text-white:not([class*="bg-gradient"]):not([class*="bg-coral"]):not([class*="bg-blue"]):not([class*="bg-navy"]) {
-    color: #1e293b !important;
+html.light-mode .hero-section {
+    background: linear-gradient(135deg, #f8fafc 0%, #fff1f2 30%, #eff6ff 70%, #f8fafc 100%) !important;
 }
 
-/* Keep white text on gradient backgrounds */
-html.light-mode [class*="bg-gradient"] .text-white,
-html.light-mode [class*="bg-coral"] .text-white,
-html.light-mode [class*="bg-blue"] .text-white,
-html.light-mode [class*="bg-navy"] .text-white {
-    color: #ffffff !important;
+html.light-mode .projects-section {
+    background: linear-gradient(to bottom, #ffffff, #f8fafc, #ffffff) !important;
 }
 
-/* Light mode headings - dark text */
+/* Light mode - text colors for readability */
 html.light-mode h1.text-white,
-html.light-mode h2.text-white,
-html.light-mode h3.text-white:not([class*="bg-"]),
-html.light-mode section > div > div > h2,
-html.light-mode section > div > div > div > h2 {
+html.light-mode h2.text-white {
+    color: #0f172a !important;
+}
+
+/* Keep coral color for Rajagopal */
+html.light-mode .text-coral-400 {
+    color: #f87171 !important;
+}
+
+/* Light mode paragraph text */
+html.light-mode p.text-white,
+html.light-mode .text-white:not([class*="bg-"]):not(button):not(a) {
     color: #1e293b !important;
 }
 
-/* Light mode secondary text */
-html.light-mode .text-slate-300,
+html.light-mode .text-slate-300 {
+    color: #475569 !important;
+}
+
 html.light-mode .text-slate-400 {
     color: #64748b !important;
 }
 
+/* Light mode card/badge text - keep white if on colored background */
+html.light-mode [class*="bg-gradient"] *,
+html.light-mode [class*="bg-coral"] *,
+html.light-mode .bg-gradient-to-r *,
+html.light-mode .bg-gradient-to-br * {
+    color: inherit;
+}
+
 /* Light mode card backgrounds */
-html.light-mode .bg-white\/5,
+html.light-mode .bg-white\/5 {
+    background: rgba(15, 23, 42, 0.03) !important;
+}
+
 html.light-mode .bg-white\/10 {
-    background: rgba(30, 58, 138, 0.05) !important;
+    background: rgba(15, 23, 42, 0.05) !important;
 }
 
 /* Light mode borders */
-html.light-mode .border-white\/10,
+html.light-mode .border-white\/10 {
+    border-color: rgba(15, 23, 42, 0.1) !important;
+}
+
 html.light-mode .border-white\/20 {
-    border-color: rgba(30, 58, 138, 0.15) !important;
+    border-color: rgba(15, 23, 42, 0.15) !important;
 }
 
 /* Light mode navbar */
 html.light-mode nav {
-    background: rgba(255, 255, 255, 0.9) !important;
+    background: rgba(248, 250, 252, 0.95) !important;
+    border-bottom-color: rgba(15, 23, 42, 0.1) !important;
 }
 
-html.light-mode nav .text-white {
+html.light-mode nav a,
+html.light-mode nav button {
+    color: #334155 !important;
+}
+
+html.light-mode nav button[class*="from-coral"] {
+    color: #ffffff !important;
+}
+
+/* Light mode - Hero illustration background stays dark */
+html.light-mode .hero-section svg circle[fill="url(#bgGradient)"] {
+    fill: #1e293b;
+}
+
+/* Light mode specific element overrides */
+html.light-mode span.text-white {
     color: #1e293b !important;
 }
 
-html.light-mode nav .text-slate-300 {
-    color: #475569 !important;
-}
-
-/* Ensure text inside gradient buttons stays white */
-html.light-mode .bg-gradient-to-r .text-white,
-html.light-mode .bg-gradient-to-br .text-white,
-html.light-mode button[class*="from-coral"] {
+/* Keep badge/button text colors correct */
+html.light-mode .bg-gradient-to-r.from-coral-500 span,
+html.light-mode .bg-gradient-to-br.from-coral-500 span {
     color: #ffffff !important;
 }
 
