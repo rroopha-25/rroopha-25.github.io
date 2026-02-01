@@ -34,7 +34,6 @@ const Contact = () => {
     { icon: TrendingUp, stat: '40%', label: 'Revenue Increase', color: 'from-green-500 to-emerald-500' },
     { icon: Users, stat: '1M+', label: 'Users Impacted', color: 'from-blue-500 to-cyan-500' },
     { icon: Target, stat: '6+', label: 'Products Launched', color: 'from-coral-500 to-pink-500' },
-    { icon: Briefcase, stat: '8+', label: 'Years Experience', color: 'from-purple-500 to-violet-500' },
   ];
 
   return (
