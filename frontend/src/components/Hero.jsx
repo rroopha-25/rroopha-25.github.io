@@ -2,10 +2,12 @@ import React, { useEffect, useState } from 'react';
 import { Button } from './ui/button';
 import { ArrowDown, Linkedin, Github, Mail } from 'lucide-react';
 import { mockData } from '../mock';
+import { useTheme } from '../context/ThemeContext';
 
 const Hero = () => {
   const [isVisible, setIsVisible] = useState(false);
   const { hero } = mockData;
+  const { isDarkMode } = useTheme();
 
   useEffect(() => {
     setIsVisible(true);
@@ -19,14 +21,26 @@ const Hero = () => {
   };
 
   return (
-    <section className="hero-section relative min-h-screen flex items-center justify-center overflow-hidden bg-gradient-to-br from-navy-950 via-slate-900 to-navy-900">
+    <section className={`hero-section relative min-h-screen flex items-center justify-center overflow-hidden ${
+      isDarkMode 
+        ? 'bg-gradient-to-br from-navy-950 via-slate-900 to-navy-900' 
+        : 'bg-gradient-to-br from-white via-rose-50 to-blue-50'
+    }`}>
       
       {/* Simple gradient background */}
-      <div className="absolute inset-0 bg-gradient-to-br from-navy-950 via-slate-900 to-navy-900"></div>
+      <div className={`absolute inset-0 ${
+        isDarkMode 
+          ? 'bg-gradient-to-br from-navy-950 via-slate-900 to-navy-900' 
+          : 'bg-gradient-to-br from-white via-rose-50 to-blue-50'
+      }`}></div>
       
       {/* Subtle accent glow */}
-      <div className="absolute top-0 right-0 w-[600px] h-[600px] bg-coral-500/10 rounded-full filter blur-[150px]"></div>
-      <div className="absolute bottom-0 left-0 w-[500px] h-[500px] bg-navy-500/20 rounded-full filter blur-[120px]"></div>
+      <div className={`absolute top-0 right-0 w-[600px] h-[600px] rounded-full filter blur-[150px] ${
+        isDarkMode ? 'bg-coral-500/10' : 'bg-coral-500/20'
+      }`}></div>
+      <div className={`absolute bottom-0 left-0 w-[500px] h-[500px] rounded-full filter blur-[120px] ${
+        isDarkMode ? 'bg-navy-500/20' : 'bg-blue-500/10'
+      }`}></div>
 
       {/* Main Content - Two Column Layout */}
       <div className="relative z-10 max-w-7xl mx-auto px-4 md:px-6 py-16 md:py-24">
