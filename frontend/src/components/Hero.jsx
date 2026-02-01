@@ -51,14 +51,20 @@ const Hero = () => {
             
             {/* Status Badge */}
             <div 
-              className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white/5 backdrop-blur-xl border border-white/10 mb-6 text-sm"
+              className={`inline-flex items-center gap-2 px-4 py-2 rounded-full backdrop-blur-xl border mb-6 text-sm ${
+                isDarkMode 
+                  ? 'bg-white/5 border-white/10' 
+                  : 'bg-slate-900/5 border-slate-900/10'
+              }`}
             >
               <div className="w-2 h-2 bg-coral-500 rounded-full animate-pulse"></div>
-              <span className="text-white font-medium">Available for opportunities</span>
+              <span className={`font-medium ${isDarkMode ? 'text-white' : 'text-slate-800'}`}>Available for opportunities</span>
             </div>
 
             {/* Main heading - Clean & Clear */}
-            <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-black text-white mb-2 tracking-tight leading-tight">
+            <h1 className={`text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-black mb-2 tracking-tight leading-tight ${
+              isDarkMode ? 'text-white' : 'text-slate-900'
+            }`}>
               {hero.name.split(' ')[0]}
             </h1>
             <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-black mb-4 tracking-tight leading-tight">
@@ -68,7 +74,7 @@ const Hero = () => {
             </h1>
 
             {hero.title && (
-              <p className="text-xl md:text-2xl font-semibold text-white mb-3">
+              <p className={`text-xl md:text-2xl font-semibold mb-3 ${isDarkMode ? 'text-white' : 'text-slate-800'}`}>
                 {hero.title}
               </p>
             )}
